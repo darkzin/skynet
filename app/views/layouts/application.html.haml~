@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %title 스카이넷 - 과제 제출 웹서비스
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body
+    = yield

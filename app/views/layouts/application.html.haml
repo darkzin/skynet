@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %title 스카이넷 - 과제 제출 웹서비스
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body
+    .navbar.navbar-inverse
+      .navbar-inner
+        .container
+          %a.brand SkyNet
+          %ul.nav
+            %li.active
+              %a
+                %i.icon-info-sign.icon-white
+                %span 2006012953, 김창환
+          .choose_class.pull-right
+            .btn-group
+              %button.btn 2013년 1학기 컴퓨터 프로그래밍
+              %button.btn.dropdown-toggle{ data: { toggle: "dropdown" } }
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  = link_to "2013년 1학기 컴퓨터 구조", "#"
+                %li
+                  = link_to "2013년 1학기 컴퓨터 개론", "#"
+                %li
+                  = link_to "2013년 1학기 컴퓨터 알고리즘", "#"
+    .container
+      = yield
