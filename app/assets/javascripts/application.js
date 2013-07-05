@@ -14,4 +14,12 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require google-code-prettify-rails/prettify
+//= require google-code-prettify-rails/lang-clj
 //= require_tree .
+
+$(function(){
+    // make code pretty
+    window.prettyPrint && prettyPrint();
+});
+    

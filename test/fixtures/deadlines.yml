@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  term: 2013-07-05 12:01:57
+  penalty: 1
+  subject_id: 
+
+two:
+  term: 2013-07-05 12:01:57
+  penalty: 1
+  subject_id: 

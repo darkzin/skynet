@@ -1,0 +1,8 @@
+.row-fluid
+  .span12
+    .choose-subject
+      %span 과제선택
+      .btn-group
+        %a.btn.btn-large{ href: "#" } 1. 하노이의 탑
+        %a.btn.btn-large.dropdown-toggle{ href: "#", data { toggle: "dropdown" }
+          %span.caret

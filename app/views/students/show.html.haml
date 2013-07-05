@@ -1,40 +1,49 @@
-.row
+.row-fluid
   .span12
-    .hero-unit
-      %h2 skynet 과제 제출 서비스
+    .class-title
+      %span 2013년 1학기 컴퓨터 프로그래밍
+      .buttons.pull-right
+        %a.btn.btn-large{ href: "#" } 과제보기
+        %a.btn.btn-large{ href: "#" } 제출하기
+        %a.btn.btn-large{ href: "#" } 결과보기
 
-.row
-  .right-column.span6
-    %h3 공지사항
-    .rounded-border-box
-      %ul#notice
-        %li
-          %h4 수업 폐지합니다.
-          %h5 2013년 6월 25일
-          %p 전쟁나는 바람에 폐지합니다.
+.row-fluid
+  .right-column.span7
+    .box
+      .box-header
+        %h3.box-title 최신 공지사항
+      .box-body
+        %ul.notice-list#latest-notice
+          %li
+            .notice-title
+              %span.title 수업 폐지합니다.
+              %span.date 2013년 6월 25일
+            .notice-detail
+              %p 전쟁나는 바람에 폐지합니다.
 
-  .left-column.span6
-    %h3 현재 진행중인 과제
-    .rounded-border-box
-      %ul#ongoing-homework
-        %li
-          .homework
-            %h4 하노이의 탑
-            .btn-group.pull-right
-              %button.btn.btn-small.btn-primary 설명 보기
-              %button.btn.btn-small.btn-danger 제출 하기
-              %button.btn.btn-small.btn-success 결과 보기
-            .problem
-              %h5 1. 하나 쌓기
+  .left-column.span5
+    .box
+      .box-header
+        %h3.box-title 현재 진행중인 과제
+      .box-body
+        %ul.homework-list#ongoing-homework
+          %li
+            .homework
+              %span.title 하노이의 탑
+              .btn-group.pull-right
+                %button.btn.btn-small.btn-primary 설명
+                %button.btn.btn-small.btn-success 결과
+              .problem
+                %a 1. 하나 쌓기
 
-    %h3 지나간 과제
-    .rounded-border-box
-      %ul#outgoing-homework
-        %li
-          .homework
-            %h4 국방부 해킹
-            .btn-group.pull-right
-              %button.btn.btn-small.btn-primary 설명 보기
-              %button.btn.btn-small.btn-success 결과 보기
-          .problem
-            %h5 1. 하나 쌓기      
+    .box
+      .box-header
+        %h3.box-title 지나간 과제
+      .box-body
+        %ul.homework-list#outgoing-homework
+          %li
+            .homework
+              %h4 하노이의 탑
+              .btn-group.pull-right
+                %button.btn.btn-small.btn-primary 설명
+                %button.btn.btn-small.btn-success 결과

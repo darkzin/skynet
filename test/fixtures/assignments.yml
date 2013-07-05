@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  state: MyString
+  compile_message: MyText
+  lead_time: 1
+  memory_usage: 1
+  student_id: 
+  problem_id: 
+
+two:
+  state: MyString
+  compile_message: MyText
+  lead_time: 1
+  memory_usage: 1
+  student_id: 
+  problem_id: 

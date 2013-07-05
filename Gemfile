@@ -51,3 +51,13 @@ gem 'capistrano', group: :development
 
 # Use haml as default html template.
 gem 'haml-rails'
+
+# Use google-code prettify.
+gem 'google-code-prettify-rails'
+
+# Use carrierwave for file upload.
+gem 'carrierwave'
+
+# Use devise for user authentication.
+# gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
+gem 'devise', '~> 3.0.0.rc'
