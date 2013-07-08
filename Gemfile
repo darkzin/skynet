@@ -61,3 +61,6 @@ gem 'carrierwave'
 # Use devise for user authentication.
 # gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 gem 'devise', '~> 3.0.0.rc'
+
+# Use mercury editor.
+gem 'mercury-rails'

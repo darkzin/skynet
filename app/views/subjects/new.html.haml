@@ -1,0 +1,19 @@
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    %li.active
+      %a{ href: "#tab1", data: { toggle: "tab" } } 기본정보
+    %li
+      %a{ href: "#tab2", data: { toggle: "tab" } } 과제안내
+    %li
+      %a{ href: "#tab3", data: { toggle: "tab" } } 관련파일
+    %li
+      %a{ href: "#tab4", data: { toggle: "tab" } } 문제설정
+  .tab-content
+    #tab1.tab-pane.active
+      = render partial: "subjects/basic"
+    #tab2.tab-pane
+      = render partial: "subjects/about"
+    #tab3.tab-pane
+      /= render partial: "subjects/files"
+    #tab4.tab-pane
+      문제설정입니다.

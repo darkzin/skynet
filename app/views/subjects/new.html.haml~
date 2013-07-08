@@ -1,0 +1,15 @@
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    %li.active 기본정보
+    %li 과제안내
+    %li 관련파일
+    %li 문제설정
+  .tab-content
+    #tab1.tab-pane.active
+      기본정보입니다.
+    #tab2.tab-pane
+      과제안내입니다.
+    #tab3.tab-pane
+      관련파일입니다.
+    #tab4.tab-pane
+      문제설정입니다.

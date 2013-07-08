@@ -1,5 +1,12 @@
 Skynet::Application.routes.draw do
 
+  get "courses/index"
+  get "courses/show"
+  get "courses/new"
+  get "courses/create"
+  get "courses/edit"
+  get "courses/delete"
+  get "courses/update"
   devise_for :professors
   devise_for :students
   get "assignments/index"
@@ -12,7 +19,8 @@ Skynet::Application.routes.draw do
   #root to: "students#show"
   #root to: "homeworks#index"
   #root to: "assignments#new"
-  root to: "assignments#show"
+  #root to: "assignments#show"
+  root to: "subjects#new"
   get "students/index"
   get "students/create"
   get "students/new"
