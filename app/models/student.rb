@@ -5,6 +5,8 @@ class Student < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
+  attr_accessible :email, :password, :password_confirmation, :student_number, :name, :phone_number
+
   has_many :courses, through: :enrolls
   has_many :assignments, dependent: :destroy
 end

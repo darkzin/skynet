@@ -1,2 +1,24 @@
-%h1 Students#new
-%p Find me in app/views/students/new.html.haml
+.row-fluid
+  .span12
+    %h3 회원 가입
+    %table.table
+      %tr
+        %td
+          %span 이메일
+        %td
+          = text_field(:post, :email)
+      %tr
+        %td
+          %span 이름
+        %td
+          = text_field(:post, :name)
+      %tr
+        %td
+          %span 전화번호
+        %td
+          = text_field(:post, :tel)
+      %tr
+        %td
+          %span 설명 
+        %td
+          = text_field(:post, :tel)

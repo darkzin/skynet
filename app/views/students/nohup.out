@@ -1,0 +1,988 @@
+[2013-07-10 10:59:16] INFO  WEBrick 1.3.1
+[2013-07-10 10:59:16] INFO  ruby 1.9.3 (2012-11-10) [x86_64-linux]
+[2013-07-10 10:59:16] INFO  WEBrick::HTTPServer#start: pid=3098 port=3000
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+=> Booting WEBrick
+=> Rails 4.0.0 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-10 11:10:03 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SubjectsController#new as HTML
+  Rendered subjects/_basic.html.haml (1.4ms)
+  Rendered subjects/_about.html.haml (0.6ms)
+  Rendered subjects/new.html.haml within layouts/application (41.9ms)
+Completed 200 OK in 1254ms (Views: 1204.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/classes.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/homeworks.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/students.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/lang-clj.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/classes.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/homeworks.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/students.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2013-07-10 11:10:05 +0900
+
+
+Started GET "/students/show" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+Processing by StudentsController#show as HTML
+  Rendered students/show.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/classes.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/homeworks.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/students.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.css?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/lang-clj.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/classes.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 11:10:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:37:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/homeworks.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/students.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-10 11:10:12 +0900
+
+
+Started GET "/students/new" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.haml within layouts/application (16.1ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/classes.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/homeworks.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/students.css?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/lang-clj.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/classes.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/students.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/homeworks.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2013-07-10 12:37:38 +0900
+
+
+Started GET "/students/new" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/classes.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/homeworks.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/students.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/lang-clj.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/classes.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:38:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:39:10] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+
+
+Started GET "/assets/homeworks.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/students.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-10 12:38:31 +0900
+
+
+Started GET "/students/new" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/classes.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/homeworks.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/students.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/lang-clj.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/assignments.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/classes.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/homeworks.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/students.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2013-07-10 12:39:10 +0900
+
+
+Started GET "/students/new" for 127.0.0.1 at 2013-07-10 12:42:30 +0900
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.haml within layouts/application (29.7ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %h3 and nested within it.):
+    1: .row-fluid
+    2:   .span12
+    3:     %h3 회원 가입
+    4:       %table.table
+    5:         %tr
+    6:           %td
+    7:             %span 이메일
+  app/views/students/new.html.haml:4
+
+
+  Rendered /home/ryze/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/ryze/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/ryze/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/assignments.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/classes.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/homeworks.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/students.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/google-code-prettify-rails/prettify.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-07-10 12:42:49 +0900
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 12:42:49] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 18:58:25] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2013-07-10 22:15:42] ERROR SignalException: SIGTERM
+	/home/ryze/.rbenv/versions/1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
