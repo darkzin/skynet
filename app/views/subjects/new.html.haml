@@ -14,6 +14,6 @@
     #tab2.tab-pane
       = render partial: "subjects/about"
     #tab3.tab-pane
-      /= render partial: "subjects/files"
+      /= render partial: "layouts/shared/fileupload"
     #tab4.tab-pane
-      문제설정입니다.
+      = render partial: "subjects/problems"

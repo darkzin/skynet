@@ -1,50 +1,55 @@
-.row-fluid
+.row-fluid#students-show
   .span12
-    .class-title
-      %span 2013년 1학기 컴퓨터 프로그래밍
-      .buttons.pull-right
-        %a.btn.btn-large{ href: "#" } 과제보기
-        %a.btn.btn-large{ href: "#" } 제출하기
-        %a.btn.btn-large{ href: "#" } 결과보기
-
-.row-fluid
-  .right-column.span7
+    %h2 학생 정보
     .box
       .box-header
-        %h3.box-title 최신 공지사항
+        %h3
+          개인정보
+          /= link_to '계정 삭제', "#", class: "btn btn-danger pull-right"
       .box-body
-        %ul.notice-list#latest-notice
-          %li
-            .notice-title
-              %span.title 수업 폐지합니다.
-              %span.date 2013년 6월 25일
-            .notice-detail
-              %p 전쟁나는 바람에 폐지합니다.
+        %h4 이    름 : 김창환
+        %h4 학    번 : 2006012953
+        %h4 이 메 일 : darkzin1021@gmail.com
+        %h4 전화번호 : 010 - 6628 - 7256
 
-  .left-column.span5
-    .box
-      .box-header
-        %h3.box-title 현재 진행중인 과제
-        %a.btn.btn-success.pull-right{ href: "#" } 새로 만들기
-      .box-body
-        %ul.homework-list#ongoing-homework
-          %li
-            .homework
-              %span.title 하노이의 탑
-              .btn-group.pull-right
-                %button.btn.btn-small.btn-primary 설명
-                %button.btn.btn-small.btn-success 결과
-              .problem
-                %a 1. 하나 쌓기
-
-    .box
-      .box-header
-        %h3.box-title 지나간 과제
-      .box-body
-        %ul.homework-list#outgoing-homework
-          %li
-            .homework
-              %h4 하노이의 탑
-              .btn-group.pull-right
-                %button.btn.btn-small.btn-primary 설명
-                %button.btn.btn-small.btn-success 결과
+    %h2 듣고있는 수업
+    %table.table.table-striped
+      %thead
+        %tr
+          %th
+            %span 과목명
+          %th
+            %span 교수명
+          %th
+            %span 연도
+          %th
+            %span 학기
+          
+      %tbody
+        %tr
+          %td
+            %span C언어
+          %td
+            %span 김봉봉
+          %td
+            %span 2013
+          %td
+            %span 1
+        %tr
+          %td
+            %span C언어
+          %td
+            %span 김봉봉
+          %td
+            %span 2013
+          %td
+            %span 1
+        %tr
+          %td
+            %span C언어
+          %td
+            %span 김봉봉
+          %td
+            %span 2013
+          %td
+            %span 1

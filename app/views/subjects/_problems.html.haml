@@ -1,0 +1,117 @@
+.row#subjects-new-problems
+  .span12.problem-index
+    %h3 문제 목록
+    %table.table.table-striped
+      %thead
+        %tr
+          %th 차례
+          %th 제목
+          %th 설명
+          %th 순서
+          %th 삭제
+      %tbody
+        %tr
+          %td 1
+          %td 머지소트
+          %td 머지소트로 디바이드 앤 컨쿼를 정...
+          %td
+            .btn-group
+              %button.btn
+                %span.caret
+              %button.btn.dropup
+                %span.caret
+          %td
+            = link_to "삭제", class: "btn btn-danger"
+        %tr
+          %td 1
+          %td 머지소트
+          %td 머지소트로 디바이드 앤 컨쿼를 정...
+          %td
+            .btn-group
+              %button.btn
+                %span.caret
+              %button.btn.dropup
+                %span.caret
+          %td
+            = link_to "삭제", class: "btn btn-danger"
+        %tr
+          %td 1
+          %td 머지소트
+          %td 머지소트로 디바이드 앤 컨쿼를 정...
+          %td
+            .btn-group
+              %button.btn
+                %span.caret
+              %button.btn.dropup
+                %span.caret
+          %td
+            = link_to "삭제", class: "btn btn-danger"
+  = form_for Problem.new do |f|
+    .span12.new-problem
+      %h3
+        새로운 문제
+        %h4
+          제목
+          = f.text_field :title
+        %h4
+          설명
+          = f.text_area :about
+      %h3 채점기준
+      %table.table.table-striped
+        %thead
+          %tr
+            %th 차례
+            %th 기준
+            %th 점수
+            %th 순서
+            %th 삭제
+        %tbody
+          %tr
+            %td 1
+            %td 20ms 이하의 속도로 돌아가는가?
+            %td 20
+            %td
+              .btn-group
+                %button.btn
+                  %span.caret
+                %button.btn.dropup
+                  %span.caret
+            %td
+              = link_to "삭제", class: "btn btn-danger"
+          %tr
+            %td 2
+            %td 아웃풋이 같은가?
+            %td 30
+            %td
+              .btn-group
+                %button.btn
+                  %span.caret
+                %button.btn.dropup
+                  %span.caret
+            %td
+              = link_to "삭제", class: "btn btn-danger"
+          %tr
+            %td 3
+            %td 교수님을 존경하는가?
+            %td 50
+            %td
+              .btn-group
+                %button.btn
+                  %span.caret
+                %button.btn.dropup
+                  %span.caret
+            %td
+              = link_to "삭제", class: "btn btn-danger"
+      = form_for Criterion.new do |c|
+        %h5
+          기준
+          = c.text_field :title
+          점수
+          = c.text_field :score
+          = link_to "추가", criterions_path, method: 'post', class: "btn btn-primary"
+    .span6
+      %h3 입력데이터
+      = f.text_area :input_data
+    .span6
+      %h3 모범답안
+      = f.text_area :model_paper

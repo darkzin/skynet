@@ -1,0 +1,6 @@
+class AddInputDataAndModelPaperToCriterions < ActiveRecord::Migration
+  def change
+    add_column :criterions, :input_data
+    add_column :criterions, :model_paper
+  end
+end

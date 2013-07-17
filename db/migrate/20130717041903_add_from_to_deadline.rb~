@@ -1,0 +1,4 @@
+class AddFromToDeadline < ActiveRecord::Migration
+  def change
+  end
+end
