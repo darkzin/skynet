@@ -1,58 +1,72 @@
-.row-fluid
+.row#assignments-index
   .span12
-    %h4 결과 종합
-
-.row-fluid
+    %h2 제출 목록
   .span12
-    .subject-title
-      %h4 1. 하노이의 탑
-      %h4 총점 : 50점
-    .problems
-      .problem
-        .title
-          %h5 1) 재귀함수 구현
-        .table
-          %table.table.table-striped
-            %thead
-              %tr
-                %th #
-                %th 제출상태
-                %th 제출일시
-                %th 소요시간(msec)
-                %th 메모리사용량(Byte)
-                %th 점수
-                %th 자세히 보기
-            %tbody
-              %tr
-                %td 1
-                %td 성공
-                %td 2013년 7월 1일 11시 55분
-                %td 1131
-                %td 1594
-                %td 100
-                %td
-                  %a.btn.btn-primary.btn-mini{ href: "#" } 아
-      .problem
-        .title
-          %h5 2) 재귀함수 구현
-        .table
-          %table.table.table-striped
-            %thead
-              %tr
-                %th #
-                %th 제출상태
-                %th 제출일시
-                %th 소요시간(msec)
-                %th 메모리사용량(Byte)
-                %th 점수
-                %th 자세히 보기
-            %tbody
-              %tr
-                %td 1
-                %td 성공
-                %td 2013년 7월 1일 11시 55분
-                %td 1131
-                %td 1594
-                %td 100
-                %td
-                  %a.btn.btn-primary.btn-mini{ href: "#" } 아
+    .row
+      .span6
+        %h3 주제
+        %select
+          %option 이거슨 샘플입니다
+          %option 이것도 샘플입니다
+          %option This is Sample
+          %option Is this sample??
+      .span6
+        %h3 문제
+        %select
+          %option 샘플의 귀환
+          %option 리턴 오브 샘플
+          %option 노모어 샘플
+        %a.btn.btn-primary{href:"#"} 검색
+  .span12  
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th 제출번호
+          %th 상태
+          %th 소요시간
+          %th 메모리 사용량
+      %tbody
+        %tr
+          %td 1
+          %td Success 
+          %td 105ms
+          %td 100KB
+        %tr
+          %td 2
+          %td Fail 
+          %td 24ms
+          %td 10KB
+    .bar
+    #result-wrapper
+      %h2 제출 내용
+      .row
+        .span6
+          %h3 주제명 : 디바이드 앤 컨커
+          %h3 문제명 : 머지소트 
+          .box-header
+            .title
+              제출 결과
+          .box-body#result-meta-box
+            %p 제출일시: 2013년 5얼 5일 5시 5분 55초
+            %p 상태: Success
+            %p 소요시간: 105ms
+            %p 메모리 사용량: 100KB
+        .span6
+          %h3 입력데이터
+          %textarea#input-data-box
+            %span 101 102 103
+        .span12
+          .bar
+      %h3 컴파일 메시지
+      %textarea#compile-message-box
+        %span ohYeah!
+      .bar
+      .row
+        .span6
+          %h3 출력 결과
+          %textarea#result-box
+            %span 이거 과제라고 해왔냐?!
+        .span6
+          %h3 모범 답안
+          %textarea#sample-box
+            %span 이렇게 해야지!

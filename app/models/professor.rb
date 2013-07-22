@@ -5,7 +5,7 @@ class Professor < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :name, :phone_number, :about
+  #attr_accessible :email, :password, :password_confirmation, :name, :phone_number, :about
 
   has_many :courses
   has_many :notices
