@@ -1,0 +1,14 @@
+.row#subjects-new-problems
+  .span12
+    %h3 문제 목록
+    %table.table.table-striped
+      %thead
+        %tr
+          %th 차례
+          %th 제목
+          %th 설명
+          %th 순서
+          %th 삭제
+      
+  
+  

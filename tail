@@ -1,0 +1,9 @@
+/home/tony/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/railties-4.0.0/lib/rails/commands/server.rb:33:in `parse!': invalid option: -f (OptionParser::InvalidOption)
+	from /home/tony/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/rack-1.5.2/lib/rack/server.rb:293:in `parse_options'
+	from /home/tony/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/rack-1.5.2/lib/rack/server.rb:184:in `options'
+	from /home/tony/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/railties-4.0.0/lib/rails/commands/server.rb:58:in `set_environment'
+	from /home/tony/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/railties-4.0.0/lib/rails/commands/server.rb:42:in `initialize'
+	from /home/tony/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/railties-4.0.0/lib/rails/commands.rb:73:in `new'
+	from /home/tony/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/railties-4.0.0/lib/rails/commands.rb:73:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'

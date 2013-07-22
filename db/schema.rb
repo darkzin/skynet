@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130705040643) do
+ActiveRecord::Schema.define(version: 20130717085800) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -41,14 +41,17 @@ ActiveRecord::Schema.define(version: 20130705040643) do
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "input_data"
+    t.text     "model_paper"
   end
 
   create_table "deadlines", force: true do |t|
-    t.datetime "term"
+    t.datetime "from"
     t.integer  "penalty"
     t.integer  "subject_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "to"
   end
 
   add_index "deadlines", ["subject_id"], name: "index_deadlines_on_subject_id"
@@ -110,9 +113,6 @@ ActiveRecord::Schema.define(version: 20130705040643) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
-    t.string   "phone_number"
-    t.string   "about"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -139,9 +139,6 @@ ActiveRecord::Schema.define(version: 20130705040643) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
-    t.string   "phone_number"
-    t.string   "about"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

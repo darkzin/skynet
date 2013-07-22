@@ -1,5 +1,8 @@
 Skynet::Application.routes.draw do
-
+  resources :subjects, only: [:show, :new, :create]
+  resources :deadlines, only: [:create, :delete]
+  resources :problems, only: [:create, :delete, :update]
+  resources :criterions, only: [:create, :delete]
   get "courses/index"
   get "courses/show"
   get "courses/new"
@@ -14,6 +17,7 @@ Skynet::Application.routes.draw do
   get "assignments/create"
   get "subjects/index"
   get "subjects/show"
+  get "subjects/new"
   get "classes/show"
   get "homeworks/index"
   #root to: "students#show"
@@ -22,7 +26,6 @@ Skynet::Application.routes.draw do
   #root to: "assignments#show"
   root to: "subjects#new"
   get "students/index"
-  get "students/create"
   get "students/new"
   get "students/edit"
   get "students/delete"

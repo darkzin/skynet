@@ -1,4 +1,35 @@
-%blockquote
-  %p 주제안내에 표시될 내용을 설정합니다.
-  %small 에디터를 이용하여 편집할 수 있습니다.
+= form_for Subject.new do |f|
+  %h4
+    관련 수업 :
+    = f.select :course_id, ["컴퓨터 프로그래밍", "컴퓨터구조", "마이크로프로세서"]
+  %h3
+    제목 :
+    = f.text_field :title
+  %table.table.table-striped
+    %thead
+      %tr
+        %th 언제부터
+        %th 언제까지
+        %th 페널티
+        %th 삭제
+    %tbody
+      %tr
+        %td 2013년 6월 1일
+        %td 2013년 6월 7일
+        %td 0
+        %td= link_to '삭제', '#', class: "btn btn-danger"
+      %tr
+        %td 2013년 6월 8일
+        %td 2013년 6월 15일
+        %td 30
+        %td= link_to '삭제', '#', class: "btn btn-danger"
+  = form_for Deadline.new do |f|
+    = f.text_field :from
+    %span 부터
+    = f. text_field :to
+    %span 까지
+    = f.submit "추가", class: "btn btn-primary"
+  %h3 내용
+  = f.text_area :about
+  
   
