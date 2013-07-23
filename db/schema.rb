@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722173346) do
+ActiveRecord::Schema.define(version: 20130722092336) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 20130722173346) do
   add_index "scripts", ["problem_id"], name: "index_scripts_on_problem_id"
 
   create_table "students", force: true do |t|
-    t.string   "email",                  default: "", null: false
+    t.string   "student_number",         default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -139,14 +139,14 @@ ActiveRecord::Schema.define(version: 20130722173346) do
     t.string   "last_sign_in_ip"
     t.string   "name"
     t.string   "phone_number"
-    t.string   "about"
+    t.string   "email"
+    t.text     "about"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "student_number"
   end
 
-  add_index "students", ["email"], name: "index_students_on_email", unique: true
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+  add_index "students", ["student_number"], name: "index_students_on_student_number", unique: true
 
   create_table "subjects", force: true do |t|
     t.string   "title"

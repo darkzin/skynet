@@ -40,7 +40,7 @@ class DeviseCreateStudents < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :students, :student_number,                :unique => true
+    add_index :students, :student_number,       :unique => true
     add_index :students, :reset_password_token, :unique => true
     # add_index :students, :confirmation_token,   :unique => true
     # add_index :students, :unlock_token,         :unique => true
