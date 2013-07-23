@@ -12,6 +12,7 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.new
     @subject = Subject.find(params[:subject_id])
     @problem = @subject.problems.find(params[:problem_id])
+  end
 
   def create
     @assignment = Assignment.new(params[:assignment])
