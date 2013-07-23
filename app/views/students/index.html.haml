@@ -1,44 +1,51 @@
-.row-fluid
-  .span12
-    %h2 학생 목록
-    %table.table.table-striped
-      %thead
-        %tr
-          %th
-            %span 이름
-          %th
-            %span 학번
-          %th
-            %span 이메일
-          %th
-            %span 전화번호
-      %tbody
-        %tr
-          %td
-            %span 김창환
-          %td
-            %span 2006012953
-          %td
-            %span darkzin1021@gmail.com
-          %td
-            %span 010-6628-7256
-              
-        %tr
-          %td
-            %span 조성홍 
-          %td
-            %span 2006011701
-          %td
-            %span lunaticbreeze@gmail.com
-          %td
-            %span 010-1805-2929
-             
-        %tr
-          %td
-            %span 변성욱
-          %td
-            %span 20062533
-          %td
-            %span lrien1@hanmail.,net
-          %td
-            %span 010-4949-3929
+#student_wrapper
+  .row-fluid
+    .span3         
+      %h3 학생 목록
+    .span3.offset6
+      %select.btn.btn-info
+        %option C프로그래밍
+        %option Python
+        %option Java
+  .row-fluid
+    .span12
+      .bar
+      %table.table.table-striped.table-bordered
+        %thead
+          %tr
+            %th
+              %span 이름
+            %th
+              %span 학번
+            %th
+              %span 이메일
+            %th
+              %span 전화번호
+        %tbody
+          %tr
+            %td
+              %span 김창환
+            %td
+              %span 2006012953
+            %td
+              %span darkzin1021@gmail.com
+            %td
+              %span 010-6628-7256	
+          %tr
+            %td
+              %span 조성홍 
+            %td
+              %span 2006011701
+            %td
+              %span lunaticbreeze@gmail.com
+            %td
+              %span 010-1805-2929       
+          %tr
+            %td
+              %span 변성욱
+            %td
+              %span 20062533
+            %td
+              %span lrien1@hanmail.,net
+            %td
+              %span 010-4949-3929

@@ -15,6 +15,9 @@ Skynet::Application.routes.draw do
   end
 
   resources :criterions
+  
+  get 'students/show' => 'students#show'
+  get 'students/index' => 'students#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,19 +1,17 @@
 .row-fluid#students-show
   .span12
-    %h2 학생 정보
-    .box
-      .box-header
-        %h3
-          개인정보
-          /= link_to '계정 삭제', "#", class: "btn btn-danger pull-right"
-      .box-body
-        %h4 이    름 : 김창환
-        %h4 학    번 : 2006012953
-        %h4 이 메 일 : darkzin1021@gmail.com
-        %h4 전화번호 : 010 - 6628 - 7256
-
-    %h2 듣고있는 수업
-    %table.table.table-striped
+    %h3 학생 정보
+    .margin
+    %h4 개인정보
+    .bar
+    %p 이    름 : 김창환
+    %p 학    번 : 2006012953
+    %p 이 메 일 : darkzin1021@gmail.com
+    %p 전화번호 : 010 - 6628 - 7256
+    .margin
+    %h4 듣고있는 수업
+    .bar
+    %table.table.table-striped.table-bordered
       %thead
         %tr
           %th
