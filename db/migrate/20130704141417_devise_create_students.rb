@@ -2,7 +2,7 @@ class DeviseCreateStudents < ActiveRecord::Migration
   def change
     create_table(:students) do |t|
       ## Database authenticatable
-      t.string :email,              :null => false, :default => ""
+      t.string :student_number,     :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
 
       ## Recoverable
@@ -34,12 +34,13 @@ class DeviseCreateStudents < ActiveRecord::Migration
       # t.string :authentication_token
       t.string :name
       t.string :phone_number
-      t.string :about
+      t.string :email
+      t.text :about
 
       t.timestamps
     end
 
-    add_index :students, :email,                :unique => true
+    add_index :students, :student_number,                :unique => true
     add_index :students, :reset_password_token, :unique => true
     # add_index :students, :confirmation_token,   :unique => true
     # add_index :students, :unlock_token,         :unique => true
