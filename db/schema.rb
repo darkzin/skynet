@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130717085800) do
+ActiveRecord::Schema.define(version: 20130722173346) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -103,22 +103,20 @@ ActiveRecord::Schema.define(version: 20130717085800) do
   add_index "problems", ["subject_id"], name: "index_problems_on_subject_id"
 
   create_table "professors", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0
+    t.string   "email",              default: "", null: false
+    t.string   "encrypted_password", default: "", null: false
+    t.string   "name",               default: "", null: false
+    t.string   "phone_number",       default: "", null: false
+    t.string   "about"
+    t.integer  "sign_in_count",      default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "failed_attempts",    default: 0
+    t.string   "unlock_token"
+    t.datetime "locked_at"
   end
-
-  add_index "professors", ["email"], name: "index_professors_on_email", unique: true
-  add_index "professors", ["reset_password_token"], name: "index_professors_on_reset_password_token", unique: true
 
   create_table "scripts", force: true do |t|
     t.integer  "problem_id"
@@ -139,8 +137,12 @@ ActiveRecord::Schema.define(version: 20130717085800) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.string   "phone_number"
+    t.string   "about"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "student_number"
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true

@@ -1,0 +1,9 @@
+.row-fluid
+  .span12
+    %h3 비밀번호 찾기
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+      = devise_error_messages!
+      = f.label :학번
+      = f.email_field :student_number, :autofocus => true
+      = f.submit "비밀번호 재설정 메일 보내기", class: 'btn btn-info'
+    = render "devise/shared/links" 
