@@ -44,8 +44,6 @@ ActiveRecord::Schema.define(version: 20130723123225) do
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "input_data"
-    t.text     "model_paper"
   end
 
   create_table "deadlines", force: true do |t|
