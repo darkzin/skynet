@@ -1,2 +1,24 @@
-%h1 Courses#new
-%p Find me in app/views/courses/new.html.haml
+#course_wrapper
+  .row
+    .span12
+      %h2 과목 생성
+      .bar
+      =form_for(Course.new) do |f|
+        .field
+	  = f.label :name, "과목명"
+	  = f.text_field :name, :autofocus => true
+        .field
+          = f.label :professor, "담당 교수"
+	  = f.text_field :professor
+        .field
+          = f.label :year, "년도"
+	  = f.text_field :year
+	.field
+	  = f.label :term, "학기"
+	  = f.text_field :term
+	.field
+	  = f.label :about, "설명"
+	  = f.text_area :about
+        .field
+          = f.submit "생성", class: 'btn btn-primary'
+          

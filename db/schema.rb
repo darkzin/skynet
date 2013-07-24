@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20130724060037) do
     t.integer  "professor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.integer  "year"
+    t.integer  "term"
   end
 
   add_index "courses", ["professor_id"], name: "index_courses_on_professor_id"
