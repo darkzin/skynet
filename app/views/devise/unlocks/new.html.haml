@@ -1,0 +1,12 @@
+.row-fluid
+  .span12
+    %h3 비밀번호 변경 메일 재전송
+    = form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f|
+      = devise_error_messages! %>
+      .field
+        = f.label :student_number, "학번"
+        = f.text_field :student_number, :autofocus => true
+      .field
+        = f.submit "재전송", class: 'btn btn-warning'
+    = render "devise/shared/links"
+

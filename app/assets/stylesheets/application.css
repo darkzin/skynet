@@ -150,3 +150,12 @@ li {
   list-style-type: none;
   margin-bottom: 10px;
 }
+
+.bar{
+  border-top:1px solid gray;
+  margin:10px 0;
+}
+
+.margin{
+  margin-top:25px;
+}

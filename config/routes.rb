@@ -1,36 +1,24 @@
 Skynet::Application.routes.draw do
-  resources :subjects, only: [:show, :new, :create]
-  resources :deadlines, only: [:create, :delete]
-  resources :problems, only: [:create, :delete, :update]
-  resources :criterions, only: [:create, :delete]
-  get "courses/index"
-  get "courses/show"
-  get "courses/new"
-  get "courses/create"
-  get "courses/edit"
-  get "courses/delete"
-  get "courses/update"
+
+  root 'courses#show'
+
   devise_for :professors
   devise_for :students
-  get "assignments/index"
-  get "assignments/show"
-  get "assignments/create"
-  get "subjects/index"
-  get "subjects/show"
-  get "subjects/new"
-  get "classes/show"
-  get "homeworks/index"
-  #root to: "students#show"
-  #root to: "homeworks#index"
-  #root to: "assignments#new"
-  #root to: "assignments#show"
-  root to: "subjects#new"
-  get "students/index"
-  get "students/new"
-  get "students/edit"
-  get "students/delete"
-  get "students/update"
-  get "students/show"
+
+  resources :courses
+
+  resources :assignments
+
+  resources :subjects do
+    resources :problems
+    resources :deadlines
+  end
+
+  resources :criterions
+  
+  get 'students/show' => 'students#show'
+  get 'students/index' => 'students#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

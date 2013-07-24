@@ -1,5 +1,6 @@
-.row-fluid
+.row-fluid#subjects-show
   .span3
+    %h4 주제목록
     %ul.nav.nav-tabs.nav-stacked
       %li.active
         %a 1. 하노이의 탑
@@ -10,15 +11,25 @@
       %li.disabled
         %a{ href: "#" } 4. 뽀로로 뽀로로
   .span9
+    .row-fluid
+      .span6
+        %h4 주제내용
+      .span6
+        %a.btn.btn-warning.pull-right{ href:"#"} 편집
     .title
-      %p 하노이의 탑
+      .alert
+        %button.close{data: { dismiss: "alert"}}  &times
+        %span 본 주제는 마감되었습니다.
+    %h3 하노이의 탑
     .date
       %p 제출기한 : 2013년 7월 1일 ~ 2013년 7월 5일
+      %p 추가제출 : 2013년 7월 6일 ~ 2013년 7월 7일
     .about
+      %h4 주제 소개
       %p 이번과제는 하노이의 탑입니다. 숫자를 입력 받으면 하노이의 탑이 뾰뾰뿅!!
     .files
-      %p 관련 파일
-      %ul
+      %h4 관련 파일
+      %ul.file_down
         %li
           %span 뼈대 파일
           %a.btn.btn-primary.pull-right{ href: "#" }  내려받기
@@ -29,19 +40,17 @@
           %span 뼈대 파일
           %a.btn.btn-primary.pull-right{ href: "#" }  내려받기
     .problems
-      %p 문제
-      %ul
+      %h4 문제
+      %ul.file_upload
         %li
-          %span 1) 입력은 고정된 값, 출력을 옮게.
-          %a.btn.btn-danger.pull-right{ href: "#" }  제출하기
+          %span 1. 하노이의 탑인데 머지소트구현
+          %a.btn.btn-success.pull-right{ href: "#" }  제출하기
+          %p 시키는대로 해라, 하노이의 탑 뭐 머지소트로 구현하면 안되냐? 
         %li
-          %span 2) 입력을 사용자에게 받음, 출력을 옮게.
-          %a.btn.btn-danger.pull-right{ href: "#" }  제출하기
+          %span 2. 하노이의 탑인데 퀵소트로 구현.
+          %a.btn.btn-success.pull-right{ href: "#" }  제출하기
+          %p 시키는대로 해라, 생각해보니까 할 수 있다 
         %li
-          %span 3) 위의 문제를 재귀함수를 통해 구현.
-          %a.btn.btn-danger.pull-right{ href: "#" }  제출하기
-    .box
-      .box-header
-        %h3.box-title 과제 설명
-      .box-body
-        %p 설명입니다.
+          %span 3. 하노이의 탑인데 인공지능 구현
+          %a.btn.btn-success.pull-right{ href: "#" }  제출하기
+          %p 시키는대로 해라, 질문은 받지 않는다, 마른 하늘을 달려 나 그대에게 안길수만 있으면 내 몸 부서진대로 좋아~ 설혹 너무 태양가까이히~ 날아~
