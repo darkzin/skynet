@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722092336) do
+ActiveRecord::Schema.define(version: 20130724060037) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20130722092336) do
     t.string   "category_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "file"
   end
 
   add_index "file_infos", ["category_id", "category_type"], name: "index_file_infos_on_category_id_and_category_type"
