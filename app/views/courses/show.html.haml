@@ -14,37 +14,42 @@
         %h3.box-title 최신 공지사항
       .box-body
         %ul.notice-list#latest-notice
-          %li
-            .notice-title
-              %span.title 수업 폐지합니다.
-              %span.date 2013년 6월 25일
-            .notice-detail
-              %p 전쟁나는 바람에 폐지합니다.
+          - @latest_notice.each do |notice|
+            %li
+              .notice-title
+                %span.title notice.title
+                %span.date notice.created_at
+              .notice-detail
+                %p notice.content
 
   .left-column.span5
     .box
       .box-header
         %h3.box-title 현재 진행중인 과제
-        %a.btn.btn-success.pull-right.margin-top-to-up{ href: "#" } 새로 만들기
+        = link_to "새로 만들기", new_subject_path, class:"btn btn-success pull-right margin-top-to-up
       .box-body
-        %ul.homework-list#ongoing-homework
-          %li
-            .homework
-              %span.title 하노이의 탑
-              .btn-group.pull-right
-                %button.btn.btn-small.btn-primary 설명
-                %button.btn.btn-small.btn-success 결과
-              .problem
-                %a 1. 하나 쌓기
+        %ul.subject-list#ongoing-subject
+          - @current_subjects.each do |subject|
+            %li
+              .subject
+                %span.title subject.title
+                .btn-group.pull-right
+                  = link_to "설명", subject, class:"button btn btn-small btn-primary"
+                .problem
+                  - subject.problems.each_with_index do |problem, index|
+                    = link_to "#{index}. #{problem.title}", subject_problem_path(problem)
 
     .box
       .box-header
-        %h3.box-title 지나간 과제
+        %h3.box-title 완료된 과제
       .box-body
-        %ul.homework-list#outgoing-homework
-          %li
-            .homework
-              %span 하노이의 탑
-              .btn-group.pull-right
-                %button.btn.btn-small.btn-primary 설명
-                %button.btn.btn-small.btn-success 결과
+        %ul.subject-list#outdate-subject
+          - @outdate_subjects.each do |subject|
+            %li
+              .subject
+                %span.title subject.title
+                .btn-group.pull-right
+                  = link_to "설명", subject, class:"button btn btn-small btn-primary"
+                .problem
+                  - subject.problems.each_with_index do |problem, index|
+                    = link_to "#{index}. #{problem.title}", subject_problem_path(problem)

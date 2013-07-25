@@ -6,29 +6,29 @@ class CoursesController < ApplicationController
   end
 
   def show
-#    @course = Course.find(params[:id])
+   @course = Course.find(params[:id])
 
-#    if current_student.last_sign_in_at > 7.days.ago
-#      latest_date = 7.days.ago
-#    else
-#      latest_date = current_student.last_sign_in_at
-#    end
+   if current_student.last_sign_in_at > 7.days.ago
+     latest_date = 7.days.ago
+   else
+     latest_date = current_student.last_sign_in_at
+   end
 
-#    @latest_notice = Course.where("created_at >= ?", latest_date).order("created_at DESC")
-#    @outdate_notice = Course.where("created_at < ?", latest_date).order("created_at DESC")
+   @latest_notice = Course.where("created_at >= ?", latest_date).order("created_at DESC")
+   @outdate_notice = Course.where("created_at < ?", latest_date).order("created_at DESC")
 
-#    @current_subjects = Subject.all
-#    @outdate_subjects = []
+   @current_subjects = Subject.all
+   @outdate_subjects = []
 
-#    @current_subjects.delete_if do |subject|
+   @current_subjects.delete_if do |subject|
 
-#      if @subject.deadlines.where("from >= ? and to <= ?", Date.today, Date.today).empty?
-#        @outdate_subjects << subject
-#      else
-#        false
-#      end
+     if @subject.deadlines.where("from >= ? and to <= ?", Date.today, Date.today).empty?
+       @outdate_subjects << subject
+     else
+       false
+     end
 
-#    end
+   end
 
   end
 

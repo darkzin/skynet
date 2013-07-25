@@ -34,10 +34,17 @@
           설명
           = f.text_area :about
       %h3 채점기준
-      = f.field_for :criterions do |c|
-        = render 'subjects/criteria_fields'
-      = link_to_add_fields "추가", f, :criterions
-
+      %table.table.table-striped
+        %thead
+          %tr
+            %th 차례
+            %th 기준
+            %th 점수
+            %th 순서
+            %th 삭제
+        %tbody
+      = render 'subjects/criteria_field'
+파일정보 넣어라잉
     .span6
       %h3 입력데이터
       = f.text_area :input_data

@@ -23,24 +23,5 @@
                   %span.caret
             %td
               = link_to "삭제", destroy_problem_path(problem), class: "btn btn-danger", method: "delete"
-  = form_for Problem.new do |f|
-    .span12.new-problem
-      %h3
-        새로운 문제
-        %h4
-          제목
-          = f.text_field :title
-        %h4
-          설명
-          = f.text_area :about
-      %h3 채점기준
-      = f.field_for :criterions do |c|
-        = render 'subjects/criteria_fields'
-      = link_to_add_fields "추가", f, :criterions
 
-    .span6
-      %h3 입력데이터
-      = f.text_area :input_data
-    .span6
-      %h3 모범답안
-      = f.text_area :model_paper
+  = link_to "새로 만들기", new_subject_problem_path, class: "btn btn-primary"

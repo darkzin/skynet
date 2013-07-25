@@ -1,5 +1,4 @@
 Skynet::Application.routes.draw do
-
   root 'courses#show'
 
   devise_for :professors
@@ -15,7 +14,7 @@ Skynet::Application.routes.draw do
   end
 
   resources :criterions
-  
+
   get 'students/show' => 'students#show'
   get 'students/index' => 'students#index'
 
