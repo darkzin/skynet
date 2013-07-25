@@ -1,0 +1,18 @@
+.row-fluid
+  .span12
+    %h3 로그인
+    .bar
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .field
+        = f.label :student_number, "학번"
+        = f.text_field :student_number, :autofocus => true
+      .field
+        = f.label :password, "비밀번호"
+        = f.password_field :password
+      -if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me, "아이디 기억하기"
+      .field
+        = f.submit "로그인", class: 'btn btn-primary'
+    = render "devise/shared/links"

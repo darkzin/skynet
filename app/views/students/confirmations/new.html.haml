@@ -1,0 +1,10 @@
+.row-fluid
+  .span12
+    %h3 확인 메일 재전송
+    .bar
+    = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+      = devise_error_messages!
+      = f.label :email
+      = f.email_field :email, :autofocus => true
+      = f.submit "확인 메일 재전송", class: 'btn btn-info'
+    = render "devise/shared/links"
