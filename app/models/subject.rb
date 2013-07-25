@@ -4,5 +4,5 @@ class Subject < ActiveRecord::Base
   has_many :problems, dependent: :destroy
   has_many :deadlines, dependent: :destroy
 
-  accepts_nested_attributes_for :problems
+  accepts_nested_attributes_for :deadlines, :file_infos, :problems
 end

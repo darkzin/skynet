@@ -1,4 +1,19 @@
-.tabbable.tabs-left
+= form_for Subject.new do |subject|
+  = subject.fields_for :deadlines do |deadline|
+    = render "subjects/deadline_fields", f: deadline
+  = link_to_add_fields "추가", subject, :subjects, :deadlines
+  .control-group
+    = subject.label :title, "과제명", class: "control-label"
+    .controls
+      = subject.text_field :title, placeholder: "과제명을 입력하세요."
+    = subject.label :about, "과제 내용", class: "control-label"
+    .controls
+      = subject.text_area :about
+  = fields_for :file_infos do |file_info|
+    = render "subjects/file_info_fields", f: file_info
+  = subject.submit "문제 만들기", class: "btn btn-large btn-success"
+/
+  .tabbable.tabs-left
   %ul.nav.nav-tabs
     %li.active
       %a{ href: "#tab1", data: { toggle: "tab" } } 기본정보
@@ -9,11 +24,13 @@
     %li
       %a{ href: "#tab4", data: { toggle: "tab" } } 문제설정
   .tab-content
-    #tab1.tab-pane.active
-      = render partial: "subjects/basic"
-    #tab2.tab-pane
-      = render partial: "subjects/about"
-    #tab3.tab-pane
-      /= render partial: "layouts/shared/fileupload"
-    #tab4.tab-pane
-      = render partial: "subjects/problems"
+    = form_for Subject.new do |subject|
+
+      #tab1.tab-pane.active
+        /= render partial: "subjects/basic"
+      #tab2.tab-pane
+        /= render partial: "subjects/about"
+      #tab3.tab-pane
+        /= render partial: "layouts/shared/fileupload"
+      #tab4.tab-pane
+        /= render partial: "subjects/problems"

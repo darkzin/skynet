@@ -14,8 +14,8 @@ class CoursesController < ApplicationController
      latest_date = current_student.last_sign_in_at
    end
 
-   @latest_notice = Course.where("created_at >= ?", latest_date).order("created_at DESC")
-   @outdate_notice = Course.where("created_at < ?", latest_date).order("created_at DESC")
+   @latest_notice = @course.notices.where("created_at >= ?", latest_date).order("created_at DESC")
+   @outdate_notice = @course.notices.where("created_at < ?", latest_date).order("created_at DESC")
 
    @current_subjects = Subject.all
    @outdate_subjects = []
@@ -38,7 +38,7 @@ class CoursesController < ApplicationController
 
   def create
 
-    @course = Course.new(params[:course])
+    @course = current_professor.courses.new(params.require(:course).permit(:name, :year, :term, :about))
 
     if @course.save
       redirect_to @course, notice: "성공적으로 저장되었습니다."

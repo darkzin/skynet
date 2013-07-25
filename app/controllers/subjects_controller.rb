@@ -14,10 +14,10 @@ class SubjectsController < ApplicationController
   end
 
   def create
-    @subject = Subject.new(params[:subject])
+    @subject = Subject.new(params.require(:subject).permit!)
 
     if @subject.save
-      redirect_to @subject, notice: "성공적으로 저장되었습니다."
+      redirect_to new_subject_problem_path(@subject), notice: "성공적으로 저장되었습니다."
     else
       render :new
     end

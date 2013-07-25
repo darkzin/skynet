@@ -3,37 +3,9 @@
     %h3 수업 리스트
     .bar
     %dl
-      %a{href:'#'}
-        %dt
-          C프로그래밍
-      %dd
-        %p 2013년도 2학기 김교수
-        %p 본 수업은 내 마음대로 하는 수업으로 과제는 하루에 3개씩 나가며 과제를 3번이상 B이하 점수로 맞게 되면 바로 에프
-      %a{href:'#'}
-        %dt
-          졸업 프로젝트
-      %dd
-        %p 2013년도 2학기 ___
-        %p 본 수업은 이번에 통과 해야함. 안그럼 졸업 못함.
-      %a{href:'#'}
-        %dt
-          졸업 프로젝트
-      %dd
-        %p 2013년도 2학기 ___
-        %p 본 수업은 이번에 통과 해야함. 안그럼 졸업 못함.
-      %a{href:'#'}
-        %dt
-          졸업 프로젝트
-      %dd
-        %p 2013년도 2학기 ___
-        %p 본 수업은 이번에 통과 해야함. 안그럼 졸업 못함.
-      %a{href:'#'}
-        %dt
-          졸업 프로젝트
-      %dd
-        %p 2013년도 2학기 ___
-        %p 본 수업은 이번에 통과 해야함. 안그럼 졸업 못함.
-    .courses-list
-      .course-title
-        %span C프로그래밍
-      
+      - @courses.each do |course|
+        = link_to course do
+          %dt= course.name
+        %dd
+          %p= "#{course.year}년도 #{course.term}학기 #{course.professor.name} 교수님"
+          %p= course.about

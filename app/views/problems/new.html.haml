@@ -12,8 +12,13 @@
 
       %h3 채점기준
       = f.field_for :criterions do |c|
-        = render 'problems/criteria_fields'
-      = link_to_add_fields "추가", f, :criterions
+        = render 'problems/criterion_fields', f: c
+      = link_to_add_fields "추가", f, :problems, :criterions
+
+      %h3 스크립트 파일
+      = f.field_for :scripts do |s|
+        = render 'problems/script_fields', f: c
+      = link_to_add_fields "추가", f, :problems, :scripts
 
       .span6
         %h3 입력데이터
