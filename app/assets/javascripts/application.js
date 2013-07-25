@@ -17,9 +17,9 @@
 //= require google-code-prettify-rails/prettify
 //= require google-code-prettify-rails/lang-clj
 //= require_tree .
+//= require_self
 
 $(function(){
     // make code pretty
     window.prettyPrint && prettyPrint();
 });
-    
