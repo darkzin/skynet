@@ -151,6 +151,15 @@ li {
   margin-bottom: 10px;
 }
 
+/*
+ * ===============================================
+ *
+ *   Used in common
+ *
+ * ===============================================
+ */
+
+
 .bar{
   border-top:1px solid gray;
   margin:10px 0;
@@ -162,4 +171,31 @@ li {
 
 .margin-top-to-up{
   margin-top:-35px;
+}
+
+a:link{
+  color:black;
+  text-decoration: none;
+}
+
+a:visited{
+  color:black;
+  text-decoration: none;
+}
+
+a:hover{
+  color:gray;
+  text-decoration: none;
+}
+
+a:active{
+  color:black;
+  text-decoration: none;
+}
+
+dt{
+  font-size:1.2em;
+}
+dd{
+  margin-bottom:30px;
 }
