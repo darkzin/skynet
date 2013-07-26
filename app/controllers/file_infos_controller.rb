@@ -1,19 +1,13 @@
 class FileInfosController < ApplicationController
+  before_action :find_parent_object
+
   def index
-    categorys = ["subject", "assignment", "problem"]
-
-    if categorys.include? params[:category] && params[:category_id]
-      @category = params[:category].to_s.capitalize.constantize.find(params[:category_id])
-      @file_infos = @category.file_infos.all
-      render :json => @file_infos.collect { |p| p.to_jq_upload }.to_json
-    else
-      render :json => false
-    end
-
+    @file_infos = @category.file_infos.all
+    render :json => @file_infos.collect { |p| p.to_jq_upload }.to_json
   end
 
   def create
-    @file_info = File_Info.new(params[:file_info])
+    @file_info = @category.file_infos.new(params[:file_info])
     if @file_info.save
       respond_to do |format|
         format.html {
@@ -31,9 +25,21 @@ class FileInfosController < ApplicationController
   end
 
   def destroy
-
-    @file_info = File_Info.find(params[:id])
+    @file_info = @category.file_infos.find(params[:id])
     @file_info.destroy
     render :json => true
+  end
+
+  def find_parent_object
+    categorys = ["subject", "assignment", "problem"]
+
+    categorys.each do |category|
+      if params["#{category}_id"]
+        @category = category.classify.constantize.find(params["#{category}_id"])
+        return true
+      end
+    end
+
+    return false
   end
 end
