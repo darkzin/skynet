@@ -4,6 +4,10 @@ Skynet::Application.routes.draw do
   devise_for :professors
   devise_for :students
 
+  resources :students do
+    post "select_course", on: :member
+  end
+
   concern :file do
     resources :file_infos, only:[:index, :create, :destroy]
   end

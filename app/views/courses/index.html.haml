@@ -1,6 +1,9 @@
 .row-fluid
   .span12
-    %h3 수업 리스트
+    %h3
+      수업 리스트
+      - if professor_signed_in?
+        = link_to "새로 만들기", new_course_path, class: "btn btn-primary pull-right"
     .bar
     %dl
       - @courses.each do |course|
@@ -9,3 +12,5 @@
         %dd
           %p= "#{course.year}년도 #{course.term}학기 #{course.professor.name} 교수님"
           %p= course.about
+          - if student_signed_in?
+            = link_to "수업 선택", select_course_student_path(current_student, course_id: course.id), method: :post, class: "btn btn-danger"

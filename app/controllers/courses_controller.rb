@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 class CoursesController < ApplicationController
+before_action :authenticate_professor!
 
   def index
-    @courses = Course.all
+    @courses = current_professor.courses.all
   end
 
   def show
    @course = Course.find(params[:id])
 
-   if current_student.last_sign_in_at > 7.days.ago
+   if not(current_student.last_sign_in_at.nil?) && current_student.last_sign_in_at > 7.days.ago
      latest_date = 7.days.ago
    else
      latest_date = current_student.last_sign_in_at
@@ -38,7 +39,7 @@ class CoursesController < ApplicationController
 
   def create
 
-    @course = current_professor.courses.new(params.require(:course).permit(:name, :year, :term, :about))
+    @course = current_professor.courses.new(params.require(:course).permit!)
 
     if @course.save
       redirect_to @course, notice: "성공적으로 저장되었습니다."
@@ -50,13 +51,13 @@ class CoursesController < ApplicationController
 
   def edit
 
-    @course = Course.find(params[:id])
+    @course = current_professor.courses.find(params[:id])
 
   end
 
   def delete
 
-    @course = Course.find(params[:id])
+    @course = current_professor.courses.find(params[:id])
     @course.destroy
 
     redirect_to courses_path, notice: "성공적으로 삭제되었습니다."
@@ -65,7 +66,7 @@ class CoursesController < ApplicationController
 
   def update
 
-    @course = Course.find(params[:id])
+    @course = current_professor.courses.find(params[:id])
 
     if @course.update_attributes(params[:course])
       redirect_to @course, notice: "성공적으로 반영되었습니다."
