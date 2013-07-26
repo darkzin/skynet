@@ -8,7 +8,9 @@ Skynet::Application.routes.draw do
     resources :file_infos, only:[:index, :create, :destroy]
   end
 
-  resources :courses
+  resources :courses do
+    resources :notices
+  end
 
   resources :assignments, concern: :file
 
