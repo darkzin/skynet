@@ -23,7 +23,7 @@ before_action :authenticate_professor!
 
    @current_subjects.delete_if do |subject|
 
-     if @subject.deadlines.where("from >= ? and to <= ?", Date.today, Date.today).empty?
+     if subject.deadlines.where("'from' >= ? and 'to' <= ?", Date.today, Date.today).empty?
        @outdate_subjects << subject
      else
        false
