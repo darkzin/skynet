@@ -1,4 +1,4 @@
-= form_for Subject.new do |subject|
+= form_for Subject.new, multipart: true do |subject|
   = subject.fields_for :deadlines do |deadline|
     = render "subjects/deadline_fields", f: deadline
   = link_to_add_fields "추가", subject, :subjects, :deadlines
@@ -11,6 +11,7 @@
       = subject.text_area :about
   = fields_for :file_infos do |file_info|
     = render "subjects/file_info_fields", f: file_info
+  = link_to_add_fields "추가", subject, :subjects, :file_infos
   = subject.submit "문제 만들기", class: "btn btn-large btn-success"
 /
   .tabbable.tabs-left

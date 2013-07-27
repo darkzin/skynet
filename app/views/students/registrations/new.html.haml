@@ -6,7 +6,7 @@
 .row-fulid.devise_common
   .span3
   .span6
-    .fields-box 
+    .fields-box
       .div-width300
         =form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
           =devise_error_messages!
@@ -30,6 +30,6 @@
             = f.password_field :password_confirmation
           .field
             = f.submit "생성", class: 'btn btn-primary'
-        .field 
+        .field
           = render "devise/shared/links"
   .span3

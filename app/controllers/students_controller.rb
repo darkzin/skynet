@@ -27,4 +27,14 @@ class StudentsController < ApplicationController
     @courses = @student.courses.all
   end
 
+  def select_course
+    @enroll = current_student.enrolls.build(course_id: params[:course_id])
+
+    if @enroll.save
+      @course = current_student.courses.find(params[:course_id])
+      redirect_to @course
+    else
+      redirect_to courses_path
+    end
+  end
 end
