@@ -1,11 +1,19 @@
 .row-fluid
   .span12
     %h3 수업 리스트
-    .bar
-    %dl
-      - @courses.each do |course|
-        = link_to course do
-          %dt= course.name
-        %dd
-          %p= "#{course.year}년도 #{course.term}학기 #{course.professor.name} 교수님"
-          %p= course.about
+    .title-bar-thin
+    .title-bar-thick
+.row-fluid
+  .span1
+  .span10
+    - @courses.each do |course|
+      .square-box
+        .square-box-title
+          %span=course.name
+          .square-box-title-right
+            = link_to '신청하기', course, class: 'btn btn-info'
+        .square-box-subinfo
+          %span= "#{course.year}년도 #{course.term}학기 #{course.professor.name} 교수님"
+        .square-box-info
+          %span= course.about
+  .span1    
