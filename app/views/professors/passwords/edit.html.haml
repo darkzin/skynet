@@ -1,15 +1,22 @@
-.row-fluid
+.row-fluid.devise_common
   .span12
     %h3 비밀번호 변경
-    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
-      = devise_error_messages!
-      = f.hidden_field :reset_password_token
-      .field
-        = f.label :password, "새로운 비밀번호"
-        = f.password_field :password, :autofocus => true
-      .field
-        = f.label :password_confirmation, "새로운 비밀번호 확인"
-        = f.password_field :password_confirmation
-      .field
-        = f.submit "변경", class: 'btn btn-warning'
-    = render "devise/shared/links" %>
+    .title-bar-thin
+    .title-bar-thick
+.row-fluid.devise_common
+  .span3
+  .span6
+    .fields-box
+      .div-width300
+        = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+          = devise_error_messages!
+          = f.hidden_field :reset_password_token
+          .field
+            = f.label :password, "새로운 비밀번호"
+            = f.password_field :password, :autofocus => true
+          .field
+            = f.label :password_confirmation, "새로운 비밀번호 확인"
+            = f.password_field :password_confirmation
+          .field
+            = f.submit "변경", class: 'btn btn-warning'
+        = render "devise/shared/links"

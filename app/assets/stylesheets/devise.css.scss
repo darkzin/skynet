@@ -1,15 +1,48 @@
-#devise_common{
+.devise_common{
 
   #wrapper{
     margin:0 auto;
   }
 
-  .fideld{
-    width:100%;
-
+  .field{
+    margin-bottom: 10px;
     input{
-      width:100%;
+      width:300px;
+    }
+    .a-white{
+      width:275px;
+      color:white;
+    }
+    .inline{
+      display:inline;
+      width: 10px;
     }
   }
 
+  .fields-box{
+    background: #f9f9f9;
+    border: 1px solid #e7e7e7;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    border-radius:7px;
+
+    padding:10px;
+    margin-bottom:30px;
+    label{ 
+      font-weight:bold;
+    }
+  }
+
+  .div-width300{
+    width:300px;
+    margin:0 auto;
+  }
+
+  .field-down{
+    margin-top:20px;
+  }
+
+  .away-from-top-10px{
+    margin-top:10px;
+  }
 }

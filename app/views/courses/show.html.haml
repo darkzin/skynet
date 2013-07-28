@@ -3,15 +3,18 @@
     .class-title
       %span 2013년 1학기 컴퓨터 프로그래밍
       .buttons.pull-right
-        %a.btn.btn-large.btn-info{ href: "#" } 과제보기
-        %a.btn.btn-large.btn-primary{ href: "#" } 제출하기
-        %a.btn.btn-large.btn-success{ href: "#" } 결과보기
+        = link_to "과제보기", subjects_path, class: "btn btn-info btn-large"
+        = link_to "제출하기", new_assignment_path, class: "btn btn-primary btn-large"
+        = link_to "결과보기", assignments_path, class: "btn btn-success btn-large"
 
 .row-fluid
   .right-column.span7
     .box
       .box-header
-        %h3.box-title 최신 공지사항
+        %h3.box-title
+          최신 공지사항
+          - if professor_signed_in?
+            = link_to "새로 만들기",  new_course_notice_path(@course), class: "btn btn-primary pull-right"
       .box-body
         %ul.notice-list#latest-notice
           - @latest_notice.each do |notice|
@@ -25,8 +28,10 @@
   .left-column.span5
     .box
       .box-header
-        %h3.box-title 현재 진행중인 과제
-        = link_to "새로 만들기", new_subject_path, class:"btn btn-success pull-right margin-top-to-up"
+        %h3.box-title
+          현재 진행중인 과제
+          - if professor_signed_in?
+            = link_to "새로 만들기",  new_subject_path, class: "btn btn-primary pull-right"
       .box-body
         %ul.subject-list#ongoing-subject
           - @current_subjects.each do |subject|

@@ -64,3 +64,7 @@ gem 'devise', '~> 3.0.0.rc'
 
 # Use mercury editor.
 gem 'mercury-rails'
+
+# Use jquery file upload.
+gem 'jquery-fileupload-rails'
+

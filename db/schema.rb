@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130728101055) do
+ActiveRecord::Schema.define(version: 20130726162317) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -121,14 +121,6 @@ ActiveRecord::Schema.define(version: 20130728101055) do
     t.string   "unlock_token"
     t.datetime "locked_at"
   end
-
-  create_table "scripts", force: true do |t|
-    t.integer  "problem_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "scripts", ["problem_id"], name: "index_scripts_on_problem_id"
 
   create_table "students", force: true do |t|
     t.string   "student_number",         default: "", null: false
