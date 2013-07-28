@@ -4,13 +4,13 @@
       .choose-subject
         %span 과제선택
         .btn-group
-          %a.btn{ href: "#" }= "1. #{@subjects.first}"
+          = link_to "1. #{@subjects.first}", subject_path(@subjects.first), class: "btn"
           %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
             %span.caret
           %ul.dropdown-menu
             = @subjects.each_with_index do |subject, index|
             %li
-              %a{ href: "#" }= "#{index}. #{subject.title}"
+              = link_to "#{index}. #{subject.title}", subject_path(subject)
 
       .about-subject
         %p 1. 하노이의 탑
@@ -21,17 +21,12 @@
       .choose-problem
         %span 문제선택
         .btn-group
-          %a.btn{ href: "#" } 1) 재귀함수 만들기
+          = link_to "1. #{@problems.first}", subject_path(@problems.first), class: "btn"
           %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
             %span.caret
           %ul.dropdown-menu
-
             %li
-              %a{ href: "#" } 1) 재귀함수 만들기
-            %li
-              %a{ href: "#" } 2) 입력 고정
-            %li
-              %a{ href: "#" } 3) 입력 임의
+              = link_to "#{index}. #{problem.title}", subject_problem_path(@subject, problem)
       .about-problem
         %p 1) 재귀함수를 이용하여 하노이의 탑을 풀어라.
         %p 하노이의 탑을 재귀함수를 이용하여 풀어라. 입력값은 3, 4, 5이고, 출력값은 다음과 같아야 한다...

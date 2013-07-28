@@ -6,10 +6,13 @@ class AssignmentsController < ApplicationController
 
   def show
     @assignment = Assignment.find(params[:id])
+    @problem = Problem.find(@assignment.problem_id)
+    @subject = Subject.find(@problem.subject_id)
   end
 
   def new
     @assignment = Assignment.new
+    @subjects = Subject.all
     @subject = Subject.find(params[:subject_id])
     @problem = @subject.problems.find(params[:problem_id])
   end
