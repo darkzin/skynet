@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130729031828) do
+ActiveRecord::Schema.define(version: 20130729051321) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -45,9 +45,10 @@ ActiveRecord::Schema.define(version: 20130729031828) do
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "input_data"
-    t.text     "model_paper"
+    t.integer  "problem_id"
   end
+
+  add_index "criterions", ["problem_id"], name: "index_criterions_on_problem_id"
 
   create_table "deadlines", force: true do |t|
     t.datetime "from"

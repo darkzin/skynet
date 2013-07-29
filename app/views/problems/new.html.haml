@@ -1,6 +1,7 @@
 .row
   .span12.new-problem
     = form_for Problem.new do |f|
+      = f.hidden_field :subject_id, value: params[:subject_id]
       %h3
         새로운 문제
         %h4
