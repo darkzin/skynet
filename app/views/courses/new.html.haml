@@ -1,8 +1,13 @@
-#course_wrapper
-  .row
-    .span12
-      %h2 과목 생성
-      .bar
+.row-fluid
+  .span12
+    %h3 과목 생성
+    .title-bar-thin
+    .title-bar-thick
+.row-fluid.input-style
+  .span2
+  .span8
+    .fields-box
+      .div-width400      
         =form_for Course.new do |f|
           .field
             = f.label :name, "과목명"
