@@ -1,37 +1,64 @@
 .row-fluid
+  .span12
+    %h3 제출 결과 #{@subject.order}. #{@subject.title}, #{@problem.order}) #{@problem.title}
+    .title-bar-thin
+    .title-bar-thick
+.row-fluid.assignments
   .span6
-    %span "#{@subject.order}. #{@subject.title}, #{@problem.order}) #{@problem.title}"
-    %h3 제출 결과
-
-.row-fluid
+    %h4 입력데이터
+    %textarea#input-data-box
+      %pre.prettyprint.linenums
+        = @problem.input_data
   .span6
-    %p 입력값
-    %pre.prettyprint.linenums
-      = @problem.input_data
-  .span6
-    %p 결과
-    %dl.dl-horizontal
-      %dt 제출 시간
-      %dd= @assignment.created_at
-      %dt 채점 상태
-      %dd= @assignment.state
-      %dt 메모리 사용량
-      %dd= @assignment.memory_usage
-      %dt 걸린 시간
-      %dd= @assignment.lead_time
-    %h4= "총점 : #{@assignment.score} 점(100점 만점)"
-
-.row-fluid
-  .span6
-    %span 모범 답안
-    %pre.prettyprint.linenums
-      = @problem.model_paper
-  .span6
-    %span 결과 답안
-    %pre.prettyprint.linenums
-      = @assignment.result
+    %h4 제출 결과
+    %table.table.table-stripted
+      %tbody
+        %tr
+          %td 제출 시간
+        %tr
+          %td= @assignment.created_at
+        %tr
+          %td 채점 상태 
+        %tr
+          %td= @assignment.state
+        %tr
+          %td 메모리 사용량
+        %tr
+          %td= @assignment.memory_usage
+        %tr
+          %td 걸린 시간
+        %tr
+          %td= @assignment.lead_time
+        %tr.info
+          %td
+            %h4="총점 : #{@assignment.score} 점(100점 만점)"
 
 .row-fluid
   .span12
-    %p 오류 시 컴파일 에러 출력
-    .hero-unit= @assignment.compile_message
+    .bar
+
+.row-fluid.assignments
+  .span6
+    %h4 모범 답안
+    %textarea#sample-box
+      %pre.prettyprint.linenums
+        = @assginment.model_paper
+  .span6
+    %h4 제출 답안
+    %textarea#sample-box
+      %pre.prettyprint.linenums
+        = @assignment.result
+
+.row-fluid
+  .span12
+    .bar
+
+.row-fluid
+  .span12
+    %h4 오류 시 컴파일 에러 출력
+    /.hero-unit= @assignment.compile_message
+    %textarea#compile-message-box
+      .hero-unit=@assignment.compile_message
+
+.blank
+

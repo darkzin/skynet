@@ -1,7 +1,7 @@
 // Place all the styles related to the assignments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#assignments-index{
+.assignments{
   .title{
     font-size:1.3em;
     font-weight:bold;
@@ -12,25 +12,34 @@
   }
 
   #input-data-box{
-    width:95%;
-    min-height:200px;
-    resize:none;
+    min-width:97%;
+    min-height:215px;
+    //resize:none;
  }
   #compile-message-box{
-    width:97.5%;
+    min-width:98.5%;
     min-height:200px;
-    resize:none;
+    //resize:none;
  }
 
   #result-box{
-    width:95%;
+    min-width:97%;
     min-height:200px;
-    resize:none;
+    //resize:none;
  }
 
   #sample-box{
-    width:95%;
+    width:97%;
     min-height:200px;
-    resize:none;
+    //resize:none;
+ }
+
+ table{
+   th{
+     text-align:center;
+   }
+   td{
+     text-align:center;
+   }
  }
 }

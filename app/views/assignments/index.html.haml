@@ -1,4 +1,4 @@
-.row-fluid#assignments-index
+.row-fluid.assignments
   .span12
     %h3 제출 목록
     .title-bar-thin
@@ -19,61 +19,28 @@
       %option 노모어 샘플
     %a.btn.btn-primary.move-10px-to-top{href:"#"} 검색
   .span4
-.row-fluid
+.row-fluid.assignments
   .span12  
-    %table.table.table-striped.table-bordered
+    %table.table.table-striped
       %thead
         %tr
           %th 제출번호
           %th 상태
           %th 소요시간
           %th 메모리 사용량
+          %th 결과보기
       %tbody
-        %tr
+        %tr.success
           %td 1
           %td Success 
           %td 105ms
           %td 100KB
-        %tr
+          %td=link_to "결과보기" , "#", class: 'btn btn-info'
+        %tr.error
           %td 2
           %td Fail 
           %td 24ms
           %td 10KB
+          %td=link_to "결과보기" , "#", class: 'btn btn-info'
 
-.row-fluid
-  .span12
-    %h3 제출 내용
-    .title-bar-thin
-    .title-bar-thick
-.row-fluid
-  #result-wrapper
-    .span6
-      %h4 주제명 : 디바이드 앤 컨커
-      %h4 문제명 : 머지소트 
-      %h4 제출 결과
-      .square-box
-        .square-box-info#result-meta-box
-          %p 제출일시: 2013년 5얼 5일 5시 5분 55초
-          %p 상태: Success
-          %p 소요시간: 105ms
-          %p 메모리 사용량: 100KB
-    .span6
-      %h4 입력데이터
-      %textarea#input-data-box
-        %span 101 102 103
-.row-fluid	  
-  .span12
-    .bar
-  %h4 컴파일 메시지
-  %textarea#compile-message-box
-    %span ohYeah!
-  .bar
-.row-fluid
-  .span6
-    %h4 출력 결과
-    %textarea#result-box
-      %span 이거 과제라고 해왔냐?!
-  .span6
-    %h4 모범 답안
-    %textarea#sample-box
-      %span 이렇게 해야지!
+.blank
