@@ -16,6 +16,7 @@ ko:
       locked: '계정이 잠겼습니다.'
       invalid: '이메일이나 패스워드가 다릅니다.'
       invalid_token: '잘못된 인증 토큰 입니다.'
+      not_found_in_database: "비밀번호 또는 계정명이 잘못되었습니다."
       timeout: '세션이 만료되어습니다, 계속하시려면 로그인해주세요.'
       inactive: '계정이 아직 활성화 되지 않았습니다. '
     sessions:
@@ -52,3 +53,8 @@ ko:
         subject: '비밀번호 변경 확인 메일'
       unlock_instructions:
         subject: '계정 Unlock 메일'
+  activerecord:
+    errors:
+      messages:
+        taken: "이미 다른 계정에 사용되었습니다."
+        too_short: "패스워드가 너무 짧습니다."

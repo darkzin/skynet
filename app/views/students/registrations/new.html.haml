@@ -3,7 +3,7 @@
     %h3 계정 생성
     .title-bar-thin
     .title-bar-thick
-.row-fulid.devise_common
+.row-fluid.devise_common
   .span3
   .span6
     .fields-box
@@ -31,5 +31,5 @@
           .field
             = f.submit "생성", class: 'btn btn-primary'
         .field
-          = render "devise/shared/links"
+          = link_to "뒤로가기", :back, class: 'btn btn-inverse a-white'
   .span3

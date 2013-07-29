@@ -229,8 +229,15 @@ dd{
     .square-box-title-right{
       display:inline;
       float:right;
+      font-size:1em;
+      font-weight:none;
+    }
+    .square-box-title-right-btn{
+      display:inline;
+      float:right;
       margin-top:-5px;
     }
+
   }
 
   .square-box-subinfo{
@@ -248,4 +255,12 @@ dd{
   }
 }
 
-
+.move-20px-to-top{
+  margin: -20px;
+}
+.move-30px-to-top{
+  margin: -30px;
+}
+.move-40px-to-top{
+  margin: -40px;
+}
