@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://cssdeck.com/labs/css-only-pinterest-style-columns-layout -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>CSS-Only Pinterest Style Columns Layout | CSSDeck</title>
+
+		<link rel="stylesheet" href="http://cssdeck.com/assets/css/labs/app-66df569899d28c442f897ea972ee822e.css">
+	
+	
+	
+		<meta name="description" content="If you have seen pinterest, they has a multi-column interface to display the pins and those pins arrange nicely even if they are not of the same height. They do">
+		
+	<style>
+	.ui-resizable-e {
+		cursor: ew-resize;
+	}
+	.ui-resizable-e:active {
+		background: #cecece;
+	}
+	</style>
+	
+<style>#adzerk_by {display:none}
+
+/* horiz */
+.carbonad {display:block; background: #fdfdfd; background-image: -moz-linear-gradient(top, #f8f8f8, #fdfdfd); background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f8f8f8),color-stop(1, #fdfdfd)); border: 1px solid #d5d5d5; font-family: Lucida Grande, Arial, Helvetica, sans-serif; font-size: 11px; height: 118px; line-height: 15px; overflow: hidden; width: 300px;}
+.carbonad-img {border: none; display: inline; float: left; height: 100px; margin: 9px; width: 130px;}
+.carbonad-text {display:inline; float:left; width:142px; padding-top:13px;}
+.carbonad-text a {color: #000000; font-weight: bold; text-decoration: none;}
+.carbonad-tag {float: left; margin-top: 9px; text-align: center; width: 142px; color: #999999;}
+.carbonad-tag a {color: #999999; text-decoration: none;}
+</style></head>
+
+<body style="">
+<div id="full_shadow"></div>
+
+<!-- ajax loader -->
+<div class="ajax_loader">
+	<img src="./CSS-Only Pinterest Style Columns Layout   CSSDeck_files/ajax-loader.gif" alt="Ajax Loader">
+</div>
+<!-- /ajax loader -->
+
+<!-- Broadcast container -->
+<div id="bcast_container"><ul></ul></div>
+
+<header>
+	<!-- Logo -->
+	<div class="logo">
+		<a href="http://cssdeck.com/">Labs</a>
+	</div>
+	
+	<!-- Nav -->
+	<ul class="top_nav">
+
+				<li><a href="http://cssdeck.com/labs">New</a></li>
+
+				<li><a href="javascript:void(0);" id="fork">Fork</a></li>
+		<li><a href="javascript:void(0);" id="save" style="display: none;">Save</a></li>
+		
+		
+				
+		
+		<li class="multi">
+			<a href="javascript:void(0);">Share</a>
+
+			<ul class="share_box dropdown" style="top: 44px; opacity: 0; display: none;">
+				<!--<li>
+					<label for="share_url">Link</label>
+					<input type="url" id="share_url"
+					value="http://cssdeck.com/labs/css-only-pinterest-style-columns-layout" onclick="this.select();">
+				</li>-->
+				<li>
+					<label for="share_full_url">Full Screen Result</label>
+					<input type="url" id="share_full_url" value="http://cssdeck.com/labs/full/css-only-pinterest-style-columns-layout" onclick="this.select();">
+				</li>
+				<li>
+					<label for="embed_url">Embed on your webpage (blogs, articles, etc.)</label>
+					<input type="url" id="embed_url" value="&lt;pre class=&quot;_cssdeck_embed&quot; data-pane=&quot;output&quot; data-user=&quot;kushsolitary&quot; data-href=&quot;css-only-pinterest-style-columns-layout&quot; data-version=&quot;0&quot;&gt;&lt;/pre&gt;&lt;script async src=&quot;http://cssdeck.com/assets/js/embed.js&quot;&gt;&lt;/script&gt;" onclick="this.select();">
+				</li>
+								<li class="share-links">
+					<a href="http://twitter.com/share?text=CSS-Only+Pinterest+Style+Columns+Layout&via=cssdeck" target="_blank">
+						<i class="icon-twitter-sign"></i>
+					</a>
+					|
+					<a href="http://facebook.com/share.php?s=100&p[title]=CSS-Only+Pinterest+Style+Columns+Layout&p[url]=http://cssdeck.com/labs/css-only-pinterest-style-columns-layout" target="_blank">
+						<i class="icon-facebook-sign"></i>
+					</a>
+					|
+					<a href="https://plus.google.com/share?url=http://cssdeck.com/labs/css-only-pinterest-style-columns-layout" target="_blank">
+						<i class="icon-google-plus-sign"></i>
+					</a>
+				</li>
+			</ul>
+		</li>
+		
+	</ul>
+
+	<!-- Extra Menu -->
+	<ul class="extra">
+		<!-- Nav -->
+				<li>
+			<a id="like" class="icons " href="http://cssdeck.com/login/?next=%2Flabs%2Fcss-only-pinterest-style-columns-layout" title="Like this Creation">
+				<i class="icon-heart"></i>
+			</a>
+		</li>
+		<li>
+			<a id="random_item" class="icons" href="http://cssdeck.com/labs/qqlknmff" title="Next Item">
+				<i class="icon-random"></i>
+			</a>
+		</li>
+				<li>
+			<a id="refresh_output" class="icons" href="javascript:void(0);" title="Refresh Output">
+				<i class="icon-refresh"></i>
+			</a>
+		</li>
+
+		
+				
+				<li><a href="http://cssdeck.com/login/?next=%2Flabs%2Fcss-only-pinterest-style-columns-layout">Login</a></li>
+			</ul>	
+
+</header>
+
+<div id="wrapper">
+
+	<section id="details_pane" class="side_panes left_pane active" style="display: block;">
+
+  <div class="pane_controls">
+        <a href="javascript:void(0);" class="details_btn close active">×</a>
+  </div>
+
+  <article id="content">
+    <h1 id="title">CSS-Only Pinterest Style Columns Layout</h1>
+
+        <div id="member_info">
+              <img src="./CSS-Only Pinterest Style Columns Layout   CSSDeck_files/eb742143cb014a061bf009ab81e1c525" class="gravatar" alt="" width="16">
+        <a class="username" href="http://cssdeck.com/user/kushsolitary">Kushagra Agarwal</a>
+      
+            <ul>
+        <li><a href="javascript:void(0);">94737 <i class="icon-eye-open"></i></a></li>
+        <li><a href="javascript:void(0);" class="like_btn">141 <i class="icon-heart"></i></a></li>
+        <li><a href="javascript:void(0);" class="comments_btn">20 <i class="icon-comment"></i></a></li>
+      </ul>
+          </div>
+    
+    <div id="description">
+            <!--<div id="carbonads-container" style="float: right; margin: 0 0 10px 10px; min-width: 150px;"><div class="carbonad"><div id="azcarbon"></div><script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/17091/azcarbon_2_1_0_VERT"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>-->
+      <div id="carbonads-container" style="width: 100%;"><div class="carbonad" style="margin: 0 auto;"><div id="azcarbon"><span class="carbonad-image"><a href="http://engine.carbonads.com/r?e=eyJhdiI6NjQ4LCJhdCI6MSwiY20iOjEzMTMsImNoIjoxMjA0LCJjciI6NDgyMDUsImRpIjoiYTVlZTEwNmE5YTNmNGUzMjk1NDNlNjdlZTFkMWQyODEiLCJkbSI6MSwiZmMiOjEzODYwNywiZmwiOjY4MjQ4LCJudyI6MzksInJ2IjowLCJwciI6Nywic3QiOjE3MDkxLCJ6biI6MCwidXIiOiJodHRwOi8vbWVkaWF0ZW1wbGUubmV0L3dlYmhvc3RpbmcvdnBzL21hbmFnZWQvP3V0bV9zb3VyY2U9Y2FyYm9uJnV0bV9tZWRpdW09YmFubmVyJnV0bV9jb250ZW50PTEzMHgxMDBkZXZfcG93ZXJpbmcmdXRtX2NhbXBhaWduPWRldmNvZGUifQ&s=VdLF0IGcPFIKZC4G_MlWVZqsGgc" title="(mt)" target="_blank"><img class="carbonad-image carbonad-img" src="./CSS-Only Pinterest Style Columns Layout   CSSDeck_files/f816398a4d364d0593f2f76fdc2ac38e.png" title="(mt)" alt="(mt)" border="0" height="90" width="120"></a></span><span class="carbonad-text"><a href="http://engine.carbonads.com/r?e=eyJhdiI6NjQ4LCJhdCI6MSwiY20iOjEzMTMsImNoIjoxMjA0LCJjciI6NDgyMDUsImRpIjoiYTVlZTEwNmE5YTNmNGUzMjk1NDNlNjdlZTFkMWQyODEiLCJkbSI6MSwiZmMiOjEzODYwNywiZmwiOjY4MjQ4LCJudyI6MzksInJ2IjowLCJwciI6Nywic3QiOjE3MDkxLCJ6biI6MCwidXIiOiJodHRwOi8vbWVkaWF0ZW1wbGUubmV0L3dlYmhvc3RpbmcvdnBzL21hbmFnZWQvP3V0bV9zb3VyY2U9Y2FyYm9uJnV0bV9tZWRpdW09YmFubmVyJnV0bV9jb250ZW50PTEzMHgxMDBkZXZfcG93ZXJpbmcmdXRtX2NhbXBhaWduPWRldmNvZGUifQ&s=VdLF0IGcPFIKZC4G_MlWVZqsGgc">(mt) Media Temple:</a> Powering More than 1 Million Websites!</span><span class="carbonad-tag">ads via <a href="http://carbonads.com/">Carbon</a></span><img height="0px" width="0px" border="0" src="./CSS-Only Pinterest Style Columns Layout   CSSDeck_files/i.gif"></div><script type="text/javascript" async="" src="./CSS-Only Pinterest Style Columns Layout   CSSDeck_files/ga.js"></script><script type="text/javascript" async="" src="./CSS-Only Pinterest Style Columns Layout   CSSDeck_files/azcarbon_2_1_0_HORIZ"></script><script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/17091/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
+            <p>If you have seen pinterest, they has a multi-column interface to display the pins and those pins arrange nicely even if they are not of the same height. They do it by using javascript to calculate the height of each pin and then positioning them absolutely. Achieving the same with CSS can be done in two ways:</p>
+
+<p></p><ul><li><strong>Using Floats</strong>: Floats can be used but only if all the pins have same height otherwise there will be gaps left all over.</li>
+<li><strong>Using CSS3 Columns</strong>: This is what I used here. It is explained in detail below.</li>
+</ul><p>Javascript is still the way to go as this technique has some problems like, lesser cross browser support,&nbsp;seemed to produce weird bugs while testing that were fixed with weird solutions (although simple), hard to maintain the ordering of the items .&nbsp;If there is any ordering, like you want to show recent items&nbsp;where the first item is most recent, and the second most recent item is on the right, it doesn't maintains that. Also, the ordering changes on resizing so it's not a better option.</p>
+<p>This technique is originally created by <a href="https://twitter.com/#!/pixleight">pixleight</a>&nbsp;and&nbsp;I modified it a little to make it look and function much better. Here's a quote from the original creation on how it's done.</p>
+<pre>&lt;div id="columns"&gt;
+    &lt;div class="pin"&gt;
+        &lt;img src="http://placekitten.com/400/300" alt="PlaceKitten" /&gt;
+        &lt;p&gt;Jean shorts street art flexitarian ... &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="pin"&gt;
+        &lt;img src="http://placekitten.com/g/400/300" alt="PlaceKitten" /&gt;
+        &lt;p&gt;Leggings pour-over banksy, DIY wolf tattooed ... &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="pin"&gt;
+        &lt;img src="http://placekitten.com/500/450" alt="PlaceKitten" /&gt;
+        &lt;p&gt;Put a bird on it viral wolf, 3 wolf moon ... &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- and so on ...  --&gt;
+&lt;/div&gt;
+    </pre>
+<p>Now on to the styling:</p>
+<pre>#columns {
+    -moz-column-count: 3;
+    -moz-column-gap: 10px;
+    -moz-column-fill: auto;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 10px;
+    -webkit-column-fill: auto;
+    column-count: 3;
+    column-gap: 15px;
+    column-fill: auto;
+}
+
+</pre><p>.pin {
+    -moz-column-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    column-break-inside: avoid;
+    display: inline-block;
+    margin: 0 2px 15px;
+    padding: 15px;
+    border: 2px solid #FAFAFA;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    background: #FEFEFE;
+    background-image: linear-gradient(45deg, #FFF, #F9F9F9);
+}
+    </p>
+<p>As you can see, I used <span class="mono">column-count, column-gap</span> on <span class="mono">#columns</span> to achieve the column behavior. Then I added <span class="mono">column-break-inside: avoid;</span> to the "pins" to prevent them from flowing from one column to the next — force them to be contained in a single column. Make sure to include <span class="mono">-moz-</span> and <span class="mono">-webkit-</span> browser prefixes. Then I just styled the boxes however I wanted.</p>
+<p>For good measure, I added some media queries to adjust the number of columns depending on browser width:</p>
+<pre>@media all and (min-width: 960px) {
+    #columns {
+        column-count: 4;
+    }
+}
+
+</pre><p>@media all and (min-width: 1170px) {
+    #columns {
+        column-count: 5;
+    }
+}
+    </p>
+<p>This won't work in Internet Explorer 9 and below as it don't support multi column. However, you can use it if you don't care about it ;)<br>Make sure to take a look at the source code to understand more about it's working.</p>
+    </div>
+
+  </article>
+
+  
+</section>
+	<section id="side_controls">
+		<ul>
+
+			<li>
+				<a href="javascript:void(0);" class="preferences_btn" title="Preferences" data-pane="preferences">
+					<!--<img src="http://cssdeck.com/assets/img/pref.png" alt="preferences">-->
+					<i class="icon-wrench"></i>
+				</a>
+			</li>
+			<li style="display: none;">
+				<a href="javascript:void(0);" class="settings_btn" title="Settings" data-pane="settings">
+					<!--<img src="http://cssdeck.com/assets/img/pref.png" alt="settings">-->
+				</a>
+			</li>
+
+						<li>
+				<a href="javascript:void(0);" class="details_btn active" title="Details" data-pane="details">
+					<!--<img src="http://cssdeck.com/assets/img/document.png" alt="details">-->
+					<i class="icon-file-alt"></i>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0);" class="comments_btn" title="Comments" data-pane="comments">
+					<!--<img src="http://cssdeck.com/assets/img/comments.png" alt="comments">-->
+					<i class="icon-comments-alt"></i>
+				</a>
+			</li>
+			
+			<!--<li><a href="javascript:void(0);" class="validations_btn" title="Code Validation">
+				<img src="http://cssdeck.com/assets/img/validate.png" alt="validate">
+			</a></li>-->
+
+			<li>
+				<a href="javascript:void(0);" class="documentation_btn" title="Extras and Tips" data-pane="documentation">
+					<!--<img src="http://cssdeck.com/assets/img/tips.png" alt="extras and tips" style="width: 15px;">-->
+					<i class="icon-lightbulb"></i>
+				</a>
+			</li>
+
+			<!-- Share -->
+							<li class="panel_share">
+	<ul>
+
+		<!-- Twitter -->
+		<li><a href="http://twitter.com/share?text=CSS-Only+Pinterest+Style+Columns+Layout&via=cssdeck" target="_blank">
+			<!--<img src="http://cssdeck.com/assets/img/share/tw.png" alt="twitter">-->
+			<i class="icon-twitter-sign"></i>
+		</a></li>
+
+		<!-- Facebook -->
+		<!--<li class="fb">
+			<div class="fb-like" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" data-font="lucida grande"></div>
+
+			<div id="fb-root" style="display: none;"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=190502394323833";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+		</li>-->
+
+		<li class="fb">
+			<a href="http://facebook.com/share.php?s=100&p[title]=CSS-Only+Pinterest+Style+Columns+Layout&p[url]=http://cssdeck.com/labs/css-only-pinterest-style-columns-layout" target="_blank">
+				<i class="icon-facebook-sign"></i>
+			</a>
+		</li>
+
+		<!-- Google Plus -->
+		<!--<li class="gp">
+			<div class="g-plusone" data-size="medium" data-annotation="none"></div>
+
+			<script type="text/javascript">
+			  (function() {
+			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			    po.src = 'https://apis.google.com/js/plusone.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			  })();
+			</script>
+
+			<div id="social_icons_spacer"></div>
+		</li>-->
+
+		<li class="gplus">
+			<a href="https://plus.google.com/share?url=http://cssdeck.com/labs/css-only-pinterest-style-columns-layout">
+				<i class="icon-google-plus-sign"></i>
+			</a>
+		</li>
+
+	</ul>
+
+</li>					</ul>
+	</section>
+
+	<section id="preferences_pane" class="side_panes left_pane" style="display: none;">
+
+  <div class="pane_controls" style="float: right;">
+    <a href="javascript:void(0);" class="preferences_btn close">×</a>
+  </div>
+
+  <h3 style="float: left;">Coding Preferences
+    </h3>
+
+  <br style="clear: both">
+
+  <div class="html_pref code_pref">
+    <h4>HTML</h4>
+
+    <div>
+      <select id="html_pp" name="html_pp">
+        <option value="none">Preprocessor...</option>
+        <option value="haml">HAML</option>
+        <option value="jade">Jade</option>
+        <option value="markdown">Markdown</option>
+        <option value="slim">Slim</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="css_pref code_pref">
+    <h4>CSS</h4>
+
+    <div>
+      <select id="css_pp" name="css_pp">
+        <option value="none">Preprocessor...</option>
+        <option value="less">Less</option>
+        <option value="stylus">Stylus</option>
+        <option value="sass">SASS</option>
+        <option value="scss">SCSS</option>
+        <option value="sass_compass">SASS w/ Compass</option>
+        <option value="scss_compass">SCSS w/ Compass</option>
+      </select>
+    </div>
+
+    <div class="css_libs dd_select">
+      <input type="text" name="include_search" placeholder="Search Library..." class="include_search">
+      <ul><li>Bootstrap 2.0.4</li><li>jQuery UI</li><li>jQuery Mobile</li><li>Sencha Touch</li></ul>
+      <a href="javascript:void(0);" class="libs_chosen css">Done</a>
+    </div>
+
+    <div>
+      <input type="checkbox" id="prefixfree">
+      <label for="prefixfree">Prefixfree</label>
+
+      <input type="checkbox" id="normalize">
+      <label for="normalize">Normalize</label>
+    </div>
+  </div>
+
+  <div class="js_pref code_pref">
+    <h4>Javascript</h4>
+
+    <div>
+      <select id="js_pp" name="js_pp">
+        <option value="none">Preprocessor...</option>
+        <option value="coffeescript">Coffeescript</option>
+      </select>
+    </div>
+
+    <div class="js_libs dd_select">
+      <input type="text" name="include_search" placeholder="Search Library..." class="include_search">
+      <ul><li>YUI 3.3.0</li><li>jQuery 1.8.0</li><li>Mootools 1.3.2</li><li>Prototype 1.7.0.0</li><li>jQuery Mobile 1.0</li><li>Underscore 1.2.2</li><li>Backbone 0.5.3</li><li>CoffeeScript 1.3.1</li><li>Modernizr 2.0.6</li><li>Sencha Touch</li><li>Dojo 1.6.0</li><li>Bootstrap 2.0.4</li></ul>
+      <a href="javascript:void(0);" class="libs_chosen js">Done</a>
+    </div>
+  </div>
+
+  <div class="more_pref code_pref">
+    <h4>More</h4>
+
+    <div>
+      <label class="font-size slider" title="Font size">
+        <span title="smaller">A</span>
+
+        <input id="font_size" type="range" name="font_size" min="55" max="100" value="70" step="5">
+
+        <span title="larger" style="font-size: 24px;">A</span>
+      </label>
+    </div>
+
+      </div>
+        
+</section>	  <section id="comments_pane" class="side_panes right_pane" style="display: none;">
+  
+    <h3>20 Comments</h3>
+    <a href="javascript:void(0);" class="comments_btn close">×</a>
+    <a href="javascript:void(0);" id="new_comment">New</a>
+
+    <form action="http://cssdeck.com/labs/comment/add" method="post" style="display: none;">
+
+              <p><a href="http://cssdeck.com/login/?next=%2Flabs%2Fcss-only-pinterest-style-columns-layout">Sign In</a> to comment</p>
+          </form>
+    
+    <section id="comments_list">
+  
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/hongster" target="_blank">Hean Hong Leong:</a>
+
+        <div><p>To get it to work in Firefox, I removed "-moz-column-fill: auto;". Alterntively, setting -moz-column-fill to "balance" works too.</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/hongster" target="_blank">Hean Hong Leong:</a>
+
+        <div><p>It is working in Chromium, but not Firefox.</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/wp_shaun" target="_blank">wp_shaun:</a>
+
+        <div><p>This is very cool! Of course, IE9 can't handle it...but what else is new?</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/WebKingdom" target="_blank">WebKingdom:</a>
+
+        <div><p>I am new to CSSDeck i am wondering do you have to include the link css file like this  could someone tell me?</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/arios342" target="_blank">arios342:</a>
+
+        <div><p>I love it! just one question, what kind of code would I need to change the columns into one column if it's on a mobile device?</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/abhirathore2006" target="_blank">abhirathore2006:</a>
+
+        <div><p>can u mail me your code for chrome because i see that it works well in chrome if  i open here but when i copy and open in my html page it doesn't work properly</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/abhirathore2006" target="_blank">abhirathore2006:</a>
+
+        <div><p>i copied your whole code its not working properly in chrome .it works in mozila .<br>
+anyway i made it work for i.e. :)</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/rish" target="_blank">Rish Vishwakarma:</a>
+
+        <div><p>excellent work !!!</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/urbien" target="_blank">urbien:</a>
+
+        <div><p>This layout works really well, thanks both to the author and to @pixleight. It saved my day when using it with the backbone.js + jquery mobile. Without it there was a constant hassle to rearrange the tiles after the transitions, which resulted in a flicker. Unfortunately this method has a major flaw:<br>
+it arranges tiles vertically, and with endless/infinate page jquery plugin the affect becomes so bad, that I doubt I can continue to use it. It is disconcerting for the user to see tiles from the top jump to the left column. Any suggestions on how to fix it?</p>
+<p>Thanks a lot!<br>
+Gene</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/zx284685488" target="_blank">zx284685488:</a>
+
+        <div><p>good</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/madmaxcorp" target="_blank">madmaxcorp:</a>
+
+        <div><p>Very cool, but in Chrome we have a lot of space under block.</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/seb2020" target="_blank">seb2020:</a>
+
+        <div><p>Awesome ! Thank's a lot.<br>
+Is there any posssibilities to make it work on IE ?</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/shaikhmshariq" target="_blank">shaikhmshariq:</a>
+
+        <div><p>Looks awesome. But it doesn't work in devil IE.</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/Ricky" target="_blank">Ricky:</a>
+
+        <div><p>Sorry I'would like to post code example.<br>
+I's a div who wrap some html5 article.</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/Ricky" target="_blank">Ricky:</a>
+
+        <div><p>Wow exactly what i need, but I don't know why this dont work for me!<br>
+Those lines of CSS3 it's only what needed to make it work?<br>
+Maybe this dont work with html5? I'have </p>
+<p>...</p>
+<p>structure.</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/madyar" target="_blank">madyar:</a>
+
+        <div><p>these effect like some jQuery effect ! and these are awesome</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/madyar" target="_blank">madyar:</a>
+
+        <div><p>THIS ! IS ! AWESOME ! I LIKE IT ! :x</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/kushsolitary" target="_blank">Kushagra Agarwal:</a>
+
+        <div><p>Thanks! But your techniques are unique and awesome.. Keep showing us your amazing creations!! :)</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/WBGate" target="_blank"> LukyVj:</a>
+
+        <div><p>Kush is back ! and, as wile, he is the best !</p>
+</div>
+      </article>
+    
+      
+      <article>
+        <a class="name" href="http://cssdeck.com/user/pixleight" target="_blank">pixleight:</a>
+
+        <div><p>Glad to see my technique has been helpful. Of course, javascript is still the way to go for cross-browser support (jQuery Masonry is a good tool). I like the hover effect in your adaptation.</p>
+</div>
+      </article>
+    
+      
+    </section>
+
+  </section>	<section id="settings_pane" class="side_panes left_pane" style="display: none;">
+
+  <div class="pane_controls" style="float: right;">
+    <a href="javascript:void(0);" class="settings_btn close">×</a>
+  </div>
+
+  <h3>Your Default Settings - 
+    <a href="javascript:void(0);" style="font-size: 12px;" class="preferences_btn"> Preferences</a>
+  </h3>
+
+  <form method="post">
+
+    <div class="input_block">
+      <label>Default <strong>HTML</strong> Preprocessor:</label>
+      <select id="default_html_pp" name="html_pp">
+        <option value="">None</option>
+        <option value="haml">HAML</option>
+        <option value="jade">Jade</option>
+        <option value="markdown">Markdown</option>
+        <option value="slim">Slim</option>
+      </select>
+    </div>
+
+    <div class="input_block">
+      <label>Default <strong>CSS</strong> Preprocessor:</label>
+      <select id="default_css_pp" name="css_pp">
+        <option value="">None</option>
+        <option value="less">Less</option>
+        <option value="stylus">Stylus</option>
+        <option value="sass">SASS</option>
+        <option value="scss">SCSS</option>
+        <option value="sass_compass">SASS w/ Compass</option>
+        <option value="scss_compass">SCSS w/ Compass</option>
+      </select>
+    </div>
+
+    <div class="input_block">
+      <label>Default <strong>JS</strong> Preprocessor:</label>
+      <select id="default_js_pp" name="js_pp">
+        <option value="">None</option>
+        <option value="coffeescript">Coffeescript</option>
+      </select>
+    </div>
+
+    <div class="input_block">
+      <label>Editor <strong>Positioning</strong>:</label>
+      <select id="default_editor_position" name="editor_position">
+        <option value="vert">Vertical Editors</option>
+        <option value="horiz">Horizontal Editors</option>
+      </select>
+    </div>
+
+    <div class="input_block">
+      <label>Enable <strong>Prefixfree</strong> by Default:</label>
+      <input id="default_prefixfree" type="checkbox" name="prefixfree" value="1">
+    </div>
+
+    <div class="input_block">
+      <label>Enable <strong>Normalize</strong> by Default:</label>
+      <input id="default_normalize" type="checkbox" name="normalize" value="1">
+    </div>
+
+    <div>
+      <label class="font-size slider" title="Font size">
+        <span title="smaller">A</span>
+        <input id="default_font_size" type="range" name="font_size" min="55" max="100" value="60" step="5">
+        <span title="larger" style="font-size: 24px;">A</span>
+      </label>
+    </div>
+
+    <div>
+      <input type="submit" name="submit" id="save_settings" value="Save">
+    </div>
+  </form>
+
+</section>	<section id="admin_action_pane" class="side_panes" style="display: none;">
+
+  <div class="pane_controls">
+    <a href="javascript:void(0);" class="admin_action_btn close">×</a>
+  </div>
+
+  
+</section>	
+<section id="documentation_pane" class="side_panes right_pane" style="display: none;">
+  
+  <div class="pane_controls">
+    <a href="javascript:void(0);" class="documentation_btn close">×</a>
+  </div>
+  
+</section>
+
+	<section id="validations_pane" class="side_panes right_pane" style="display: none;">
+
+  <div class="pane_controls">
+    <a href="javascript:void(0);" class="validations_btn close">×</a>
+  </div>
+
+  <h3>Validations</h3>
+  <p style="margin-top: 0; font-size: 11px;">(Errors from your JS or Pre-Processors code)</p>
+
+  <ol></ol>
+
+</section>
+	<div id="work_area" style="left: 507px;">
+
+		<section id="editor_pane" class="editor_pane editor_pane_vert ui-resizable ui-resizable-autohide" style="position: absolute;">
+
+			<div id="editor_tabs">
+				<ul>
+					<li>
+						<a href="javascript:void(0);" id="horiz_editor_handle"><i class="icon-arrow-down"></i></a>
+						<a href="javascript:void(0);" id="vert_editor_handle" style="display: none;"><i class="icon-arrow-left"></i></a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="code_tab active html_tab" data-type="html" title="Enable/Disable HTML Codebox">HTML</a>
+					</li>
+					<li class="et_sep"></li>
+					<li>
+						<a href="javascript:void(0);" class="code_tab active css_tab" data-type="css" title="Enable/Disable CSS Codebox">CSS</a>
+					</li>
+					<li class="et_sep"></li>
+					<li>
+						<a href="javascript:void(0);" class="code_tab js_tab" data-type="js" title="Enable/Disable JS Codebox">JavaScript</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);" class="compiled_code_tab" data-type="js" title="Compiled Code">
+							<i class="icon-exclamation-sign"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div id="code" class="code">
+
+				<div class="cb_equal_2">
+					<span class="editor_label" style="display: block;">HTML</span>
+					<!--<div class="editor_title html">
+						HTML
+						<span class="close_html_code active" data-type="html">x</span>
+					</div>-->
+
+					<!-- html -->
+					<div id="html" class="code_boxes">
+						<textarea name="html" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 37px;"><textarea autocorrect="off" autocapitalize="off" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none; font-size: 4px;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 33px;"><div style="height: 1px;"></div></div><div class="CodeMirror-vscrollbar" style="display: block; bottom: 0px;"><div style="width: 1px; height: 2798px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div style="position: relative; min-height: 100%;"><div class="CodeMirror-sizer" style="margin-left: 33px; min-height: 2798px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span class="cm-tag">&lt;</span><span class="cm-tag">d</span><span class="cm-tag">i</span><span class="cm-tag">v</span><span> </span><span class="cm-attribute">i</span><span class="cm-attribute">d</span><span>=</span><span class="cm-string">"</span><span class="cm-string">w</span><span class="cm-string">r</span><span class="cm-string">a</span><span class="cm-string">p</span><span class="cm-string">p</span><span class="cm-string">e</span><span class="cm-string">r</span><span class="cm-string">"</span><span class="cm-tag">&gt;</span></pre></div><div style="position: relative; z-index: 1; display: none;"></div><div style=""><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">1</div></div><pre><span class="cm-tag">&lt;div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"wrapper"</span><span class="cm-tag">&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">2</div></div><pre><span class="cm-tab">  </span><span class="cm-tag">&lt;div</span> <span class="cm-attribute">id</span>=<span class="cm-string">"columns"</span><span class="cm-tag">&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">3</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"pin"</span><span class="cm-tag">&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">4</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"http://cssdeck.com/uploads/media/items/2/2v3VhAp.png"</span> <span class="cm-tag">/&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">5</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;p&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">6</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">7</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>Sed feugiat consectetur pellentesque. Nam ac elit risus, </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">8</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>ac blandit dui. Duis rutrum porta tortor ut convallis.</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">9</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>Duis rutrum porta tortor ut convallis.</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">10</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;/p&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">11</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;/div&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">12</div></div><pre><span class="cm-tab">  </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">13</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"pin"</span><span class="cm-tag">&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">14</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"http://cssdeck.com/uploads/media/items/1/1swi3Qy.png"</span> <span class="cm-tag">/&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">15</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;p&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">16</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>Donec a fermentum nisi. </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">17</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;/p&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">18</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;/div&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">19</div></div><pre><span class="cm-tab">  </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">20</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"pin"</span><span class="cm-tag">&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">21</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"http://cssdeck.com/uploads/media/items/6/6f3nXse.png"</span> <span class="cm-tag">/&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">22</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;p&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">23</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>Nullam eget lectus augue. Donec eu sem sit amet ligula </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">24</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>faucibus suscipit. Suspendisse rutrum turpis quis nunc </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">25</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>convallis quis aliquam mauris suscipit.</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">26</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;/p&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">27</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;/div&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">28</div></div><pre><span class="cm-tab">  </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">29</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"pin"</span><span class="cm-tag">&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">30</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"http://cssdeck.com/uploads/media/items/8/8kEc1hS.png"</span> <span class="cm-tag">/&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">31</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;p&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">32</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>Nullam eget lectus augue. Donec eu sem sit amet ligula </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">33</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>faucibus suscipit. Suspendisse rutrum turpis quis nunc </pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">34</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>convallis quis aliquam mauris suscipit.</pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">35</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;/p&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">36</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;/div&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">37</div></div><pre><span class="cm-tab">  </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">38</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"pin"</span><span class="cm-tag">&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">39</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;img</span> <span class="cm-attribute">src</span>=<span class="cm-string">"http://cssdeck.com/uploads/media/items/1/1swi3Qy.png"</span> <span class="cm-tag">/&gt;</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -33px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 24px;">40</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tag">&lt;p&gt;</span></pre></div></div><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 17px;">&nbsp;</div><div class="CodeMirror-cursor CodeMirror-secondarycursor" style="display: none;">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 2798px;"></div><div class="CodeMirror-gutters" style="left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 32px;"></div></div></div></div></div>
+					</div>
+				</div>
+
+				<div class="cb_equal_2">
+					<span class="editor_label" style="display: block;">CSS</span>
+					<!--<div class="editor_title css">
+						CSS
+						<span class="close_css_code active" data-type="css">x</span>
+					</div>-->
+		
+					<!-- CSS -->
+					<div id="css" class="code_boxes">
+						<textarea name="css" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 130px; left: 105px;"><textarea autocorrect="off" autocapitalize="off" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none; font-size: 4px;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 25px;"><div style="height: 1px;"></div></div><div class="CodeMirror-vscrollbar" style="display: block; bottom: 0px;"><div style="width: 1px; height: 1394px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div style="position: relative; min-height: 100%;"><div class="CodeMirror-sizer" style="margin-left: 25px; min-height: 1394px;"><div style="position: relative; top: 396px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span><span class="cm-tab">  </span></span><span class="cm-builtin">#</span><span class="cm-builtin">c</span><span class="cm-builtin">o</span><span class="cm-builtin">l</span><span class="cm-builtin">u</span><span class="cm-builtin">m</span><span class="cm-builtin">n</span><span class="cm-builtin">s</span><span> </span><span>{</span></pre></div><div style="position: relative; z-index: 1; display: none;"></div><div style=""><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">23</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">24</div></div><pre><span class="cm-qualifier">.pin</span> {</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">25</div></div><pre><span class="cm-tab">  </span><span class="cm-property">display</span><span class="cm-operator">:</span> <span class="cm-string-2">inline-block</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">26</div></div><pre><span class="cm-tab">  </span><span class="cm-property">background</span><span class="cm-operator">:</span> <span class="cm-atom">#FEFEFE</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">27</div></div><pre><span class="cm-tab">  </span><span class="cm-property">border</span><span class="cm-operator">:</span> <span class="cm-number">2px</span> <span class="cm-string-2">solid</span> <span class="cm-atom">#FAFAFA</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">28</div></div><pre><span class="cm-tab">  </span><span class="cm-property">box-shadow</span><span class="cm-operator">:</span> <span class="cm-number">0</span> <span class="cm-number">1px</span> <span class="cm-number">2px</span> <span class="cm-string-2">rgba</span>(<span class="cm-number">34</span>, <span class="cm-number">25</span>, <span class="cm-number">25</span>, <span class="cm-number">0.4</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">29</div></div><pre><span class="cm-tab">  </span><span class="cm-property">margin</span><span class="cm-operator">:</span> <span class="cm-number">0</span> <span class="cm-number">2px</span> <span class="cm-number">15px</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">30</div></div><pre><span class="cm-tab">  </span><span class="cm-meta">-webkit-</span><span class="cm-property cm-error">column-break-inside</span><span class="cm-operator">:</span> <span class="cm-string-2">avoid</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">31</div></div><pre><span class="cm-tab">  </span><span class="cm-meta">-moz-</span><span class="cm-property cm-error">column-break-inside</span><span class="cm-operator">:</span> <span class="cm-string-2">avoid</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">32</div></div><pre><span class="cm-tab">  </span><span class="cm-property cm-error">column-break-inside</span><span class="cm-operator">:</span> <span class="cm-string-2">avoid</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">33</div></div><pre><span class="cm-tab">  </span><span class="cm-property">padding</span><span class="cm-operator">:</span> <span class="cm-number">15px</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">34</div></div><pre><span class="cm-tab">  </span><span class="cm-property">padding-bottom</span><span class="cm-operator">:</span> <span class="cm-number">5px</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">35</div></div><pre><span class="cm-tab">  </span><span class="cm-property">background</span><span class="cm-operator">:</span> <span class="cm-meta">-webkit-</span><span class="cm-variable-2">linear-gradient</span>(<span class="cm-number">45deg</span>, <span class="cm-atom">#FFF</span>, <span class="cm-atom">#F9F9F9</span>);</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">36</div></div><pre><span class="cm-tab">  </span><span class="cm-property">opacity</span><span class="cm-operator">:</span> <span class="cm-number">1</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">37</div></div><pre><span class="cm-tab">  </span></pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">38</div></div><pre><span class="cm-tab">  </span><span class="cm-meta">-webkit-</span><span class="cm-property">transition</span><span class="cm-operator">:</span> <span class="cm-string-2">all</span> <span class="cm-variable-2">.2s</span> <span class="cm-string-2">ease</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">39</div></div><pre><span class="cm-tab">  </span><span class="cm-meta">-moz-</span><span class="cm-property">transition</span><span class="cm-operator">:</span> <span class="cm-string-2">all</span> <span class="cm-variable-2">.2s</span> <span class="cm-string-2">ease</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">40</div></div><pre><span class="cm-tab">  </span><span class="cm-meta">-o-</span><span class="cm-property">transition</span><span class="cm-operator">:</span> <span class="cm-string-2">all</span> <span class="cm-variable-2">.2s</span> <span class="cm-string-2">ease</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">41</div></div><pre><span class="cm-tab">  </span><span class="cm-property">transition</span><span class="cm-operator">:</span> <span class="cm-string-2">all</span> <span class="cm-variable-2">.2s</span> <span class="cm-string-2">ease</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">42</div></div><pre>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">43</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">44</div></div><pre><span class="cm-qualifier">.pin</span> <span class="cm-tag">img</span> {</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">45</div></div><pre><span class="cm-tab">  </span><span class="cm-property">width</span><span class="cm-operator">:</span> <span class="cm-number">100%</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">46</div></div><pre><span class="cm-tab">  </span><span class="cm-property">border-bottom</span><span class="cm-operator">:</span> <span class="cm-number">1px</span> <span class="cm-string-2">solid</span> <span class="cm-atom">#ccc</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">47</div></div><pre><span class="cm-tab">  </span><span class="cm-property">padding-bottom</span><span class="cm-operator">:</span> <span class="cm-number">15px</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">48</div></div><pre><span class="cm-tab">  </span><span class="cm-property">margin-bottom</span><span class="cm-operator">:</span> <span class="cm-number">5px</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">49</div></div><pre>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">50</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">51</div></div><pre><span class="cm-qualifier">.pin</span> <span class="cm-tag">p</span> {</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">52</div></div><pre><span class="cm-tab">  </span><span class="cm-property">font</span><span class="cm-operator">:</span> <span class="cm-number">12px</span>/<span class="cm-number">18px</span> <span class="cm-variable-2">Arial</span>, <span class="cm-string-2">sans-serif</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">53</div></div><pre><span class="cm-tab">  </span><span class="cm-property">color</span><span class="cm-operator">:</span> <span class="cm-atom">#333</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">54</div></div><pre><span class="cm-tab">  </span><span class="cm-property">margin</span><span class="cm-operator">:</span> <span class="cm-number">0</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">55</div></div><pre>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">56</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">57</div></div><pre><span class="cm-def">@media</span> (<span class="cm-error">min-width</span><span class="cm-operator">:</span> <span class="cm-number">960px</span>) <span class="cm-error">{</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">58</div></div><pre><span class="cm-tab">  </span><span class="cm-builtin">#columns</span> {</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">59</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-meta">-webkit-</span><span class="cm-property">column-count</span><span class="cm-operator">:</span> <span class="cm-number">4</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">60</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-meta">-moz-</span><span class="cm-property">column-count</span><span class="cm-operator">:</span> <span class="cm-number">4</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">61</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-property">column-count</span><span class="cm-operator">:</span> <span class="cm-number">4</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">62</div></div><pre><span class="cm-tab">  </span>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">63</div></div><pre>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">64</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">65</div></div><pre><span class="cm-def">@media</span> (<span class="cm-error">min-width</span><span class="cm-operator">:</span> <span class="cm-number">1100px</span>) <span class="cm-error">{</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">66</div></div><pre><span class="cm-tab">  </span><span class="cm-builtin">#columns</span> {</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">67</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-meta">-webkit-</span><span class="cm-property">column-count</span><span class="cm-operator">:</span> <span class="cm-number">5</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">68</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-meta">-moz-</span><span class="cm-property">column-count</span><span class="cm-operator">:</span> <span class="cm-number">5</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">69</div></div><pre><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-property">column-count</span><span class="cm-operator">:</span> <span class="cm-number">5</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">70</div></div><pre><span class="cm-tab">  </span>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">71</div></div><pre>}</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">72</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">73</div></div><pre><span class="cm-builtin">#columns</span><span class="cm-operator">:</span><span class="cm-tag">hover</span> <span class="cm-qualifier">.pin</span><span class="cm-operator">:</span><span class="cm-tag">not</span>(<span class="cm-operator">:</span><span class="cm-tag">hover</span>) {</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">74</div></div><pre><span class="cm-tab">  </span><span class="cm-property">opacity</span><span class="cm-operator">:</span> <span class="cm-number">0.4</span>;</pre></div><div style="position: relative;"><div style="position: absolute; left: -25px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">75</div></div><pre>}</pre></div></div><div class="CodeMirror-cursor" style="left: 80px; top: 666px; height: 17px;">&nbsp;</div><div class="CodeMirror-cursor CodeMirror-secondarycursor" style="display: none;">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 1394px;"></div><div class="CodeMirror-gutters" style="left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 24px;"></div></div></div></div></div>
+					</div>
+				</div>
+
+				<div class="cb_equal_2" style="display: none;">
+					<span class="editor_label">JavaScript</span>
+					<!--<div class="editor_title js">
+						JavaScript
+						<span class="close_js_code active" data-type="js">x</span>
+					</div>-->
+
+					<!-- Javascript -->
+					<div id="js" class="code_boxes removed" style="display: none;">
+						<textarea name="js" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 25px;"><textarea autocorrect="off" autocapitalize="off" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none; font-size: 4px;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 21px;"><div style="height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div style="position: relative; min-height: 100%;"><div class="CodeMirror-sizer" style="margin-left: 21px; min-height: 26px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>&nbsp;</span></pre></div><div style="position: relative; z-index: 1; display: none;"></div><div style=""><div style="position: relative;"><div style="position: absolute; left: 0px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 12px;">1</div></div><pre>&nbsp;</pre></div></div><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 17px;">&nbsp;</div><div class="CodeMirror-cursor CodeMirror-secondarycursor" style="display: none;">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 26px;"></div><div class="CodeMirror-gutters" style="left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 20px;"></div></div></div></div></div>
+					</div>
+				</div>
+
+			</div>
+			<!--<div class="ui-resizable-handle ui-resizable-e"></div>-->
+		<div class="ui-resizable-handle ui-resizable-n" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90; display: none;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90; display: none;"></div></section>
+
+		<div id="output" class="output">
+
+			<iframe scrolling="no" sandbox="allow-scripts allow-same-origin" src="./CSS-Only Pinterest Style Columns Layout   CSSDeck_files/iframe.html"></iframe>
+			<div id="output_mask" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none;"></div>
+
+		</div>
+
+		
+	</div>
+	<!-- main area wrap -->
+
+	<div id="footer" style="left: 507px;">
+		<p id="foot_tips" style="display: block;">You can code <a href="http://cssdeck.org/post/62/say-hello-to-realtime-collaboration">collaboratively</a>.</p>
+
+		<!-- Player -->
+		<section id="player">
+			<div id="timeline" style="position: absolute; bottom: 30px; right: 10px; left: 70%; height:0.6em;"></div>
+			<div class="player_opts" style="position: absolute; bottom: 10px; left: 10px; right: 30%; top: 10px;">
+				<a href="javascript:void(0);" id="play_button" style="float: right; margin: 2px 15px 0 10px;">▶</a>
+				<a href="javascript:void(0);" id="pause_button" style="float: right; margin: 2px 15px 0 10px;">||</a>
+
+				<ul style="float: right;" class="pb_speed">
+					<li><a href="javascript:void(0);" data-speed="5">5x</a></li>
+					<li><a href="javascript:void(0);" data-speed="10" class="active">10x</a></li>
+					<li><a href="javascript:void(0);" data-speed="15">15x</a></li>
+									</ul>
+
+				<ul style="float: left;">
+					<li><a href="http://cssdeck.com/codecasts">More</a></li>
+					<li><a href="http://cssdeck.com/docs/labs/codecasts" target="_blank">Create</a></li>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+</div>
+
+<script>
+window.__bin = {"user":"kushsolitary","creator":"Kushagra Agarwal","url_slug":"css-only-pinterest-style-columns-layout","bid":377,"bv":0,"pref":{"privacy":"public"},"code":{"html":"<div id=\"wrapper\">\r\n\t<div id=\"columns\">\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/2\/2v3VhAp.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. \r\n\t\t\t\tSed feugiat consectetur pellentesque. Nam ac elit risus, \r\n\t\t\t\tac blandit dui. Duis rutrum porta tortor ut convallis.\r\n\t\t\t\tDuis rutrum porta tortor ut convallis.\r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/1\/1swi3Qy.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tDonec a fermentum nisi. \r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/6\/6f3nXse.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tNullam eget lectus augue. Donec eu sem sit amet ligula \r\n\t\t\t\tfaucibus suscipit. Suspendisse rutrum turpis quis nunc \r\n\t\t\t\tconvallis quis aliquam mauris suscipit.\r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/8\/8kEc1hS.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tNullam eget lectus augue. Donec eu sem sit amet ligula \r\n\t\t\t\tfaucibus suscipit. Suspendisse rutrum turpis quis nunc \r\n\t\t\t\tconvallis quis aliquam mauris suscipit.\r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/1\/1swi3Qy.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tDonec a fermentum nisi. Integer dolor est, commodo ut \r\n\t\t\t\tsagittis vitae, egestas at augue. \r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/6\/6f3nXse.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. \r\n\t\t\t\tSed feugiat consectetur pellentesque. Nam ac elit risus, \r\n\t\t\t\tac blandit dui. Duis rutrum porta tortor ut convallis.\r\n\t\t\t\tDuis rutrum porta tortor ut convallis.\r\n\t\t\t<\/p>\r\n\t\t<\/div>\t\r\n\t\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/2\/2v3VhAp.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tNullam eget lectus augue. Donec eu sem sit amet ligula \r\n\t\t\t\tfaucibus suscipit. Suspendisse rutrum turpis quis nunc \r\n\t\t\t\tconvallis quis aliquam mauris suscipit.\r\n\t\t\t\tDuis rutrum porta tortor ut convallis.\r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/1\/1swi3Qy.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tNullam eget lectus augue. \r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/8\/8kEc1hS.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. \r\n\t\t\t\tSed feugiat consectetur pellentesque. \r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/2\/2v3VhAp.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tDonec a fermentum nisi. Integer dolor est, commodo ut \r\n\t\t\t\tsagittis vitae, egestas at augue. Suspendisse id nulla \r\n\t\t\t\tac urna vestibulum mattis. Duis rutrum porta tortor ut convallis.\r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/1\/1swi3Qy.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tDonec a fermentum nisi. Integer dolor est, commodo ut \r\n\t\t\t\tsagittis vitae, egestas at augue. Suspendisse id nulla \r\n\t\t\t\tac urna vestibulum mattis. \r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/6\/6f3nXse.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. \r\n\t\t\t\tSed feugiat consectetur pellentesque. Nam ac elit risus, \r\n\t\t\t\tac blandit dui. Duis rutrum porta tortor ut convallis.\r\n\t\t\t<\/p>\r\n\t\t<\/div>\t\r\n\t\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/2\/2v3VhAp.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tDonec a fermentum nisi. Integer dolor est, commodo ut \r\n\t\t\t\tsagittis vitae, egestas at augue. Suspendisse id nulla \r\n\t\t\t\tac urna vestibulum mattis. \r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/1\/1swi3Qy.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tDonec a fermentum nisi. Integer dolor est, commodo ut \r\n\t\t\t\tsagittis vitae, egestas at augue. Suspendisse id nulla \r\n\t\t\t\tac urna vestibulum mattis. \r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t\r\n\t\t<div class=\"pin\">\r\n\t\t\t<img src=\"http:\/\/cssdeck.com\/uploads\/media\/items\/6\/6f3nXse.png\" \/>\r\n\t\t\t<p>\r\n\t\t\t\tLorem ipsum dolor sit amet, consectetur adipiscing elit. \r\n\t\t\t\tSed feugiat consectetur pellentesque. Nam ac elit risus, \r\n\t\t\t\tac blandit dui. Duis rutrum porta tortor ut convallis.\r\n\t\t\t<\/p>\r\n\t\t<\/div>\r\n\t<\/div>\r\n<\/div>","css":"body {\r\n\tbackground: url(http:\/\/subtlepatterns.com\/patterns\/scribble_light.png) ;\r\n}\r\n\r\n#wrapper {\r\n\twidth: 90%;\r\n\tmax-width: 1100px;\r\n\tmin-width: 800px;\r\n\tmargin: 50px auto;\r\n}\r\n\r\n#columns {\r\n\t-webkit-column-count: 3;\r\n\t-webkit-column-gap: 10px;\r\n\t-webkit-column-fill: auto;\r\n\t-moz-column-count: 3;\r\n\t-moz-column-gap: 10px;\r\n\t-moz-column-fill: auto;\r\n\tcolumn-count: 3;\r\n\tcolumn-gap: 15px;\r\n\tcolumn-fill: auto;\r\n}\r\n\r\n.pin {\r\n\tdisplay: inline-block;\r\n\tbackground: #FEFEFE;\r\n\tborder: 2px solid #FAFAFA;\r\n\tbox-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);\r\n\tmargin: 0 2px 15px;\r\n\t-webkit-column-break-inside: avoid;\r\n\t-moz-column-break-inside: avoid;\r\n\tcolumn-break-inside: avoid;\r\n\tpadding: 15px;\r\n\tpadding-bottom: 5px;\r\n\tbackground: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);\r\n\topacity: 1;\r\n\t\r\n\t-webkit-transition: all .2s ease;\r\n\t-moz-transition: all .2s ease;\r\n\t-o-transition: all .2s ease;\r\n\ttransition: all .2s ease;\r\n}\r\n\r\n.pin img {\r\n\twidth: 100%;\r\n\tborder-bottom: 1px solid #ccc;\r\n\tpadding-bottom: 15px;\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n.pin p {\r\n\tfont: 12px\/18px Arial, sans-serif;\r\n\tcolor: #333;\r\n\tmargin: 0;\r\n}\r\n\r\n@media (min-width: 960px) {\r\n\t#columns {\r\n\t\t-webkit-column-count: 4;\r\n\t\t-moz-column-count: 4;\r\n\t\tcolumn-count: 4;\r\n\t}\r\n}\r\n\r\n@media (min-width: 1100px) {\r\n\t#columns {\r\n\t\t-webkit-column-count: 5;\r\n\t\t-moz-column-count: 5;\r\n\t\tcolumn-count: 5;\r\n\t}\r\n}\r\n\r\n#columns:hover .pin:not(:hover) {\r\n\topacity: 0.4;\r\n}","js":""},"is_picked":true};window.__default_settings = [];</script>
+
+
+
+<script src="./CSS-Only Pinterest Style Columns Layout   CSSDeck_files/app-cc3107cafe18a4d20011166cb354014a.js"></script>
+
+
+
+<script>
+  setTimeout(function() {
+    var carbon = document.querySelector('.carbonad');
+
+    if (carbon) {
+
+      var adblock_enabled = window
+        .getComputedStyle(carbon, null)
+        .getPropertyValue('display');
+
+      if (adblock_enabled === 'none') {
+        var cont = document.querySelector('#carbonads-container');
+        cont.style.textAlign = 'center';
+        cont.style.height = 'auto';
+        cont.style.setProperty('display', 'block', '!important');
+
+        var paypal = document.createElement('a');
+        paypal.href = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WF8Q5D4LE5N9A";
+        paypal.setAttribute('class', "pp_donate_btn");
+        paypal.textContent = 'Paypal Donate';
+        paypal.style.display = 'inline-block';
+        paypal.style.marginBottom = '10px';
+        paypal.style.color = 'white';
+        paypal.target = "_blank";
+
+        cont.appendChild(paypal);
+
+        var flattr = document.createElement('a');
+        flattr.href = "http://flattr.com/thing/701630/Collection-of-CSS-Creations";
+        flattr.target="_blank";
+
+        var flattr_img = document.createElement('img');
+        flattr_img.src = "http://api.flattr.com/button/flattr-badge-large.png";
+        flattr_img.alt = "Flattr this!"
+        flattr_img.title = "Flattr this!"
+        flattr_img.style.border = "0";
+        flattr_img.style.display = 'block';
+        flattr_img.style.margin = '0 auto';
+
+        flattr.appendChild(flattr_img);
+
+        cont.appendChild(flattr);
+      }
+
+    }
+  }, 1000);
+</script>
+
+<script>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27216990-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+</body></html>

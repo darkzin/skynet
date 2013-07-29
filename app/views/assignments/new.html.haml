@@ -1,41 +1,62 @@
 = form_for Assignment.new do |assignment|
   .row-fluid
-    .span6
-      .choose-subject
-        %span 과제선택
-        .btn-group
-          = link_to "1. #{@subjects.first.title}", subject_path(@subjects.first), class: "btn"
-          %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
-            %span.caret
-          %ul.dropdown-menu
-            - @subjects.each_with_index do |subject, index|
-              %li
-                = link_to "#{index + 2}. #{subject.title}", subject_path(subject)
-
-      .about-subject
-        %p 1. 하노이의 탑
-        %p 제출기한 : 2013년 7월 1일 ~ 2013년 7월 5일
-        %a.btn.btn-primary{ href: "#" } 설명보기
-
-    .span6
-      .choose-problem
-        %span 문제선택
-        .btn-group
-          = link_to "1. #{@problem.title}", subject_path(@subject, @problem), class: "btn"
-          %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              - @problems.each_with_index do |problem, index|
-                = link_to "#{index}. #{problem.title}", subject_problem_path(@subject, problem)
-      .about-problem
-        %p 1) 재귀함수를 이용하여 하노이의 탑을 풀어라.
-        %p 하노이의 탑을 재귀함수를 이용하여 풀어라. 입력값은 3, 4, 5이고, 출력값은 다음과 같아야 한다...
-
-  .row-fluid
     .span12
+      %h3 과제제출
+      .title-bar-thin
+      .title-bar-thick
+  .row-fluid.assignments
+    .span1
+    .span10
+      %span.title 과제선택
+      .btn-group
+        = link_to "1. #{@subjects.first.title}", subject_path(@subjects.first), class: "btn"
+        %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
+          %span.caret
+        %ul.dropdown-menu
+          - @subjects.each_with_index do |subject, index|
+            %li
+              = link_to "#{index + 2}. #{subject.title}", subject_path(subject)
+      .square-box
+        .square-box-title
+          %span 1. 하노이의 탑
+          .square-box-title-right-btn
+            %a.btn.btn-info{ href: "#"} 설명보기
+        .square-box-info
+          %p 제출기한 : 2013년 7월 1일 ~ 2013년 7월 5일
+      .bar
+    .span1
+
+
+  .row-fluid.assignments
+    .span1
+    .span10
+      %span.title 문제선택
+      .btn-group
+        = link_to "1. #{@problem.title}", subject_path(@subject, @problem), class: "btn"
+        %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            - @problems.each_with_index do |problem, index|
+              = link_to "#{index}. #{problem.title}", subject_problem_path(@subject, problem)
+      .square-box
+        .square-box-title
+          %span 1) 재귀함수를 이용하여 하노이의 탑을 풀어라.
+        .square-box-info
+          %p 하노이의 탑을 재귀함수를 이용하여 풀어라. 입력값은 3, 4, 5이고, 출력값은 다음과 같아야 한다...
+      .bar
+    .span1
+
+  .row-fluid.assignments
+    .span1
+    .span10
+      %span.title 파일 업로드
       = assignment.fields_for :file_infos do |file_info|
         = render "assignments/file_info_fields", f: file_info
       = link_to_add_fields "파일 추가", assignment, :assignments, :file_infos
-  = assignment.hidden_field :problem_id, value: @problem.id
-  = assignment.submit "제출", class: "btn btn-primary btn-large"
+      = assignment.hidden_field :problem_id, value: @problem.id
+      .bar
+      = assignment.submit "제출", class: "btn btn-success width150"
+    .span1
+
+.blank

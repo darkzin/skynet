@@ -174,7 +174,7 @@ li {
 
 .bar{
   border-top:1px solid #6cc0ff;
-  margin:10px 0;
+  margin:10px 0 30px;
 }
 
 .margin{
@@ -225,7 +225,9 @@ dd{
     font-weight:bold;
     font-size:1.2em;
     background:#f0f0f0; 
-    border-bottom: 1px solid #e7e7e7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #cccccc;
 
     .square-box-title-right{
       display:inline;
@@ -237,6 +239,8 @@ dd{
       display:inline;
       float:right;
       margin-top:-5px;
+      font-weight:none;
+      font-size: 1em;
     }
 
   }
@@ -252,7 +256,6 @@ dd{
   .square-box-info{
     padding: 7px;
     padding-left: 20px;
-    margin-bottom:30px;
     clear:both;
   }
 }
@@ -273,4 +276,10 @@ dd{
 
 .blank{
   height:100px;
+}
+
+.btn.width150{
+  width:150px;
+  height:40px;
+  margin:10px;
 }
