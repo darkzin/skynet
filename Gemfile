@@ -68,3 +68,4 @@ gem 'mercury-rails'
 # Use jquery file upload.
 gem 'jquery-fileupload-rails'
 
+gem 'rails-i18n'
