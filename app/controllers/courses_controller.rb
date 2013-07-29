@@ -8,10 +8,10 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
 
-    if not(current_student.last_sign_in_at.nil?) && current_student.last_sign_in_at > 7.days.ago
+    if not(current_user.last_sign_in_at.nil?) && current_user.last_sign_in_at > 7.days.ago
       latest_date = 7.days.ago
     else
-      latest_date = current_student.last_sign_in_at
+      latest_date = current_user.last_sign_in_at
     end
 
     @latest_notice = @course.notices.where("created_at >= ?", latest_date).order("created_at DESC")
