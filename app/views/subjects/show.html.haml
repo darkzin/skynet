@@ -20,7 +20,7 @@
     %h3= @subject.title
     .date
       - @subject.deadlines.each_with_index do |deadline, index|
-        - if index == 1
+        - if index == 0
           %p= "제출기한 : #{deadline.from} ~ #{deadline.to}"
         - else
           %p= "추가제출 : #{deadline.from} ~ #{deadline.to}, 페널티 : #{deadline.penalty}"

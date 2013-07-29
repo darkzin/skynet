@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130729051321) do
+ActiveRecord::Schema.define(version: 20130729111000) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20130729051321) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "result"
+    t.integer  "score"
   end
 
   add_index "assignments", ["problem_id"], name: "index_assignments_on_problem_id"

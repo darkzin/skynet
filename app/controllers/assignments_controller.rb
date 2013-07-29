@@ -14,11 +14,12 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.new
     @subjects = Subject.all
     @subject = Subject.find(params[:subject_id])
+    @problems = @subject.problems.all
     @problem = @subject.problems.find(params[:problem_id])
   end
 
   def create
-    @assignment = Assignment.new(params[:assignment])
+    @assignment = Assignment.new(params.require(:assignment).permit!)
 
     if @assignment.save
       redirect_to @assignment, notice: "성공적으로 세출되었습니다."

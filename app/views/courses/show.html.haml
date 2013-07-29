@@ -42,7 +42,7 @@
                   = link_to "설명", subject, class:"button btn btn-small btn-primary"
                 .problem
                   - subject.problems.each_with_index do |problem, index|
-                    = link_to "#{index}. #{problem.title}", subject_problem_path(problem)
+                    = link_to "#{index}. #{problem.title}", subject_problem_path(subject, problem)
 
     .box
       .box-header
@@ -57,4 +57,4 @@
                   = link_to "설명", subject, class:"button btn btn-small btn-primary"
                 .problem
                   - subject.problems.each_with_index do |problem, index|
-                    = link_to "#{index}. #{problem.title}", subject_problem_path(problem)
+                    = link_to "#{index}. #{problem.title}", subject_problem_path(subject, problem)

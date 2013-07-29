@@ -7,7 +7,7 @@
   .span6
     %p 입력값
     %pre.prettyprint.linenums
-      = @assignment.input_data
+      = @problem.input_data
   .span6
     %p 결과
     %dl.dl-horizontal
@@ -19,7 +19,7 @@
       %dd= @assignment.memory_usage
       %dt 걸린 시간
       %dd= @assignment.lead_time
-    %h4= "총점 : #{assignment.score} 점(100점 만점)"
+    %h4= "총점 : #{@assignment.score} 점(100점 만점)"
 
 .row-fluid
   .span6

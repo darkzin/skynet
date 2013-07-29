@@ -53,8 +53,3 @@ ko:
         subject: '비밀번호 변경 확인 메일'
       unlock_instructions:
         subject: '계정 Unlock 메일'
-  activerecord:
-    errors:
-      messages:
-        taken: "이미 다른 계정에 사용되었습니다."
-        too_short: "패스워드가 너무 짧습니다."
