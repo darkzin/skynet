@@ -13,9 +13,12 @@
           %a.brand SkyNet
           %ul.nav
             %li.active
-              %a
-                %i.icon-info-sign.icon-white
-                %span 2006012953, 김창환
+              /= link_to current_user.name 
+            %li.active
+              - if student_signed_in? 
+                = link_to "로그아웃", destroy_student_session_path, :method => :delete
+              - elsif professor_signed_in?
+                = link_to "로그아웃", destroy_professor_session_path, :method => :delete
           .choose_class.pull-right
             .btn-group
               %button.btn 2013년 1학기 컴퓨터 프로그래밍

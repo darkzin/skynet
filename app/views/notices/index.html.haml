@@ -6,10 +6,18 @@
 .row-fluid
   .span2
   .span8
-    .square-box
-      .square-box-title
-        %span 공지공지공지사항
-        .square-box-title-right
-	  %span 2013-07-13, 김교수
-          
+    .none-style-link
+      %a{href: "notice_path"}
+        .square-box
+          .square-box-title
+            %span 공지공지공지사항
+            .square-box-title-right
+              %span 2013-07-13, 김교수
+          .square-box-info
+            %p Yo You need to come it up
+            %p 은 안알랴줌
+            .square-box-more
+              %a.btn.btn-inverse.a-white{href: "notice_path"}
+                %i.icon-plus-sign
+                %span 더보기
   .span2
