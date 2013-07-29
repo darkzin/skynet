@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130726162317) do
+ActiveRecord::Schema.define(version: 20130729031828) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20130726162317) do
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "input_data"
+    t.text     "model_paper"
   end
 
   create_table "deadlines", force: true do |t|
@@ -107,19 +109,20 @@ ActiveRecord::Schema.define(version: 20130726162317) do
   add_index "problems", ["subject_id"], name: "index_problems_on_subject_id"
 
   create_table "professors", force: true do |t|
-    t.string   "email",              default: "", null: false
-    t.string   "encrypted_password", default: "", null: false
-    t.string   "name",               default: "", null: false
-    t.string   "phone_number",       default: "", null: false
+    t.string   "email",               default: "", null: false
+    t.string   "encrypted_password",  default: "", null: false
+    t.string   "name",                default: "", null: false
+    t.string   "phone_number",        default: "", null: false
     t.string   "about"
-    t.integer  "sign_in_count",      default: 0
+    t.integer  "sign_in_count",       default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "failed_attempts",    default: 0
+    t.integer  "failed_attempts",     default: 0
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.datetime "remember_created_at"
   end
 
   create_table "students", force: true do |t|
