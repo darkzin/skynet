@@ -13,9 +13,21 @@ class AssignmentsController < ApplicationController
   def new
     @assignment = Assignment.new
     @subjects = Subject.all
-    @subject = Subject.find(params[:subject_id])
+
+    unless params[:subject_id].nil?
+      @subject = Subject.find(params[:subject_id])
+    else
+      @subject = Subject.last
+    end
+
     @problems = @subject.problems.all
-    @problem = @subject.problems.find(params[:problem_id])
+
+    unless params[:problem_id].nil?
+      @problem = @subject.problems.find(params[:problem_id])
+    else
+      @problem = @subject.problems.last
+    end
+
   end
 
   def create
