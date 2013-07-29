@@ -3,36 +3,39 @@
     .class-title
       %span 2013년 1학기 컴퓨터 프로그래밍
       .buttons.pull-right
-        = link_to "과제보기", subjects_path, class: "btn btn-info btn-large"
-        = link_to "제출하기", new_assignment_path, class: "btn btn-primary btn-large"
-        = link_to "결과보기", assignments_path, class: "btn btn-success btn-large"
+        = link_to "과제보기", subjects_path, class: "btn btn-info"
+        = link_to "제출하기", new_assignment_path, class: "btn btn-success"
+        = link_to "결과보기", assignments_path, class: "btn btn-primary"
+    .title-bar-thin
+    .title-bar-thick
 
 .row-fluid
-  .right-column.span7
-    .box
-      .box-header
-        %h3.box-title
-          최신 공지사항
-          - if professor_signed_in?
-            = link_to "새로 만들기",  new_course_notice_path(@course), class: "btn btn-primary pull-right"
-      .box-body
-        %ul.notice-list#latest-notice
+  .span7
+    .square-box
+      .square-box-title
+        %span 최신 공지사항
+        - if professor_signed_in?
+          .square-box-title-right-btn
+            = link_to "새로 만들기",  new_course_notice_path(@course), class: "btn btn-primary"
+      .square-box-info
+        %table.table.table-hover.table-striped
           - @latest_notice.each do |notice|
-            %li
-              .notice-title
-                %span.title= notice.title
-                %span.date= notice.created_at
-              .notice-detail
-                %p= notice.content
-
-  .left-column.span5
-    .box
-      .box-header
-        %h3.box-title
-          현재 진행중인 과제
-          - if professor_signed_in?
+            %tr
+              %a{href: "notice/#{:notice_id}/show"}
+                %td
+                  .notice-title
+                    %span.title= notice.title
+                    %span.date= notice.created_at
+                  .notice-detail
+                    %p= notice.content
+  .span5
+    .square-box
+      .square-box-title
+        %span 현재 진행중인 과제
+        - if professor_signed_in?
+          .square-box-title-right-btn
             = link_to "새로 만들기",  new_subject_path, class: "btn btn-primary pull-right"
-      .box-body
+      .square-box-info
         %ul.subject-list#ongoing-subject
           - @current_subjects.each do |subject|
             %li
@@ -44,10 +47,10 @@
                   - subject.problems.each_with_index do |problem, index|
                     = link_to "#{index}. #{problem.title}", subject_problem_path(subject, problem)
 
-    .box
-      .box-header
-        %h3.box-title 완료된 과제
-      .box-body
+    .square-box
+      .square-box-title
+        %span 완료된 과제
+      .square-box-info
         %ul.subject-list#outdate-subject
           - @outdate_subjects.each do |subject|
             %li

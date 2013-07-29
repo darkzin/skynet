@@ -1,7 +1,10 @@
 .row#subjects-new-problems
-  .span12.problem-index
+  .span1
+  .span10.problem-index
     %h3 문제 목록
-    %table.table.table-striped
+    .title-bar-thin
+    .title-bar-thick
+    %table.table.table-striped.align-center
       %thead
         %tr
           %th 차례
@@ -24,4 +27,5 @@
             %td
               = link_to "삭제", destroy_problem_path(problem), class: "btn btn-danger", method: "delete"
 
-  = link_to "새로 만들기", new_subject_problem_path, class: "btn btn-primary"
+    = link_to "새로 만들기", new_subject_problem_path, class: "btn btn-success width150"
+  .span1

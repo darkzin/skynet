@@ -11,3 +11,19 @@
 
 
 }
+
+.notice-title{
+  border-bottom: 1px solid #e7e7e7;
+
+  .title{
+    font-size:1.2em;
+    font-weight:bold;
+  }
+  .date{
+    float:right;
+  }
+}
+
+.notice-detail{
+  clear:both;
+}

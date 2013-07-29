@@ -72,14 +72,13 @@ well.bg-white {
  */
 
 .class-title {
-    border-bottom: 1px solid rgb(218, 218, 218);
-    margin-bottom: 2em;
+    //border-bottom: 1px solid rgb(218, 218, 218);
 }
 
 .class-title span {
-    font-size: 2em;
+    font-size: 1.4em;
     font-weight: bold;
-    line-height: 2;
+    line-height: 1.5;
 }
 
 .box {
@@ -241,6 +240,7 @@ dd{
       margin-top:-5px;
       font-weight:none;
       font-size: 1em;
+      
     }
 
   }
@@ -282,4 +282,15 @@ dd{
   width:150px;
   height:40px;
   margin:10px;
+}
+
+.table{
+  .align-center{
+    th{
+      text-align: center;
+    }
+    td{
+      text-align: center;
+    }
+  }
 }
