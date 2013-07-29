@@ -11,14 +11,14 @@
           = f.text_area :about
 
       %h3 채점기준
-      = f.field_for :criterions do |c|
+      = f.fields_for :criterions do |c|
         = render 'problems/criterion_fields', f: c
       = link_to_add_fields "추가", f, :problems, :criterions
 
       %h3 스크립트 파일
-      = f.field_for :scripts do |s|
-        = render 'problems/script_fields', f: c
-      = link_to_add_fields "추가", f, :problems, :scripts
+      = f.fields_for :file_infos do |s|
+        = render 'problems/file_info_fields', f: c
+      = link_to_add_fields "추가", f, :problems, :file_infos
 
       .span6
         %h3 입력데이터
@@ -26,3 +26,5 @@
       .span6
         %h3 모범답안
         = f.text_area :model_paper
+
+      = f.submit "만든다!!", class: "btn btn-success"

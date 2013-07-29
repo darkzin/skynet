@@ -5,4 +5,5 @@ class Problem < ActiveRecord::Base
   has_many :file_infos, as: :category, dependent: :destroy
 
   accepts_nested_attributes_for :criterions
+  accepts_nested_attributes_for :file_infos
 end
