@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+
+  protected
 
   def authenticate_user!
     unless (student_signed_in? || professor_signed_in?) && not(request.path.include? "professors")
@@ -32,5 +36,9 @@ class ApplicationController < ActionController::Base
     else
       nil
     end
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :name, :phone_number) }
   end
 end
