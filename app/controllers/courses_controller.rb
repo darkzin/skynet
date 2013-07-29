@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 class CoursesController < ApplicationController
-before_action :authenticate_professor!
 
   def index
     @courses = current_professor.courses.all
