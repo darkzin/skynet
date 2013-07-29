@@ -8,16 +8,13 @@
   .span8
     .fields-box
       .div-width400
-        = form_for Notice.new do |f|
-          = content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] 
-          = content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice]
-          = content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert]
+        = form_for [@course, @notice] do |f|
           .field
-            = f.label :title 
-            = f.email_field :title, :autofocus => true
+            = f.label :title, "제목"
+            = f.text_field :title, :autofocus => true
           .field
-            = f.label :contents
-            = f.textarea :contents
+            = f.label :content, "내용"
+            = f.text_area :content
           .field  
             = f.submit "등록", class: 'btn btn-success'
   .span2

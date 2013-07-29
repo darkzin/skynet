@@ -4,22 +4,22 @@
     .title-bar-thin
     .title-bar-thick
 .row-fluid
-  .span12
-    .row-fluid
-      .span6
-        %h3 주제
-        %select
-          %option 이거슨 샘플입니다
-          %option 이것도 샘플입니다
-          %option This is Sample
-          %option Is this sample??
-      .span6
-        %h3 문제
-        %select
-          %option 샘플의 귀환
-          %option 리턴 오브 샘플
-          %option 노모어 샘플
-        %a.btn.btn-primary{href:"#"} 검색
+  .span4
+    %h4 주제
+    %select
+      %option 이거슨 샘플입니다
+      %option 이것도 샘플입니다
+      %option This is Sample
+      %option Is this sample??
+  .span4
+    %h4 문제
+    %select
+      %option 샘플의 귀환
+      %option 리턴 오브 샘플
+      %option 노모어 샘플
+    %a.btn.btn-primary.move-10px-to-top{href:"#"} 검색
+  .span4
+.row-fluid
   .span12  
     %table.table.table-striped.table-bordered
       %thead
@@ -39,37 +39,41 @@
           %td Fail 
           %td 24ms
           %td 10KB
+
+.row-fluid
+  .span12
+    %h3 제출 내용
+    .title-bar-thin
+    .title-bar-thick
+.row-fluid
+  #result-wrapper
+    .span6
+      %h4 주제명 : 디바이드 앤 컨커
+      %h4 문제명 : 머지소트 
+      %h4 제출 결과
+      .square-box
+        .square-box-info#result-meta-box
+          %p 제출일시: 2013년 5얼 5일 5시 5분 55초
+          %p 상태: Success
+          %p 소요시간: 105ms
+          %p 메모리 사용량: 100KB
+    .span6
+      %h4 입력데이터
+      %textarea#input-data-box
+        %span 101 102 103
+.row-fluid	  
+  .span12
     .bar
-    #result-wrapper
-      %h2 제출 내용
-      .row
-        .span6
-          %h3 주제명 : 디바이드 앤 컨커
-          %h3 문제명 : 머지소트 
-          .box-header
-            .title
-              제출 결과
-          .box-body#result-meta-box
-            %p 제출일시: 2013년 5얼 5일 5시 5분 55초
-            %p 상태: Success
-            %p 소요시간: 105ms
-            %p 메모리 사용량: 100KB
-        .span6
-          %h3 입력데이터
-          %textarea#input-data-box
-            %span 101 102 103
-        .span12
-          .bar
-      %h3 컴파일 메시지
-      %textarea#compile-message-box
-        %span ohYeah!
-      .bar
-      .row
-        .span6
-          %h3 출력 결과
-          %textarea#result-box
-            %span 이거 과제라고 해왔냐?!
-        .span6
-          %h3 모범 답안
-          %textarea#sample-box
-            %span 이렇게 해야지!
+  %h4 컴파일 메시지
+  %textarea#compile-message-box
+    %span ohYeah!
+  .bar
+.row-fluid
+  .span6
+    %h4 출력 결과
+    %textarea#result-box
+      %span 이거 과제라고 해왔냐?!
+  .span6
+    %h4 모범 답안
+    %textarea#sample-box
+      %span 이렇게 해야지!

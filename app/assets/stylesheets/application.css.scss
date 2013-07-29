@@ -161,19 +161,19 @@ li {
 
 
 .title-bar-thin{
-  border-top:2px solid #002266;
-  //border-top:2px solid #6CC0FF;
+  //border-top:2px solid #002266;
+  border-top:2px solid #6CC0FF;
   margin: 10px 0px 2px 0px;
 }
 
 .title-bar-thick{
-  border-top:5px solid #002266;
-  //border-top:5px solid #6CC0FF;
+  //border-top:5px solid #002266;
+  border-top:5px solid #6CC0FF;
   margin: 0px 0px 20px 0px;
 }
 
 .bar{
-  border-top:1px solid gray;
+  border-top:1px solid #6cc0ff;
   margin:10px 0;
 }
 
@@ -215,7 +215,8 @@ dd{
 .square-box{
   margin:15px 0px;
   background:#ffffff;
-  border:1px solid #e7e7e7;
+  border: 1px solid #cccccc;
+  //border:1px solid #e7e7e7;
   border-radius: 10px; 
   clear:both;
 
@@ -256,12 +257,16 @@ dd{
   }
 }
 
+.move-10px-to-top{
+  margin-top: -10px;
+}
+
 .move-20px-to-top{
-  margin: -20px;
+  margin-top: -20px;
 }
 .move-30px-to-top{
-  margin: -30px;
+  margin-top: -30px;
 }
 .move-40px-to-top{
-  margin: -40px;
+  margin-top: -40px;
 }
