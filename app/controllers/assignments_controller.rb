@@ -20,6 +20,8 @@ class AssignmentsController < ApplicationController
       @subject = Subject.last
     end
 
+    redirect_to courses_path if @subject.nil?
+
     @problems = @subject.problems.all
 
     unless params[:problem_id].nil?
