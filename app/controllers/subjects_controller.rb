@@ -5,6 +5,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
+    @subjects = Subject.all
     @subject = Subject.find(params[:id])
     @files = @subject.file_infos.all
     @problems = @subject.problems.all
