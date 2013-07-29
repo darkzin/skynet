@@ -1,14 +1,13 @@
 .row-fluid
   .span12
-    %h3 제출 결과 #{@subject.order}. #{@subject.title}, #{@problem.order}) #{@problem.title}
+    %h3 #{@subject.order} #{@subject.title}, #{@problem.order} #{@problem.title} 제출 결과
     .title-bar-thin
     .title-bar-thick
 .row-fluid.assignments
   .span6
     %h4 입력데이터
-    %textarea#input-data-box
-      %pre.prettyprint.linenums
-        = @problem.input_data
+    %pre.prettyprint.linenums#input-data-box
+      = @problem.input_data
   .span6
     %h4 제출 결과
     %table.table.table-stripted
@@ -18,7 +17,7 @@
         %tr
           %td= @assignment.created_at
         %tr
-          %td 채점 상태 
+          %td 채점 상태
         %tr
           %td= @assignment.state
         %tr
@@ -40,14 +39,12 @@
 .row-fluid.assignments
   .span6
     %h4 모범 답안
-    %textarea#sample-box
-      %pre.prettyprint.linenums
-        = @assginment.model_paper
+    %pre.prettyprint.linenums#sample-box
+      = @problem.model_paper
   .span6
     %h4 제출 답안
-    %textarea#sample-box
-      %pre.prettyprint.linenums
-        = @assignment.result
+    %pre.prettyprint.linenums#sample-box
+      = @assignment.result
 
 .row-fluid
   .span12
@@ -56,9 +53,6 @@
 .row-fluid
   .span12
     %h4 오류 시 컴파일 에러 출력
-    /.hero-unit= @assignment.compile_message
-    %textarea#compile-message-box
-      .hero-unit=@assignment.compile_message
+    .hero-unit#compile-message-box= @assignment.compile_message
 
 .blank
-

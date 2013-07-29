@@ -4,9 +4,9 @@
     %h4 새로운 문제
     .title-bar-thin
     .title-bar-thick
-    .fields-box
-      .div-width400
-        = form_for Problem.new do |f|
+    = form_for Problem.new do |f|
+      .fields-box
+        .div-width400
           = f.hidden_field :subject_id, value: params[:subject_id]
           .field
             = f.label :title, "제목"
@@ -14,32 +14,32 @@
           .field
             = f.label :about, "설명"
             = f.text_area :about
-      .bar
-      .div-width400
-        %h4 채점기준
-        .field
-          = f.fields_for :criterions do |c|
-            = render 'problems/criterion_fields', f: c
-        .field
-          = link_to_add_fields "추가", f, :problems, :criterions
-      .bar
-      .div-width400
-        %h4 스크립트 파일
-        .field
-          = f.fields_for :file_infos do |s|
-            = render 'problems/file_info_fields', f: c
-        .field
-          = link_to_add_fields "추가", f, :problems, :file_infos
-
-      .row-fluid
-        .span6
-          %h3 입력데이터
+        .bar
+        .div-width400
+          %h4 채점기준
           .field
-            = f.text_area :input_data
-        .span6
-          %h3 모범답안
+            = f.fields_for :criterions do |c|
+              = render 'problems/criterion_fields', f: c
           .field
-            = f.text_area :model_paper
+            = link_to_add_fields "추가", f, :problems, :criterions
+        .bar
+        .div-width400
+          %h4 스크립트 파일
+          .field
+            = f.fields_for :file_infos do |s|
+              = render 'problems/file_info_fields', f: c
+          .field
+            = link_to_add_fields "추가", f, :problems, :file_infos
 
-      = f.submit "생성", class: "btn btn-success"
+        .row-fluid
+          .span6
+            %h3 입력데이터
+            .field
+              = f.text_area :input_data
+          .span6
+            %h3 모범답안
+            .field
+              = f.text_area :model_paper
+
+        = f.submit "생성", class: "btn btn-success"
   .span2

@@ -1,7 +1,28 @@
 # -*- coding: utf-8 -*-
 class AssignmentsController < ApplicationController
   def index
-    @assignments = Assignment.all
+    if student_signed_in?
+      @assignments = current_student.assignments.all
+    else
+      @assignments = Assignment.all
+    end
+
+    @subjects = Subject.all
+
+    unless params[:subject_id].nil?
+      @subject = Subject.find(params[:subject_id])
+    else
+      @subject = Subject.first
+    end
+
+    @problems = @subject.problems.all
+
+    unless params[:problem_id].nil? || @subject.nil?
+      @problem = @subject.problems.find(params[:problem_id])
+    else
+      @problem = @subject.problems.first
+    end
+
   end
 
   def show

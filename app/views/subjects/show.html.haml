@@ -4,7 +4,7 @@
       %li.nav-header 주제목록
       - @subjects.each_with_index do |subject, index|
         %li{class: ("active" if index==1)}
-          =link_to "#{index}. #{subject.title}", subject_path(subject)
+          = link_to "#{index + 1}. #{subject.title}", subject_path(subject)
 
   .span9
     .square-box
@@ -17,7 +17,7 @@
           .alert
             %button.close{data: { dismiss: "alert"}}  &times
             %span 본 주제는 마감되었습니다.
-      .square-box-info  
+      .square-box-info
         %h3= @subject.title
         .date
           - @subject.deadlines.each_with_index do |deadline, index|
