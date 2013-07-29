@@ -2,33 +2,33 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = current_professor.courses.all
+    @courses = current_user.courses.all
   end
 
   def show
-   @course = Course.find(params[:id])
+    @course = Course.find(params[:id])
 
-   if not(current_student.last_sign_in_at.nil?) && current_student.last_sign_in_at > 7.days.ago
-     latest_date = 7.days.ago
-   else
-     latest_date = current_student.last_sign_in_at
-   end
+    if not(current_student.last_sign_in_at.nil?) && current_student.last_sign_in_at > 7.days.ago
+      latest_date = 7.days.ago
+    else
+      latest_date = current_student.last_sign_in_at
+    end
 
-   @latest_notice = @course.notices.where("created_at >= ?", latest_date).order("created_at DESC")
-   @outdate_notice = @course.notices.where("created_at < ?", latest_date).order("created_at DESC")
+    @latest_notice = @course.notices.where("created_at >= ?", latest_date).order("created_at DESC")
+    @outdate_notice = @course.notices.where("created_at < ?", latest_date).order("created_at DESC")
 
-   @current_subjects = Subject.all
-   @outdate_subjects = []
+    @current_subjects = Subject.all
+    @outdate_subjects = []
 
-   @current_subjects.delete_if do |subject|
+    @current_subjects.delete_if do |subject|
 
-     if subject.deadlines.where("'from' >= ? and 'to' <= ?", Date.today, Date.today).empty?
-       @outdate_subjects << subject
-     else
-       false
-     end
+      if subject.deadlines.where("'from' >= ? and 'to' <= ?", Date.today, Date.today).empty?
+        @outdate_subjects << subject
+      else
+        false
+      end
 
-   end
+    end
 
   end
 

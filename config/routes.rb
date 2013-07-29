@@ -1,5 +1,5 @@
 Skynet::Application.routes.draw do
-  root 'courses#show'
+  root 'courses#index'
 
   devise_for :professors
   devise_for :students

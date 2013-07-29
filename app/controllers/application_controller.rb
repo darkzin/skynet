@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def authenticate_user!
-    p params
-    p student_signed_in? || professor_signed_in?
     unless (student_signed_in? || professor_signed_in?) && params[:controller] != "professors"
       authenticate_student!
     end
