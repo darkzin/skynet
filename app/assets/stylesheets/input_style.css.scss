@@ -6,7 +6,7 @@
     }
 
     textarea{
-      min-width:400px;
+      min-width:95%;
       min-height: 400px;
     }
 
@@ -41,6 +41,11 @@
 
   .field-down{
     margin-top:20px;
+  }
+
+  .btn.submit400{
+      width:400px;
+      margin:15px 0px;
   }
 
   .away-from-top-10px{

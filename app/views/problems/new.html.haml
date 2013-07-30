@@ -1,9 +1,12 @@
 .row-fluid
-  .span2
-  .span8.input-style
-    %h4 새로운 문제
+  .span12
+    %h3 새로운 문제
     .title-bar-thin
     .title-bar-thick
+
+.row-fluid
+  .span2
+  .span8.input-style
     = form_for Problem.new do |f|
       .fields-box
         .div-width400
@@ -15,6 +18,7 @@
             = f.label :about, "설명"
             = f.text_area :about
         .bar
+
         .div-width400
           %h4 채점기준
           .field
@@ -23,6 +27,7 @@
           .field
             = link_to_add_fields "추가", f, :problems, :criterions
         .bar
+
         .div-width400
           %h4 스크립트 파일
           .field
@@ -30,16 +35,21 @@
               = render 'problems/file_info_fields', f: c
           .field
             = link_to_add_fields "추가", f, :problems, :file_infos
+        .bar
 
-        .row-fluid
-          .span6
-            %h3 입력데이터
-            .field
-              = f.text_area :input_data
-          .span6
-            %h3 모범답안
-            .field
-              = f.text_area :model_paper
+        .div-width400
+          %h4 입력데이터
+          .field
+            = f.text_area :input_data
+        .bar
 
-        = f.submit "생성", class: "btn btn-success"
+        .div-width400            
+          %h4 모범답안
+          .field
+            = f.text_area :model_paper
+        .bar
+
+        .div-width400
+          .field
+            = f.submit "생성", class: "btn btn-success submit400"
   .span2
