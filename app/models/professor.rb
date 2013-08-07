@@ -10,3 +10,9 @@ class Professor < ActiveRecord::Base
   has_many :courses
   has_many :notices
 end
+
+class Professor::ParameterSanitizer < Devise::ParameterSanitizer
+  def sign_up
+    default_params.permit(:email, :password, :name, :phone_number)
+  end
+end

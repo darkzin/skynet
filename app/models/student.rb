@@ -12,3 +12,9 @@ class Student < ActiveRecord::Base
   has_many :courses, through: :enrolls
   has_many :assignments, dependent: :destroy
 end
+
+class Student::ParameterSanitizer < Devise::ParameterSanitizer
+  def sign_up
+    default_params.permit(:student_number, :email, :password, :name, :phone_number)
+  end
+end

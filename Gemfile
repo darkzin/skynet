@@ -47,7 +47,7 @@ gem 'unicorn'
 gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 # Use haml as default html template.
 gem 'haml-rails'

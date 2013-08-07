@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user!
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  #before_action :configure_permitted_parameters, if: :devise_controller?
 
 
   protected
@@ -38,7 +38,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def devise_parameter_sanitizer
+    if resource_class == Student
+      Student::ParameterSanitizer.new(Student, :student, params)
+    elsif resource_class = Professor
+      Professor::ParameterSanitizer.new(Professor, :professor, params)
+    end
+  end
+
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :name, :phone_number) }
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      debugger
+      u.permit(:email, :password, :name, :phone_number)
+    end
   end
 end
