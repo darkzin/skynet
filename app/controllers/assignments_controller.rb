@@ -41,6 +41,8 @@ class AssignmentsController < ApplicationController
       @subject = Subject.last
     end
 
+    @subjects.delete @subject
+
     redirect_to courses_path if @subject.nil?
 
     @problems = @subject.problems.all
@@ -50,6 +52,8 @@ class AssignmentsController < ApplicationController
     else
       @problem = @subject.problems.last
     end
+
+    @problems.delete @problem
 
   end
 

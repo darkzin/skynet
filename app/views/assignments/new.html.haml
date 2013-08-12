@@ -9,20 +9,24 @@
     .span10
       %span.title 과제선택
       .btn-group
-        = link_to "1. #{@subjects.first.title}", subject_path(@subjects.first), class: "btn"
+        = link_to @subject.title, @subject, class: "btn"
         %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
           %span.caret
         %ul.dropdown-menu
-          - @subjects.each_with_index do |subject, index|
+          - @subjects.each do |subject|
             %li
-              = link_to "#{index + 2}. #{subject.title}", subject_path(subject)
+              = link_to subject.title, subject
       .square-box
         .square-box-title
-          %span 1. 하노이의 탑
+          %span= @subject.title
           .square-box-title-right-btn
-            %a.btn.btn-info{ href: "#"} 설명보기
+            = link_to "설명보기", @subject, class: "btn.btn-info"
         .square-box-info
-          %p 제출기한 : 2013년 7월 1일 ~ 2013년 7월 5일
+
+          %p
+            제출기한 :
+            - @subject.deadlines.each do |deadline|
+              = "#{deadline.from} ~ #{deadline.to}" + ("페널티 : #{deadline.penalty}" if deadline.penalty.to_i > 0)
       .bar
     .span1
 
@@ -32,18 +36,18 @@
     .span10
       %span.title 문제선택
       .btn-group
-        = link_to "1. #{@problem.title}", subject_path(@subject, @problem), class: "btn"
+        = link_to @problem.title, subject_path(@subject, @problem), class: "btn"
         %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
           %span.caret
         %ul.dropdown-menu
           %li
-            - @problems.each_with_index do |problem, index|
-              = link_to "#{index}. #{problem.title}", subject_problem_path(@subject, problem)
+            - @problems.each do |problem|
+              = link_to problem.title, subject_problem_path(@subject, problem)
       .square-box
         .square-box-title
-          %span 1) 재귀함수를 이용하여 하노이의 탑을 풀어라.
+          %span= @problem.title
         .square-box-info
-          %p 하노이의 탑을 재귀함수를 이용하여 풀어라. 입력값은 3, 4, 5이고, 출력값은 다음과 같아야 한다...
+          %p= @problem.about
       .bar
     .span1
 
