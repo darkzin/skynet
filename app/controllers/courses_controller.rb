@@ -8,6 +8,8 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
 
+    current_user.last_selected_course_id = params[:id]
+
     if not(current_user.last_sign_in_at.nil?) && current_user.last_sign_in_at > 7.days.ago
       latest_date = 7.days.ago
     else

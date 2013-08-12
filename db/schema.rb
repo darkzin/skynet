@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130729111000) do
+ActiveRecord::Schema.define(version: 20130812061932) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -46,8 +46,6 @@ ActiveRecord::Schema.define(version: 20130729111000) do
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "input_data"
-    t.text     "model_paper"
     t.integer  "problem_id"
   end
 
@@ -113,29 +111,30 @@ ActiveRecord::Schema.define(version: 20130729111000) do
   add_index "problems", ["subject_id"], name: "index_problems_on_subject_id"
 
   create_table "professors", force: true do |t|
-    t.string   "email",               default: "", null: false
-    t.string   "encrypted_password",  default: "", null: false
-    t.string   "name",                default: "", null: false
-    t.string   "phone_number",        default: "", null: false
+    t.string   "email",                   default: "", null: false
+    t.string   "encrypted_password",      default: "", null: false
+    t.string   "name",                    default: "", null: false
+    t.string   "phone_number",            default: "", null: false
     t.string   "about"
-    t.integer  "sign_in_count",       default: 0
+    t.integer  "sign_in_count",           default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "failed_attempts",     default: 0
+    t.integer  "failed_attempts",         default: 0
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.datetime "remember_created_at"
+    t.integer  "last_selected_course_id"
   end
 
   create_table "students", force: true do |t|
-    t.string   "student_number",         default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "student_number",          default: "", null: false
+    t.string   "encrypted_password",      default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0
+    t.integer  "sign_in_count",           default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -146,6 +145,7 @@ ActiveRecord::Schema.define(version: 20130729111000) do
     t.text     "about"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "last_selected_course_id"
   end
 
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true

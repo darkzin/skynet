@@ -7,29 +7,7 @@
     = csrf_meta_tags
 
   %body
-    .navbar.navbar-inverse
-      .navbar-inner
-        .container
-          %a.brand SkyNet
-          %ul.nav
-            %li.active
-              /= link_to current_user.name 
-            %li.active
-              - if student_signed_in? 
-                = link_to "로그아웃", destroy_student_session_path, :method => :delete
-              - elsif professor_signed_in?
-                = link_to "로그아웃", destroy_professor_session_path, :method => :delete
-          .choose_class.pull-right
-            .btn-group
-              %button.btn 2013년 1학기 컴퓨터 프로그래밍
-              %button.btn.dropdown-toggle{ data: { toggle: "dropdown" } }
-                %span.caret
-              %ul.dropdown-menu
-                %li
-                  = link_to "2013년 1학기 컴퓨터 구조", "#"
-                %li
-                  = link_to "2013년 1학기 컴퓨터 개론", "#"
-                %li
-                  = link_to "2013년 1학기 컴퓨터 알고리즘", "#"
+    .header
+      = render 'layouts/shared/header'
     .container
       = yield
