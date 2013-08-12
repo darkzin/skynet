@@ -3,9 +3,8 @@
     %ul.nav.nav-list.bs-docs-sidenav
       %li.nav-header 주제목록
       - @subjects.each_with_index do |subject, index|
-        %li{class: ("active" if index==1)}
-          = link_to "#{index + 1}. #{subject.title}", subject_path(subject)
-
+        %li{class: ("active" if subject.id.to_i == params[:id].to_i)}
+          = link_to "#{index + 1}. #{subject.title}", subject
   .span9
     .square-box
       .sqaure-box-title

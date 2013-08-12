@@ -3,7 +3,7 @@
     .class-title
       %span 2013년 1학기 컴퓨터 프로그래밍
       .buttons.pull-right
-        = link_to "과제보기", subjects_path, class: "btn btn-info"
+        = link_to "과제보기", @current_subjects.first || @outdate_subjects.first, class: "btn btn-info"
         = link_to "제출하기", new_assignment_path, class: "btn btn-success"
         = link_to "결과보기", assignments_path, class: "btn btn-primary"
     .title-bar-thin
@@ -19,6 +19,8 @@
             = link_to "새로 만들기",  new_course_notice_path(@course), class: "btn btn-primary"
       .square-box-info
         %table.table.table-hover.table-striped
+          - if @latest_notice.empty?
+            %tr 최신 공지사항이 없습니다.
           - @latest_notice.each do |notice|
             %tr
               %a{href: "notice/#{:notice_id}/show"}
@@ -37,6 +39,8 @@
             = link_to "새로 만들기",  new_subject_path, class: "btn btn-primary pull-right"
       .square-box-info
         %ul.subject-list#ongoing-subject
+          - if @current_subjects.empty?
+            %li 현재 진행중인 과제가 없습니다.
           - @current_subjects.each do |subject|
             %li
               .subject
