@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812061932) do
+ActiveRecord::Schema.define(version: 20130813014705) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20130812061932) do
   add_index "assignments", ["student_id"], name: "index_assignments_on_student_id"
 
   create_table "courses", force: true do |t|
-    t.text     "about"
+    t.text     "content"
     t.integer  "professor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20130812061932) do
   add_index "courses", ["professor_id"], name: "index_courses_on_professor_id"
 
   create_table "criterions", force: true do |t|
-    t.string   "title"
+    t.string   "name"
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -91,15 +91,15 @@ ActiveRecord::Schema.define(version: 20130812061932) do
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "title"
+    t.string   "name"
   end
 
   add_index "notices", ["course_id"], name: "index_notices_on_course_id"
   add_index "notices", ["professor_id"], name: "index_notices_on_professor_id"
 
   create_table "problems", force: true do |t|
-    t.string   "title"
-    t.text     "about"
+    t.string   "name"
+    t.text     "content"
     t.integer  "order"
     t.text     "model_paper"
     t.text     "input_data"
@@ -152,8 +152,8 @@ ActiveRecord::Schema.define(version: 20130812061932) do
   add_index "students", ["student_number"], name: "index_students_on_student_number", unique: true
 
   create_table "subjects", force: true do |t|
-    t.string   "title"
-    t.text     "about"
+    t.string   "name"
+    t.text     "content"
     t.integer  "order"
     t.integer  "course_id"
     t.datetime "created_at"

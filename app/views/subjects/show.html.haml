@@ -4,7 +4,7 @@
       %li.nav-header 주제목록
       - @subjects.each_with_index do |subject, index|
         %li{class: ("active" if subject.id.to_i == params[:id].to_i)}
-          = link_to "#{index + 1}. #{subject.title}", subject
+          = link_to "#{index + 1}. #{subject.name}", subject
   .span9
     .square-box
       .sqaure-box-title
@@ -17,7 +17,7 @@
             %button.close{data: { dismiss: "alert"}}  &times
             %span 본 주제는 마감되었습니다.
       .square-box-info
-        %h3= @subject.title
+        %h3= @subject.name
         .date
           - @subject.deadlines.each_with_index do |deadline, index|
             - if index == 0
@@ -26,7 +26,7 @@
               %p= "추가제출 : #{deadline.from} ~ #{deadline.to}, 페널티 : #{deadline.penalty}"
         .about
           %h4 주제 소개
-          %p= @subject.about
+          %p= @subject.content
         .files
           %h4 관련 파일
           %ul.file_down
@@ -39,6 +39,6 @@
           %ul.file_upload
             - @subject.problems.each_with_index do |problem, index|
               %li
-                %span= "#{index}. #{problem.title}"
+                %span= "#{index}. #{problem.name}"
                 = link_to "제출하기", new_assignment_path(subject_id: @subject.id, problem_id: problem.id), class: "btn btn-success pull-right"
                 %p= problem.about

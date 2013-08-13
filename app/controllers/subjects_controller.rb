@@ -15,8 +15,18 @@ class SubjectsController < ApplicationController
   end
 
   def create
-    @subject = Subject.new(params.require(:subject).permit!)
-    p params
+    @course = Course.new(params.permit(:course_id))
+    @subject = @course.subjects.new(params.require(:subject).permit(:name, :content, :deadlines))
+    file_infos = params.require(:subject).permit(:file_infos_attributes => [])[:file_infos_attributes]
+
+    file_infos.each do |file|
+      @subject.file_infos.new(name: file.original_filename, extension: File.extname(file.original_filename), file: file)
+    end
+
+    debugger
+
+    @files
+
     if @subject.save
       redirect_to new_subject_problem_path(@subject), notice: "성공적으로 저장되었습니다."
     else

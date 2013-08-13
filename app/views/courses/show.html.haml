@@ -3,9 +3,22 @@
     .class-title
       %span 2013년 1학기 컴퓨터 프로그래밍
       .buttons.pull-right
-        = link_to "과제보기", @current_subjects.first || @outdate_subjects.first, class: "btn btn-info"
-        = link_to "제출하기", new_assignment_path, class: "btn btn-success"
-        = link_to "결과보기", assignments_path, class: "btn btn-primary"
+        - unless @current_subjects.first.nil? || @outdate_subjects.nil?
+          = link_to "과제보기", @current_subjects.first || @outdate_subjects.first, class: "btn btn-info"
+        - else
+          = link_to "과제없음", @current_course, class: "btn btn-info disabled"
+
+        - unless @current_subjects.first.nil? || @current_subjects.first.problems.first.nil?
+          = link_to "제출하기", new_problem_assignment_path(@current_subjects.first.problems.first), class: "btn btn-success"
+        - else
+          = link_to "제출없음", @current_course, class: "btn btn-success disabled"
+
+        - unless @current_subjects.first.nil? || @current_subjects.first.problems.first.nil?
+          = link_to "결과보기", assignments_path(@current_subjects.first.problems.first), class: "btn btn-primary"
+        - else
+          = link_to "결과없음", @current_course, class: "btn btn-primary disabled"
+
+
     .title-bar-thin
     .title-bar-thick
 

@@ -7,7 +7,13 @@
     = csrf_meta_tags
 
   %body
-    .header
-      = render 'layouts/shared/header'
+    - unless Devise.constants.include? controller.class.name.split('::').last.classify.to_sym
+      .header
+        = render 'layouts/shared/header'
+
     .container
+      - if flash[:notice]
+        .alert
+          %button.close{ type: "button", data: { dismiss: "alert"}} &times;
+          = flash[:notice]
       = yield

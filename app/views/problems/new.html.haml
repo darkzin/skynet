@@ -12,11 +12,11 @@
         .div-width400
           = f.hidden_field :subject_id, value: params[:subject_id]
           .field
-            = f.label :title, "제목"
-            = f.text_field :title
+            = f.label :name, "제목"
+            = f.text_field :name
           .field
-            = f.label :about, "설명"
-            = f.text_area :about
+            = f.label :content, "설명"
+            = f.text_area :content
         .bar
 
         .div-width400
@@ -33,8 +33,9 @@
           .field
             = f.fields_for :file_infos do |s|
               = render 'problems/file_info_fields', f: c
-          .field
-            = link_to_add_fields "추가", f, :problems, :file_infos
+          /
+            .field
+              = link_to_add_fields "추가", f, :problems, :file_infos
         .bar
 
         .div-width400
@@ -43,7 +44,7 @@
             = f.text_area :input_data
         .bar
 
-        .div-width400            
+        .div-width400
           %h4 모범답안
           .field
             = f.text_area :model_paper

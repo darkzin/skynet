@@ -14,16 +14,17 @@ Skynet::Application.routes.draw do
 
   resources :courses do
     resources :notices
+    resources :subjects
   end
-
-  resources :assignments, concern: :file
 
   resources :subjects, concerns: :file do
     resources :problems
     resources :deadlines
   end
 
-  resources :problems, concerns: :file
+  resources :problems, concerns: :file do
+    resources :assignments, concern: :file
+  end
 
   resources :criterions
 

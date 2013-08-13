@@ -12,13 +12,13 @@
           %h4 과제 기본 내용 설정
           .control-group
             .field
-              = subject.label :title, "과제명", class: "control-label"
+              = subject.label :name, "과제명", class: "control-label"
               .controls
-                = subject.text_field :title, placeholder: "과제명을 입력하세요."
+                = subject.text_field :name, placeholder: "과제명을 입력하세요."
             .field
-              = subject.label :about, "과제 내용", class: "control-label"
+              = subject.label :content, "과제 내용", class: "control-label"
               .controls
-                = subject.text_area :about
+                = subject.text_area :content
           .bar
 
           %h4 과제 파일 추가
