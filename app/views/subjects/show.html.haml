@@ -32,13 +32,13 @@
           %ul.file_down
             - @subject.file_infos.each do |file_info|
               %li
-                %span= file_info.file.identifier
-                = link_to "내려받기", '#', class: "btn btn-primary pull-right"
+                %span= file_info.name
+                = link_to "내려받기", '#', class: "btn btn-primary"
         .problems
           %h4 문제
           %ul.file_upload
             - @subject.problems.each_with_index do |problem, index|
               %li
                 %span= "#{index}. #{problem.name}"
-                = link_to "제출하기", new_assignment_path(subject_id: @subject.id, problem_id: problem.id), class: "btn btn-success pull-right"
-                %p= problem.about
+                = link_to "제출하기", new_problem_assignment_path(problem), class: "btn btn-success pull-right"
+                %p= problem.content
