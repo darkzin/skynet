@@ -11,7 +11,8 @@ class CoursesController < ApplicationController
 
     redirect_to courses_path, notice: "등록된 수업이 없습니다. 관계자에게 문의하세요." if @course.nil?
 
-    current_user.last_selected_course_id = params[:id]
+    current_user.last_selected_course_id = params.permit(:id)[:id]
+    current_user.save
 
     if not(current_user.last_sign_in_at.nil?) && current_user.last_sign_in_at > 7.days.ago
       latest_date = 7.days.ago
@@ -32,7 +33,6 @@ class CoursesController < ApplicationController
         false
       end
     end
-
   end
 
   def new
