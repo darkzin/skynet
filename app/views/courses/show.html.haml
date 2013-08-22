@@ -1,7 +1,7 @@
 .row-fluid
   .span12
     .class-title
-      %span 2013년 1학기 컴퓨터 프로그래밍
+      %span= "#{@course.year.to_s}년 #{@course.term.to_s}학기 #{@course.name}"
       .buttons.pull-right
         - unless @current_subjects.first.nil? || @outdate_subjects.nil?
           = link_to "과제보기", @current_subjects.first || @outdate_subjects.first, class: "btn btn-info"
