@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
 class NoticesController < ApplicationController
   def index
-    @course = Course.find(params.permit(:course_id))
+    @course = Course.find(params.permit(:course_id)[:course_id])
     @notices = @course.notices.all
   end
 
   def show
-    @course = Course.find(params.permit(:course_id))
-    @notice = @course.notices.find(params.permit(:id))
+    @course = Course.find(params.permit(:course_id)[:course_id])
+    @notice = @course.notices.find(params.permit(:id)[:id])
   end
 
   def new
-    @course = Course.find(params.permit(:course_id))
+    @course = Course.find(params.permit(:course_id)[:course_id])
     @notice = @course.notices.new
   end
 
   def create
-    @course = Course.find(params.permit(:course_id))
+    @course = Course.find(params.permit(:course_id)[:course_id])
     @notice = @course.notices.build(params.require(:notice).permit(:name, :content))
 
     if @notice.save
@@ -29,12 +29,12 @@ class NoticesController < ApplicationController
   end
 
   def edit
-    @course = Course.find(params.permit(:course_id))
-    @notice = @course.notices.find(params.permit(:id))
+    @course = Course.find(params.permit(:course_id)[:course_id])
+    @notice = @course.notices.find(params.permit(:id)[:id])
   end
 
   def update
-    @course = Course.find(params.permit(:course_id))
+    @course = Course.find(params.permit(:course_id)[:course_id])
     @notice = @course.notices.update_attributes(params.require(:notice).permit(:name, :content))
 
     if @notice.save
@@ -46,7 +46,7 @@ class NoticesController < ApplicationController
   end
 
   def delete
-    @course = Course.find(params.permit(:course_id))
-    @notice = @course.notices.find(params.permit(:id))
+    @course = Course.find(params.permit(:course_id)[:course_id])
+    @notice = @course.notices.find(params.permit(:id)[:id])
   end
 end
