@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
-class NoticesController < ApplicationController
+class NoticesController < AppliquerycationController
   def index
-    @course = Course.find(params[:course_id])
+    @course = Course.find(params.permit(:course_id))
     @notices = @course.notices.all
   end
 
   def show
-    @course = Course.find(params[:course_id])
-    @notice = @course.notices.find(params[:id])
+    @course = Course.find(params.permit(:course_id))
+    @notice = @course.notices.find(params.permit(:id))
   end
 
   def new
-    @course = Course.find(params[:course_id])
+    @course = Course.find(params.permit(:course_id))
     @notice = @course.notices.new
   end
 
   def create
-    @course = Course.find(params[:course_id])
-    @notice = @course.notices.build(params[:notice])
+    @course = Course.find(params.permit(:course_id))
+    @notice = @course.notices.build(params.require(:notice).permit(:name, :content))
 
     if @notice.save
       redirect_to course_notices_path, notice: "공지사항이 성공적으로 등록되었습니다."
@@ -29,13 +29,13 @@ class NoticesController < ApplicationController
   end
 
   def edit
-    @course = Course.find(params[:course_id])
-    @notice = @course.notices.find(params[:id])
+    @course = Course.find(params.permit(:course_id))
+    @notice = @course.notices.find(params.permit(:id))
   end
 
   def update
-    @course = Course.find(params[:course_id])
-    @notice = @course.notices.update_attributes(params[:notice])
+    @course = Course.find(params.permit(:course_id))
+    @notice = @course.notices.update_attributes(params.require(:notice).permit(:name, :content))
 
     if @notice.save
       redirect_to course_notices_path, notice: "공지사항이 성공적으로 등록되었습니다."
@@ -46,7 +46,7 @@ class NoticesController < ApplicationController
   end
 
   def delete
-    @course = Course.find(params[:course_id])
-    @notice = @course.notices.find(params[:id])
+    @course = Course.find(params.permit(:course_id))
+    @notice = @course.notices.find(params.permit(:id))
   end
 end
