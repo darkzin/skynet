@@ -27,8 +27,9 @@ class AssignmentsController < ApplicationController
 
   def show
     @assignment = Assignment.find(params[:id])
-    @problem = Problem.find(@assignment.problem_id)
-    @subject = Subject.find(@problem.subject_id)
+    @problem = @assignment.problem
+    @subject = @problem.subject
+    @course = @subject.course
   end
 
   def new
