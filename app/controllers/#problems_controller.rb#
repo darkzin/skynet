@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+class ProblemsController < ApplicationController
+  def index
+  end
+
+  def new
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def create
+    @problem = Problem.new(params.require(:problem).permit(:name, :content, criterions_attributes: [:name, :score], file_infos_attributes: [:file])
+    if @problem.save
+      redirect_to new_subject_problem_path(params[:subject_id]), notice: ""
+    else
+      redirect_to new_subject_problem_path(params[:subject_id]), notice: "저장에 실패하였습니다. 다시 시도 해주세요"
+    end
+  end
+
+  def delete
+  end
+
+  def show
+  end
+end
