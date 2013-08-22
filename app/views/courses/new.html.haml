@@ -7,7 +7,7 @@
   .span2
   .span8
     .fields-box
-      .div-width400      
+      .div-width400
         =form_for Course.new do |f|
           .field
             = f.label :name, "과목명"
@@ -19,8 +19,8 @@
             = f.label :term, "학기"
             = f.text_field :term
           .field
-            = f.label :about, "설명"
-            = f.text_area :about
+            = f.label :content, "설명"
+            = f.text_area :content
           .field
             = f.submit "생성", class: 'btn btn-primary'
   .span2

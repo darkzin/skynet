@@ -10,11 +10,11 @@
       .div-width400
         = form_for [@course, @notice] do |f|
           .field
-            = f.label :title, "제목"
-            = f.text_field :title, :autofocus => true
+            = f.label :name, "제목"
+            = f.text_field :name, :autofocus => true
           .field
             = f.label :content, "내용"
             = f.text_area :content
-          .field  
+          .field
             = f.submit "등록", class: 'btn btn-success'
   .span2
