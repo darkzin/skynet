@@ -12,7 +12,7 @@
           .square-box-title
             = link_to notice.name, course_notice_path(notice.course, notice)
             .square-box-title-right
-              %span= "#{notice.created_at}, #{notice.professor.name}"
+              %span= "#{notice.updated_at}, #{notice.professor.name}"
           .square-box-info
             %p= notice.content
             .square-box-more

@@ -17,7 +17,9 @@ class NoticesController < ApplicationController
 
   def create
     @course = Course.find(params.permit(:course_id)[:course_id])
-    @notice = @course.notices.build(params.require(:notice).permit(:name, :content))
+    notice_params = params.require(:notice).permit(:name, :content)
+    notice_params[:professor_id] = current_professor.id
+    @notice = @course.notices.build(notice_params)
 
     if @notice.save
       redirect_to course_notices_path, notice: "공지사항이 성공적으로 등록되었습니다."
