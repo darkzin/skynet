@@ -10,14 +10,16 @@
             = link_to "로그아웃", destroy_student_session_path, :method => :delete
           - elsif professor_signed_in?
             = link_to "로그아웃", destroy_professor_session_path, :method => :delete
-      - if @current_user_courses.any?
-        .choose_class.pull-right
+      .choose_class.pull-right
+        %ul.nav
+          %li.active
+            = link_to "수업 리스트 보기", courses_path
+        - if @current_user_courses.any?
           .btn-group
-            %button.btn
-              = link_to @current_user_course.name, @current_user_course
+            = link_to @current_user_course.name, @current_user_course, class: "btn"
             %button.btn.dropdown-toggle{ data: { toggle: "dropdown" } }
               %span.caret
-              %ul.dropdown-menu
-                - @current_user_courses.each do |course|
-                  %li
-                    = link_to course.name, course
+            %ul.dropdown-menu
+              - @current_user_courses.each do |course|
+                %li
+                  = link_to course.name, course
