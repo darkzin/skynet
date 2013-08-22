@@ -12,6 +12,8 @@ class SubjectsController < ApplicationController
   end
 
   def new
+    @course = Course.find(params.permit(:course_id)[:course_id])
+    @subject = @course.subjects.new
   end
 
   def create
