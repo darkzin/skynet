@@ -26,13 +26,11 @@ class CoursesController < ApplicationController
     @outdate_subjects = []
 
     @current_subjects.delete_if do |subject|
-
-      if subject.deadlines.where("'from' >= ? and 'to' <= ?", Date.today, Date.today).empty?
+      if subject.deadlines.where("start <= ?", DateTime.now).where("end >= ?", DateTime.now).empty?
         @outdate_subjects << subject
       else
         false
       end
-
     end
 
   end

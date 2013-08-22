@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130813014705) do
+ActiveRecord::Schema.define(version: 20130822084727) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 20130813014705) do
   add_index "criterions", ["problem_id"], name: "index_criterions_on_problem_id"
 
   create_table "deadlines", force: true do |t|
-    t.datetime "from"
+    t.datetime "start"
     t.integer  "penalty"
     t.integer  "subject_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "to"
+    t.datetime "end"
   end
 
   add_index "deadlines", ["subject_id"], name: "index_deadlines_on_subject_id"
