@@ -8,10 +8,9 @@
   .span8
     .square-box
       .square-box-title
-        %span 공지...*^^* 뿌잉뿌잉
+        %span= @notice.name
       .square-box-subinfo.pull-right
-        %span 2016년 3월 17일, 조교
+        %span= "#{@notice.updated_at}, #{@notice.professor.name}"
       .square-box-info
-        %p 안개빛~ 조명은 하아~ 흩으러진 내 몸을 감싸고오~오오오~ 술에 취해 비틀거리는~ 워 예~ 나의 모습 이제는 싫어~ 스뜨르르 예~
+        %p= @notice.content
   .span2
-    
