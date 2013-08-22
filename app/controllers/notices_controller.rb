@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class NoticesController < AppliquerycationController
+class NoticesController < ApplicationController
   def index
     @course = Course.find(params.permit(:course_id))
     @notices = @course.notices.all
