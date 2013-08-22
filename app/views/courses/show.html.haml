@@ -39,7 +39,7 @@
               %a{href: "notice/#{:notice_id}/show"}
                 %td
                   .notice-title
-                    %span.title= notice.title
+                    %span.title= notice.name
                     %span.date= notice.created_at
                   .notice-detail
                     %p= notice.content
@@ -57,12 +57,12 @@
           - @current_subjects.each do |subject|
             %li
               .subject
-                %span.title= subject.title
+                %span.title= subject.name
                 .btn-group.pull-right
                   = link_to "설명", subject, class:"button btn btn-small btn-primary"
                 .problem
                   - subject.problems.each_with_index do |problem, index|
-                    = link_to "#{index}. #{problem.title}", subject_problem_path(subject, problem)
+                    = link_to "#{index}. #{problem.name}", subject_problem_path(subject, problem)
 
     .square-box
       .square-box-title
@@ -72,9 +72,9 @@
           - @outdate_subjects.each do |subject|
             %li
               .subject
-                %span.title= subject.title
+                %span.title= subject.name
                 .btn-group.pull-right
                   = link_to "설명", subject, class:"button btn btn-small btn-primary"
                 .problem
                   - subject.problems.each_with_index do |problem, index|
-                    = link_to "#{index}. #{problem.title}", subject_problem_path(subject, problem)
+                    = link_to "#{index}. #{problem.name}", subject_problem_path(subject, problem)
