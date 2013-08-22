@@ -9,13 +9,13 @@
     .span10
       %span.title 과제선택
       .btn-group
-        = link_to @subject.name, @subject, class: "btn"
+        = link_to @subject.name, new_problem_assignment_path(@subject.problems.first), class: "btn"
         %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
           %span.caret
         %ul.dropdown-menu
           - @subjects.each do |subject|
             %li
-              = link_to subject.name, subject
+              = link_to subject.name, new_problem_assignment_path(subject.problems.first)
       .square-box
         .square-box-title
           %span= @subject.name
@@ -36,13 +36,13 @@
     .span10
       %span.title 문제선택
       .btn-group
-        = link_to @problem.name, subject_path(@subject), class: "btn"
+        = link_to @problem.name, new_problem_assignment_path(@problem), class: "btn"
         %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
           %span.caret
         %ul.dropdown-menu
           %li
             - @problems.each do |problem|
-              = link_to problem.name, subject_problem_path(@subject, problem)
+              = link_to problem.name, new_problem_assignment_path(problem)
       .square-box
         .square-box-title
           %span= @problem.name

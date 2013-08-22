@@ -34,8 +34,9 @@ class AssignmentsController < ApplicationController
   def new
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
     @assignment = @problem.assignments.new
-    @subjects = Subject.all.to_a
     @subject = @problem.subject
+    @course = @subject.course
+
 
     # unless params[:subject_id].nil?
     #   @subject = Subject.find(params[:subject_id])
@@ -43,6 +44,7 @@ class AssignmentsController < ApplicationController
     #   @subject = Subject.last
     # end
 
+    @subjects = @course.subjects.all.to_a
     @subjects.delete @subject
 
     redirect_to courses_path if @subject.nil?
