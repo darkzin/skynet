@@ -11,9 +11,9 @@
         %span 주제내용
         .spaure-box-title-right-btn
           = link_to "편집", edit_subject_path(@subject), class: "btn btn-warning pull-right"
-      - if @subject.deadlines.last.to < Time.now
+      - if @subject.deadlines.last.end < Time.now
         .square-box-subinfo
-          .alert
+          .alert.alert-warning
             %button.close{data: { dismiss: "alert"}}  &times
             %span 본 주제는 마감되었습니다.
       .square-box-info
@@ -21,9 +21,9 @@
         .date
           - @subject.deadlines.each_with_index do |deadline, index|
             - if index == 0
-              %p= "제출기한 : #{deadline.from} ~ #{deadline.to}"
+              %p= "제출기한 : #{deadline.start} ~ #{deadline.end}"
             - else
-              %p= "추가제출 : #{deadline.from} ~ #{deadline.to}, 페널티 : #{deadline.penalty}"
+              %p= "추가제출 : #{deadline.start} ~ #{deadline.end}, 페널티 : #{deadline.penalty}"
         .about
           %h4 주제 소개
           %p= @subject.content
