@@ -17,8 +17,28 @@ class FileUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    debugger
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    category_type = model.category_type.underscore
+
+    case category_type
+    when "subject" then
+      subject = Subject.find(model.category_id)
+      course = subject.course
+      "uploads/courses/#{course.id}/subjects/#{subject.id}"
+    when "problem" then
+      problem = Problem.find(model.category_id)
+      subject = problem.subject
+      course = subject.course
+      "uploads/courses/#{course.id}/subjects/#{subject.id}/problems/#{problem.id}"
+    when "assignment" then
+      assignment = Assignment.find(model.category_id)
+      problem = assignment.problem
+      subject = problem.subject
+      course = subject.course
+      "uploads/courses/#{course.id}/subjects/#{subject.id}/problems/#{problem.id}/assignments/#{assignment.id}"
+    else
+      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    end
+
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
