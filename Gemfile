@@ -63,11 +63,15 @@ gem 'carrierwave'
 gem 'devise', '~> 3.0.0.rc'
 
 # Use mercury editor.
-gem 'mercury-rails'
+#gem 'mercury-rails'
 
 # Use jquery file upload.
-gem 'jquery-fileupload-rails'
+#gem 'jquery-fileupload-rails'
 
 gem 'rails-i18n'
 
 gem 'browser'
+
+gem 'modernizr-rails'
+
+gem 'jquery-ui-rails'
