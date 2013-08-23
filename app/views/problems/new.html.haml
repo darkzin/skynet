@@ -23,7 +23,7 @@
         .div-width400
           %h4 채점기준
           .field
-            = fields_for :criterions do |c|
+            = f.fields_for :criterions do |c|
               = render 'problems/criterion_fields', f: c
           .field
             = link_to_add_fields "추가", f, :problems, :criterions
@@ -32,11 +32,17 @@
         .div-width400
           %h4 스크립트 파일
           .field
-            = fields_for :file_infos do |f|
+            = f.fields_for :file_infos do |f|
               = render 'problems/file_info_fields', f: f
           /
             .field
               = link_to_add_fields "추가", f, :problems, :file_infos
+        .bar
+
+        .div-width400
+          %h4 컴파일 명령어
+          .field
+            = f.text :compile_command
         .bar
 
         .div-width400

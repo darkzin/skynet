@@ -6,6 +6,8 @@ class ProblemsController < ApplicationController
   def new
     @subject = Subject.find(params.permit(:subject_id)[:subject_id])
     @problem = @subject.problems.new
+    @problem.criterions.build
+    @problem.file_infos.build
   end
 
   def edit
