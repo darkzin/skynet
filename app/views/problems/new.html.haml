@@ -8,7 +8,7 @@
 .row-fluid
   .span2
   .span8.input-style
-    = form_for Problem.new do |f|
+    = form_for [@subject, @problem] do |f|
       .fields-box
         .div-width400
           = f.hidden_field :subject_id, value: params[:subject_id]
