@@ -5,8 +5,16 @@
     .title-bar-thick
 .row-fluid
   .span4
-    %h4 주제
-    = collection_select(:assignment, :subject_id, @subjects, :id, :title)
+    %h4 과제선택
+    .btn-group
+        = link_to @subject.name, new_problem_assignment_path(@subject.problems.first), class: "btn"
+        %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
+          %span.caret
+        %ul.dropdown-menu
+          - @subjects.each do |subject|
+            %li
+              = link_to subject.name, problem_assignments_path(subject.problems.first)
+    /= collection_select(:assignment, :subject_id, @subjects, :id, :title)
     /
       %select
         %option 이거슨 샘플입니다
@@ -14,14 +22,22 @@
         %option This is Sample
         %option Is this sample??
   .span4
-    %h4 문제
-    = collection_select(:assignment, :problem_id, @problems, :id, :title)
+    %h4 문제선택
+    .btn-group
+        = link_to @problem.name, new_problem_assignment_path(@problem), class: "btn"
+        %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            - @problems.each do |problem|
+              = link_to problem.name, problem_assignments_path(problem)
+    /= collection_select(:assignment, :problem_id, @problems, :id, :title)
     /
       %select
         %option 샘플의 귀환
         %option 리턴 오브 샘플
         %option 노모어 샘플
-    = link_to "검색", "#", id: "assignments_search_btn", class: "btn btn-primary move-10px-to-top"
+    /= link_to "검색", "#", id: "assignments_search_btn", class: "btn btn-primary move-10px-to-top"
   .span4
 .row-fluid.assignments
   .span12

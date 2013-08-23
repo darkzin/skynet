@@ -26,7 +26,7 @@
           %p
             제출기한 :
             - @subject.deadlines.each do |deadline|
-              = "#{deadline.from} ~ #{deadline.to}" + (deadline.penalty.to_i > 0 ? "페널티 : #{deadline.penalty.to_s}" : "" )
+              = "#{deadline.start} ~ #{deadline.end}" + (deadline.penalty.to_i > 0 ? "페널티 : #{deadline.penalty.to_s}" : "" )
       .bar
     .span1
 
