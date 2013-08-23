@@ -28,6 +28,7 @@ GEM
     arel (4.0.0)
     atomic (1.1.10)
     bcrypt-ruby (3.0.1)
+    browser (0.2.0)
     builder (3.1.4)
     capistrano (2.15.4)
       highline
@@ -187,6 +188,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  browser
   capistrano
   carrierwave
   coffee-rails (~> 4.0.0)

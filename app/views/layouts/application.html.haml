@@ -23,7 +23,12 @@
           = flash[:success]
 
       - if flash[:alert]
-        .alert.alert-danger
+        .alert.alert-warning
           %button.close{ type: "button", data: { dismiss: "alert"}} &times;
           = flash[:alert]
+
+      - if flash[:error]
+        .alert.alert-danger
+          %button.close{ type: "button", data: { dismiss: "alert"}} &times;
+          = flash[:error]
       = yield

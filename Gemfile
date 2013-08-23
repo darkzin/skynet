@@ -69,3 +69,5 @@ gem 'mercury-rails'
 gem 'jquery-fileupload-rails'
 
 gem 'rails-i18n'
+
+gem 'browser'
