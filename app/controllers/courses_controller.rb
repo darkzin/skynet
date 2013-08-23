@@ -23,12 +23,12 @@ class CoursesController < ApplicationController
     @latest_notice = @course.notices.where("created_at >= ?", latest_date).order("created_at DESC")
     @outdate_notice = @course.notices.where("created_at < ?", latest_date).order("created_at DESC")
 
-    @current_subjects = @course.subjects.all
-    @outdate_subjects = []
+    @outdate_subjects = @course.subjects.all
+    @current_subjects = []
 
-    @current_subjects.delete_if do |subject|
-      if subject.deadlines.where("start <= ?", DateTime.now).where("end >= ?", DateTime.now).empty?
-        @outdate_subjects << subject
+    @outdate_subjects.delete_if do |subject|
+      if subject.deadlines.where("start <= ?", DateTime.now).where("end >= ?", DateTime.now).any?
+        @current_subjects << subject
       else
         false
       end

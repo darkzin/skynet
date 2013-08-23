@@ -41,20 +41,23 @@
   .span4
 .row-fluid.assignments
   .span12
-    %table.table.table-striped
-      %thead
-        %tr
-          %th 제출번호
-          %th 상태
-          %th 소요시간
-          %th 메모리 사용량
-          %th 결과보기
-      %tbody
-        - @assignments.each_with_index do |assignment, index|
-          %tr{class: assignment.state}
-            %td= index
-            %td= assignment.state
-            %td= "#{assignment.lead_time}ms"
-            %td= "#{assignment.memory_usage}KB"
-            %td= link_to "결과보기" , assignment_path(assignment), class: 'btn btn-info'
+    - if @assignments.any?
+      %table.table.table-striped
+        %thead
+          %tr
+            %th 제출번호
+            %th 상태
+            %th 소요시간
+            %th 메모리 사용량
+            %th 결과보기
+        %tbody
+          - @assignments.each_with_index do |assignment, index|
+            %tr{class: assignment.state}
+              %td= index
+              %td= assignment.state
+              %td= "#{assignment.lead_time}ms"
+              %td= "#{assignment.memory_usage}KB"
+              %td= link_to "결과보기" , assignment_path(assignment), class: 'btn btn-info'
+    - else
+      %p 문제에 제출된 결과가 존재하지 않습니다.
 .blank
