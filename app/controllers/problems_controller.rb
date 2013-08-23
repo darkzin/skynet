@@ -5,6 +5,7 @@ class ProblemsController < ApplicationController
 
   def new
     @subject = Subject.find(params.permit(:subject_id)[:subject_id])
+    @problem = @subject.problems.new
   end
 
   def edit

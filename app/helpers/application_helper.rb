@@ -1,3 +1,4 @@
+# -*- coding: undecided -*-
 module ApplicationHelper
   def link_to_add_fields(name, f, parent, association)
     new_object = f.object.send(association).klass.new
@@ -7,4 +8,13 @@ module ApplicationHelper
     end
     link_to(name, '#', class: "add_fields btn btn-primary", data: {id: id, fields: fields.gsub("\n", "")})
   end
+
+  def time_localize_dateTime(time)
+    time.localtime.strftime("%Y년 %-m월 %-d일, %H시 %M분")
+  end
+
+  def time_localize_date(time)
+    time.localtime.strftime("%Y년 %-m월 %-d일")
+  end
+
 end
