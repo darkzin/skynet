@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823121342) do
+ActiveRecord::Schema.define(version: 20130823122021) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20130823121342) do
     t.integer  "subject_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "compile_command"
   end
 
   add_index "problems", ["subject_id"], name: "index_problems_on_subject_id"
