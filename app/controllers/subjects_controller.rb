@@ -18,7 +18,7 @@ class SubjectsController < ApplicationController
 
   def create
     @course = Course.find(params.permit(:course_id)[:course_id])
-    @subject = @course.subjects.new(params.require(:subject).permit(:name, :content, deadlines_attributes: [:from, :to, :penalty]))
+    @subject = @course.subjects.new(params.require(:subject).permit(:name, :content, deadlines_attributes: [:start, :end, :penalty]))
     debugger
     file_infos = params.require(:subject).permit(:file_infos_attributes => [])[:file_infos_attributes]
     file_infos.each do |file|
