@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20130822084727) do
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "input_data"
+    t.text     "model_paper"
     t.integer  "problem_id"
   end
 
