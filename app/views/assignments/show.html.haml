@@ -57,6 +57,24 @@
 
 .row-fluid
   .span12
+    %h4 교수님 한마디
+    .square-box
+      .square-box-info
+        %span 드럽게 못했네.. 나가죽어
+      .square-box-under-info
+        %span 조성홍 2013-09-01 12:23
+        = link_to "삭제",'#',class: "btn btn-small btn-alert"
+      .square-box-clear
+    
+    .square-box
+      .square-box-info
+        = text_area :comment
+      .square-box-under-info
+        =link_to "등록", '#', class: "btn btn-small btn-primary"
+      .square-box-clear
+
+.row-fluid
+  .span12
     = link_to "과목 페이지로 돌아가기", @course, class: "btn btn-primary"
 
-.blank
+.nk
