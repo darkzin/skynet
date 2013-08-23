@@ -1,4 +1,4 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
 module ApplicationHelper
   def link_to_add_fields(name, f, parent, association)
     new_object = f.object.send(association).klass.new

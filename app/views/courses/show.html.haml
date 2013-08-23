@@ -40,7 +40,7 @@
                 %td
                   .notice-title
                     %span.title= notice.name
-                    %span.date= notice.created_at
+                    %span.date= time_localize_date(notice.created_at)
                   .notice-detail
                     %p= notice.content
   .span5
