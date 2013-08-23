@@ -9,6 +9,7 @@ class Professor < ActiveRecord::Base
 
   has_many :courses
   has_many :notices
+  has_many :comments
 end
 
 class Professor::ParameterSanitizer < Devise::ParameterSanitizer
