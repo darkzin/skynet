@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  compile_command: MyString
+  course_id: 
+
+two:
+  compile_command: MyString
+  course_id: 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823022210) do
+ActiveRecord::Schema.define(version: 20130823121342) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -107,6 +107,15 @@ ActiveRecord::Schema.define(version: 20130823022210) do
 
   add_index "notices", ["course_id"], name: "index_notices_on_course_id"
   add_index "notices", ["professor_id"], name: "index_notices_on_professor_id"
+
+  create_table "options", force: true do |t|
+    t.string   "compile_command"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "options", ["course_id"], name: "index_options_on_course_id"
 
   create_table "problems", force: true do |t|
     t.string   "name"
