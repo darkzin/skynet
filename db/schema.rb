@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130822084727) do
+ActiveRecord::Schema.define(version: 20130823022210) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20130822084727) do
 
   add_index "assignments", ["problem_id"], name: "index_assignments_on_problem_id"
   add_index "assignments", ["student_id"], name: "index_assignments_on_student_id"
+
+  create_table "comments", force: true do |t|
+    t.text     "content"
+    t.integer  "professor_id"
+    t.integer  "assignment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["assignment_id"], name: "index_comments_on_assignment_id"
+  add_index "comments", ["professor_id"], name: "index_comments_on_professor_id"
 
   create_table "courses", force: true do |t|
     t.text     "content"
