@@ -23,7 +23,7 @@
 
           %h4 과제 파일 추가
           .field
-            = fields_for :file_infos do |file_info|
+            = subject.fields_for :file_infos do |file_info|
               = render "subjects/file_info_fields", f: file_info
             = link_to_add_fields "추가", subject, :subjects, :file_infos
           .bar
