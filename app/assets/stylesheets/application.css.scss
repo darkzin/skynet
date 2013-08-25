@@ -213,7 +213,7 @@ dd{
 }
 
 .square-box{
-  margin:15px 0px;
+  margin:15px 10px;
   background:#ffffff;
   border: 1px solid #cccccc;
   //border:1px solid #e7e7e7;
@@ -306,6 +306,22 @@ dd{
   }
 }
 
+table a:hover{
+  text-decoration:none;
+  color:black;
+}
+table a:visited{
+  text-decoration:none;
+  color:black;
+}
+table a:active{
+  text-decoration:none;
+  color:black;
+}
+table a:link{
+  text-decoration:none;
+  color:black;
+}
 .add_fields{
   width:95%;
 }

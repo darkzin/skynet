@@ -1,15 +1,14 @@
+.row-fluid
+  .span12
+    %h3= @subject.name
+    .title-bar-thin
+    .title-bar-thick
 .row-fluid#subjects-show
-  .span3
-    %ul.nav.nav-list.bs-docs-sidenav
-      %li.nav-header 주제목록
-      - @subjects.each_with_index do |subject, index|
-        %li{class: ("active" if subject.id.to_i == params[:id].to_i)}
-          = link_to "#{index + 1}. #{subject.name}", subject
   .span9
     .square-box
-      .sqaure-box-title
-        %span 주제내용
-        .spaure-box-title-right-btn
+      .square-box-title
+        %span= @subject.name 
+        .square-box-title-right-btn
           = link_to "편집", edit_subject_path(@subject), class: "btn btn-warning pull-right"
       - if @subject.deadlines.last.end < Time.now
         .square-box-subinfo
@@ -45,3 +44,9 @@
                 %span= "#{index + 1}. #{problem.name}"
                 = link_to "제출하기", new_problem_assignment_path(problem), class: "btn btn-success pull-right"
                 %p= problem.content
+  .span3
+    %ul.nav.nav-list.bs-docs-sidenav
+      %li.nav-header 주제목록
+      - @subjects.each_with_index do |subject, index|
+        %li{class: ("active" if subject.id.to_i == params[:id].to_i)}
+          = link_to "#{index + 1}. #{subject.name}", subject

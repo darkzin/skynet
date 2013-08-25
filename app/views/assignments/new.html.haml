@@ -59,6 +59,10 @@
         = render "assignments/file_info_fields", f: file_info
       /= link_to_add_fields "파일 추가", assignment, :assignments, :file_infos
       /= assignment.hidden_field :problem_id, value: @problem.id
+      .uploaded-files
+         .file
+           %i.icon-file
+            %span 파일 이름
       .bar
       = assignment.submit "제출", class: "btn btn-success width150"
     .span1

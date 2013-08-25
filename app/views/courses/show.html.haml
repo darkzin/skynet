@@ -36,8 +36,8 @@
             %tr 최신 공지사항이 없습니다.
           - @latest_notice.each do |notice|
             %tr
-              %a{href: "notice/#{:notice_id}/show"}
-                %td
+              %td
+                %a{href: "notice/#{notice.id}/show"}
                   .notice-title
                     %span.title= notice.name
                     %span.date= time_localize_date(notice.created_at)

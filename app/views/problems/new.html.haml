@@ -34,6 +34,10 @@
           .field
             = problem.fields_for :file_infos do |f|
               = render 'problems/file_info_fields', f: f
+          .uploaded-files
+            .file
+              %i.icon-file
+              %span 파일 이름
 
         .bar
 

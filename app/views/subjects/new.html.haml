@@ -27,6 +27,10 @@
               = render "subjects/file_info_fields", f: file_info
             - unless multiple_file_supported?
               = link_to_add_fields "추가", subject, :subjects, :file_infos
+          .uploaded-files
+            .file
+              %i.icon-file
+              %span 파일 이름
           .bar
 
           %h4 제출 기한 설정
