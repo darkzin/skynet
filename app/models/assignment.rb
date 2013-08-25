@@ -4,6 +4,10 @@ class Assignment < ActiveRecord::Base
   has_many :file_infos, as: :category, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  accepts_nested_attributes_for :file_infos
+  validates :state, presence: true
+  validates :lead_time, presence: true
+  validates :memory_usage, presence: true
+  validates :result, presence: true
 
+  accepts_nested_attributes_for :file_infos
 end
