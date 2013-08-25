@@ -21,19 +21,22 @@
         .date
           - @subject.deadlines.each_with_index do |deadline, index|
             - if index == 0
-              %p= "제출기한 : #{deadline.start} ~ #{deadline.end}"
+              %p= "제출기한 : #{time_localize_dateTime(deadline.start)} ~ #{time_localize_dateTime(deadline.end)}"
             - else
-              %p= "추가제출 : #{deadline.start} ~ #{deadline.end}, 페널티 : #{deadline.penalty}"
+              %p= "추가제출 : #{time_localize_dateTime(deadline.start)} ~ #{time_localize_dateTime(deadline.end)}, 페널티 : #{deadline.penalty}"
         .about
           %h4 주제 소개
-          %p= @subject.content
+          %p= simple_format(@subject.content)
         .files
           %h4 관련 파일
-          %ul.file_down
-            - @subject.file_infos.each do |file_info|
-              %li
-                %span= file_info.name
-                = link_to "내려받기", '#', class: "btn btn-primary"
+          - if @subject.file_infos.empty?
+            %h5 관련 파일이 없습니다.
+          - else
+            %ul.file_down
+              - @subject.file_infos.each do |file_info|
+                %li
+                  %span= file_info.name
+                  = link_to "내려받기", '#', class: "btn btn-primary"
         .problems
           %h4 문제
           %ul.file_upload
