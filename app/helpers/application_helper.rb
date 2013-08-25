@@ -20,5 +20,4 @@ module ApplicationHelper
   def multiple_file_supported?
     browser.modern? && (not browser.ie9?)
   end
-
 end

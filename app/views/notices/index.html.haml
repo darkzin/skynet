@@ -14,9 +14,9 @@
           .square-box-title
             = link_to notice.name, course_notice_path(notice.course, notice)
             .square-box-title-right
-              %span= "#{notice.updated_at}, #{notice.professor.name}"
+              %span= "#{time_localize_date(notice.updated_at)}, #{notice.professor.name}"
           .square-box-info
-            %p= notice.content
+            %p= truncate(notice.content, length: 40, seperator: ' ')
             .square-box-more
               = link_to course_notice_path(notice.course, notice), class: "btn btn-inverse a-white" do
                 %i.icon-plus-sign

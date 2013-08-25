@@ -55,7 +55,7 @@
     .span1
     .span10
       %span.title 파일 업로드
-      = fields_for :file_infos do |file_info|
+      = assignment.fields_for :file_infos do |file_info|
         = render "assignments/file_info_fields", f: file_info
       /= link_to_add_fields "파일 추가", assignment, :assignments, :file_infos
       /= assignment.hidden_field :problem_id, value: @problem.id

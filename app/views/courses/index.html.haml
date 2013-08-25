@@ -11,12 +11,12 @@
     - @courses.each do |course|
       .square-box
         .square-box-title
-          %span=course.name
+          %span= course.name
           - if student_signed_in?
             .square-box-title-right-btn
               = link_to '수업 선택', select_course_student_path(current_student, course_id: course.id),method: :post,  class: 'btn btn-info'
         .square-box-subinfo
           %span= "#{course.year}년도 #{course.term}학기 #{course.professor.name} 교수님"
         .square-box-info
-          %span= course.content
+          %span= truncate(course.content, length: 40, seperator: ' ')
   .span1

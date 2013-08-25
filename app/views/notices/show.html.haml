@@ -12,7 +12,7 @@
       .square-box-title
         %span= @notice.name
       .square-box-subinfo.pull-right
-        %span= "#{@notice.updated_at}, #{@notice.professor.name}"
+        %span= "#{time_localize_date(@notice.updated_at)}, #{@notice.professor.name}"
       .square-box-info
-        %p= @notice.content
+        %p= simple_format(@notice.content)
   .span2

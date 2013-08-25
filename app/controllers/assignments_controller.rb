@@ -43,7 +43,7 @@ class AssignmentsController < ApplicationController
     @subject = @problem.subject
     @course = @subject.course
 
-
+    assignment.file_infos.build
     # unless params[:subject_id].nil?
     #   @subject = Subject.find(params[:subject_id])
     # else
