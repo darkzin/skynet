@@ -42,6 +42,6 @@
           %ul.file_upload
             - @subject.problems.each_with_index do |problem, index|
               %li
-                %span= "#{index}. #{problem.name}"
+                %span= "#{index + 1}. #{problem.name}"
                 = link_to "제출하기", new_problem_assignment_path(problem), class: "btn btn-success pull-right"
                 %p= problem.content

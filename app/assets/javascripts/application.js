@@ -24,21 +24,28 @@
 $(function(){
     // make code pretty
     window.prettyPrint && prettyPrint();
+  if(!Modernizr.inputtypes.date){
+    $("input[type=date]").datepicker();
+  }
+
+  if(!Modernizr.inputtypes.number){
+    $("input[type=number]").spinner();
+  }
+
 });
 
-Modernizr.load([
+/*Modernizr.load([
   {
-        test: Modernizr.inputtypes.date,
-        nope: "js/jquery-ui.custom.js",
+        test: ,
+        nope: "assets,
         callback: function() {
-          $("input[type=date]").datepicker();
+
         }
   },
   {
         test: Modernizr.inputtypes.number,
-        nope: "js/jquery-ui.custom.js",
         callback: function() {
           $("input[type=number]").spinner();
         }
   }
-]);
+]);*/

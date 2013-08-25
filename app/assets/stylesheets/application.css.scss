@@ -10,6 +10,7 @@
  *
  *= require_tree .
  *= require google-code-prettify-rails/prettify
+ *= require jquery.ui.all
  *= require_self
  */
 
@@ -26,7 +27,7 @@ body {
 }
 
 li.L0, li.L1, li.L2, li.L3,
-li.L5, li.L6, li.L7, li.L8{ 
+li.L5, li.L6, li.L7, li.L8{
 list-style-type: decimal !important;
 }
 
@@ -124,7 +125,7 @@ well.bg-white {
 
 .notice-title {
     border-bottom: 1px solid rgb(218, 218, 218);
-    
+
 }
 
 .notice-title .title {
@@ -136,7 +137,7 @@ well.bg-white {
     color: rgb(65, 131, 196);
     float: right;
 }
-    
+
 
 .notice-list, .homework-list {
     margin-top: 0px;
@@ -216,14 +217,14 @@ dd{
   background:#ffffff;
   border: 1px solid #cccccc;
   //border:1px solid #e7e7e7;
-  border-radius: 10px; 
+  border-radius: 10px;
   clear:both;
 
   .square-box-title{
     padding:10px;
     font-weight:bold;
     font-size:1.2em;
-    background:#f0f0f0; 
+    background:#f0f0f0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom: 1px solid #cccccc;
@@ -240,7 +241,7 @@ dd{
       margin-top:-5px;
       font-weight:none;
       font-size: 1em;
-      
+
     }
 
   }
@@ -249,7 +250,7 @@ dd{
     padding: 7px;
     padding-left: 20px;
     border-bottom: 1px solid #e7e7e7;
-    
+
     clear:both;
   }
 
@@ -264,7 +265,7 @@ dd{
     float:right;
     font-size:0.7em;
   }
-  
+
   .square-box-clear{
     clear:both;
   }
