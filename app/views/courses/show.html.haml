@@ -42,7 +42,7 @@
                     %span.title= notice.name
                     %span.date= time_localize_date(notice.created_at)
                   .notice-detail
-                    %p= notice.content
+                    %p= truncate(notice.content, length: 40, seperator: ' ')
   .span5
     .square-box
       .square-box-title

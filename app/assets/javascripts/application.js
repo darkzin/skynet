@@ -17,7 +17,7 @@
 //= require turbolinks
 //= require google-code-prettify-rails/prettify
 //= require google-code-prettify-rails/lang-clj
-//= require jquery-fileupload
+// require jquery-fileupload
 //= require_tree .
 //= require_self
 
