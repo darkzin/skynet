@@ -68,7 +68,7 @@ class AssignmentsController < ApplicationController
   end
 
   def create
-    @problem = Problem.find(params.permit(:problem_id)[:problem_id].to_i)
+    @problem = Problem.find(params.permit(:problem_id)[:problem_id])
     @assignment = @problem.assignments.new
     file_infos = params.require(:assignment).permit(:file_infos_attributes => [])[:file_infos_attributes]
     file_infos.each do |file|
@@ -76,9 +76,9 @@ class AssignmentsController < ApplicationController
     end
 
     if @assignment.save
-      redirect_to @assignment, notice: "성공적으로 제출되었습니다."
+      redirect_to @assignment, success: "과제가 성공적으로 제출되었습니다."
     else
-      render :new
+      render :new, error: "과제 제출에 실패하였습니다." + @assignment.errors.full_messages.join(" ")
     end
 
   end

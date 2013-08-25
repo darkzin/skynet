@@ -6,16 +6,15 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.find(params[:id])
+    @course = Course.find(params.permit(:id)[:id])
 
-
-    redirect_to courses_path, notice: "등록된 수업이 없습니다. 관계자에게 문의하세요." if @course.nil?
+    redirect_to courses_path, warning: "등록된 수업이 없습니다. 관리자에게 문의하세요." if @course.nil?
 
     current_user.last_selected_course_id = params.permit(:id)[:id]
     current_user.save
 
     if not(current_user.last_sign_in_at.nil?) && current_user.last_sign_in_at > 7.days.ago
-      latest_date = 7.days.ago
+      latest_date = 1.week.ago
     else
       latest_date = current_user.last_sign_in_at
     end
@@ -36,46 +35,40 @@ class CoursesController < ApplicationController
   end
 
   def new
-    @course = Course.new
+    @course = current_professor.courses.new
   end
 
   def create
-
-    @course = current_professor.courses.new(params.require(:course).permit!)
+    @course = current_professor.courses.new(params.require(:course).permit(:name, :content, :year, :term))
 
     if @course.save
-      redirect_to @course, notice: "성공적으로 저장되었습니다."
+      current_user.last_selected_course_id = @course.id
+      redirect_to @course, success: "새로운 과목이 성공적으로 개설되었습니다. 이제 과제를 만들어주세요."
     else
-      render :new
+      render :new, error: "과제 개설에 실패했습니다. " + @course.errors.full_messages.join(" ")
     end
 
   end
 
   def edit
-
-    @course = current_professor.courses.find(params[:id])
-
+    @course = current_professor.courses.find(params.permit(:id)[:id])
   end
 
   def delete
-
-    @course = current_professor.courses.find(params[:id])
+    @course = current_professor.courses.find(params.permit(:id)[:id])
     @course.destroy
 
-    redirect_to courses_path, notice: "성공적으로 삭제되었습니다."
-
+    redirect_to courses_path, notice: "과목이 성공적으로 폐지되었습니다."
   end
 
   def update
+    @course = current_professor.courses.find(params.permit(:id)[:id])
 
-    @course = current_professor.courses.find(params[:id])
-
-    if @course.update_attributes(params[:course])
-      redirect_to @course, notice: "성공적으로 반영되었습니다."
+    if @course.update_attributes(params.require(:course).permit(:name, :content, :year, :term))
+      redirect_to @course, notice: "과목의 내용이 성공적으로 수정되었습니다."
     else
-      render edit
+      render edit, error: "과목 내용 수정에 실패하였습니다. " + @course.errors.full_messages.join(" ")
     end
-
   end
 
 end
