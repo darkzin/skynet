@@ -15,7 +15,7 @@ Skynet::Application.routes.draw do
   end
 
   concern :file do
-    resources :file_infos, only:[:index, :create, :destroy]
+    resources :file_infos, only:[:index, :create, :destroy, :show]
   end
 
   resources :courses do

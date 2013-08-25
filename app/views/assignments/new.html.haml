@@ -20,7 +20,7 @@
         .square-box-title
           %span= @subject.name
           .square-box-title-right-btn
-            = link_to "설명보기", @subject, class: "btn.btn-info"
+            = link_to "설명보기", @subject, class: "btn btn-info"
         .square-box-info
 
           %p
@@ -60,9 +60,9 @@
       /= link_to_add_fields "파일 추가", assignment, :assignments, :file_infos
       /= assignment.hidden_field :problem_id, value: @problem.id
       .uploaded-files
-         .file
-           %i.icon-file
-            %span 파일 이름
+        .file
+          %i.icon-file
+          %span 파일 이름
       .bar
       = assignment.submit "제출", class: "btn btn-success width150"
     .span1
