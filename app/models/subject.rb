@@ -4,5 +4,7 @@ class Subject < ActiveRecord::Base
   has_many :problems, dependent: :destroy
   has_many :deadlines, dependent: :destroy
 
+  validates :deadlines, presence: true
+
   accepts_nested_attributes_for :deadlines, :file_infos, :problems
 end

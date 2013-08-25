@@ -25,7 +25,8 @@
           .field
             = subject.fields_for :file_infos do |file_info|
               = render "subjects/file_info_fields", f: file_info
-            = link_to_add_fields "추가", subject, :subjects, :file_infos
+            - unless multiple_file_supported?
+              = link_to_add_fields "추가", subject, :subjects, :file_infos
           .bar
 
           %h4 제출 기한 설정

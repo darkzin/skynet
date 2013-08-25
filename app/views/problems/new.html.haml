@@ -8,56 +8,54 @@
 .row-fluid
   .span2
   .span8.input-style
-    = form_for [@subject, @problem] do |f|
+    = form_for [@subject, @problem] do |problem|
       .fields-box
         .div-width400
-          = f.hidden_field :subject_id, value: params[:subject_id]
+          = problem.hidden_field :subject_id, value: params[:subject_id]
           .field
-            = f.label :name, "제목"
-            = f.text_field :name
+            = problem.label :name, "제목"
+            = problem.text_field :name
           .field
-            = f.label :content, "설명"
-            = f.text_area :content
+            = problem.label :content, "설명"
+            = problem.text_area :content
         .bar
 
         .div-width400
           %h4 채점기준
           .field
-            = f.fields_for :criterions do |c|
+            = problem.fields_for :criterions do |c|
               = render 'problems/criterion_fields', f: c
           .field
-            = link_to_add_fields "추가", f, :problems, :criterions
+            = link_to_add_fields "추가", problem, :problems, :criterions
         .bar
 
         .div-width400
           %h4 스크립트 파일
           .field
-            = f.fields_for :file_infos do |f|
+            = problem.fields_for :file_infos do |f|
               = render 'problems/file_info_fields', f: f
-          /
-            .field
-              = link_to_add_fields "추가", f, :problems, :file_infos
+
         .bar
 
         .div-width400
           %h4 컴파일 명령어
           .field
-            = f.text :compile_command
+            = problem.text_field :compile_command
         .bar
 
         .div-width400
           %h4 입력데이터
           .field
-            = f.text_area :input_data
+            = problem.text_area :input_data
         .bar
 
         .div-width400
           %h4 모범답안
           .field
-            = f.text_area :model_paper
+            = problem.text_area :model_paper
         .bar
 
         .div-width400
           .field
-            = f.submit "생성", class: "btn btn-success submit400"
+            = problem.submit "생성", class: "btn btn-success submit400"
   .span2

@@ -17,4 +17,8 @@ module ApplicationHelper
     time.localtime.strftime("%Y년 %-m월 %-d일")
   end
 
+  def multiple_file_supported?
+    browser.modern? && (not browser.ie9?)
+  end
+
 end

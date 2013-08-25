@@ -6,8 +6,9 @@
     }
 
     textarea{
-      min-width:95%;
+      min-width:100%;
       min-height: 400px;
+      resize: none;
     }
 
     .a-white{
@@ -29,7 +30,7 @@
 
     padding:10px;
     margin-bottom:30px;
-    label{ 
+    label{
       font-weight:bold;
     }
   }
