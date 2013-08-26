@@ -31,7 +31,6 @@ class FileInfosController < ApplicationController
   end
 
   def show
-    debugger
     @file_info = FileInfo.find(params.permit(:id)[:id])
     #uploader.retrieve_from_store!(@file_info.file.
     send_file @file_info.file.path

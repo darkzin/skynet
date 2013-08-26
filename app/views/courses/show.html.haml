@@ -59,10 +59,10 @@
               .subject
                 %span.title= subject.name
                 .btn-group.pull-right
-                  = link_to "설명", subject, class:"button btn btn-small btn-primary"
+                  = link_to "설명", [@course, subject], class:"button btn btn-small btn-primary"
                 .problem
                   - subject.problems.each_with_index do |problem, index|
-                    = link_to "#{index + 1}. #{problem.name}", subject_problem_path(subject, problem)
+                    = link_to "#{index + 1}. #{problem.name}", new_problem_assignment_path(problem)
 
     .square-box
       .square-box-title

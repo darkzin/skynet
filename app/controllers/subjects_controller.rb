@@ -5,8 +5,19 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @subjects = @current_course.subjects.where("start < ?", DateTime.now)
-    @subject = Subject.find(params.permit(:id)[:id])
+    @course = Course.find(params.permit(:course_id)[:course_id])
+    @subjects = @course.subjects.all
+
+    @subjects.delete_if do |subject|
+      subject.deadlines.each do |deadline|
+        if deadline.start <= DateTime.now
+          return false
+        end
+      end
+      true
+    end
+
+    @subject = @course.subjects.find(params.permit(:id)[:id])
     @files = @subject.file_infos.all
     @problems = @subject.problems.all
   end

@@ -4,6 +4,12 @@
     .title-bar-thin
     .title-bar-thick
 .row-fluid#subjects-show
+  .span3
+    %ul.nav.nav-list.bs-docs-sidenav
+      %li.nav-header 주제목록
+      - @subjects.each_with_index do |subject, index|
+        %li{class: ("active" if subject.id == @subject.id)}
+          = link_to "#{index + 1}. #{subject.name}", subject
   .span9
     .square-box
       .square-box-title
@@ -44,9 +50,3 @@
                 %span= "#{index + 1}. #{problem.name}"
                 = link_to "제출하기", new_problem_assignment_path(problem), class: "btn btn-success pull-right"
                 %p= problem.content
-  .span3
-    %ul.nav.nav-list.bs-docs-sidenav
-      %li.nav-header 주제목록
-      - @subjects.each_with_index do |subject, index|
-        %li{class: ("active" if subject.id.to_i == params[:id].to_i)}
-          = link_to "#{index + 1}. #{subject.name}", subject
