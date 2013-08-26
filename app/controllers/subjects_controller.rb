@@ -5,7 +5,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @subjects = @current_course.subjects.all.to_a
+    @subjects = @current_course.subjects.where("start < ?", DateTime.now)
     @subject = Subject.find(params.permit(:id)[:id])
     @files = @subject.file_infos.all
     @problems = @subject.problems.all
@@ -22,8 +22,9 @@ class SubjectsController < ApplicationController
     @course = Course.find(params.permit(:course_id)[:course_id])
     @subject = @course.subjects.new(params.require(:subject).permit(:name, :content, deadlines_attributes: [:start, :end, :penalty]))
 
-    file_infos = params.require(:subject).permit(file_infos_attributes: [])[:file_infos_attributes]
-    file_infos.each do |file|
+    uploaded_files = params.require(:subject).permit(file_infos_attributes: [])[:file_infos_attributes]
+    uploaded_files.each do |file|
+      debugger
       @subject.file_infos.new(name: file.original_filename, extension: File.extname(file.original_filename), file: file)
     end
 

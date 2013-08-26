@@ -20,4 +20,9 @@ module ApplicationHelper
   def multiple_file_supported?
     browser.modern? && (not browser.ie9?)
   end
+
+  def is_this_mine?(master, association, slave)
+    @association = master.send(association).find(slave)
+    not @association.nil?
+  end
 end

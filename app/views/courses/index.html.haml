@@ -11,7 +11,10 @@
     - @courses.each do |course|
       .square-box
         .square-box-title
-          %span= course.name
+          - if professor_signed_in? && is_this_mine?(current_professor, :courses, course)
+            = link_to course.name, course
+          - else
+            %span= course.name
           - if student_signed_in?
             .square-box-title-right-btn
               = link_to '수업 선택', select_course_student_path(current_student, course_id: course.id),method: :post,  class: 'btn btn-info'

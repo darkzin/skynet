@@ -15,20 +15,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_in_path_for(resource_or_scope)
-    @courses = current_user.courses.all
-
-    if @courses.count == 0
-      courses_path
-    else
-      course_path(@courses.first)
-    end
-  end
-
-  def print_params
-    p params
-  end
-
   def current_user
     if student_signed_in?
       current_student
@@ -36,14 +22,6 @@ class ApplicationController < ActionController::Base
       current_professor
     else
       nil
-    end
-  end
-
-  def devise_parameter_sanitizer
-    if resource_class == Student
-      Student::ParameterSanitizer.new(Student, :student, params)
-    elsif resource_class = Professor
-      Professor::ParameterSanitizer.new(Professor, :professor, params)
     end
   end
 
@@ -58,5 +36,33 @@ class ApplicationController < ActionController::Base
 
     @current_user_courses.delete @current_user_course
   end
+
+  def after_sign_in_path_for(resource_or_scope)
+    @current_user_courses ||= []
+
+    if @current_user_courses.empty?
+      courses_path
+    else
+      course_path(@current_user_course)
+    end
+  end
+
+  def devise_parameter_sanitizer
+    if resource_class == Student
+      Student::ParameterSanitizer.new(Student, :student, params)
+    elsif resource_class = Professor
+      Professor::ParameterSanitizer.new(Professor, :professor, params)
+    end
+  end
+
+  def print_params
+    p params
+  end
+
+  def are_you_root?
+    current_professor.email == "root@hanyang.ac.kr"
+  end
+
+  
 
 end
