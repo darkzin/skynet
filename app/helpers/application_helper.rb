@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def is_this_mine?(master, association, slave)
-    @association = master.send(association).find(slave)
+    @association = master.send(association).find_by_id(slave.id)
     not @association.nil?
   end
 end
