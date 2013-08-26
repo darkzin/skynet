@@ -21,8 +21,8 @@ class ProblemsController < ApplicationController
   end
 
   def create
-
-    @problem = Problem.new(params.require(:problem).permit(:name, :content, :input_data, :model_paper, :compile_command, criterions_attributes: [:name, :score], file_infos_attributes: [:file]))
+    @subject = Subject.find(params.permit(:subject_id)[:subject_id])
+    @problem = @subject.problems.new(params.require(:problem).permit(:name, :content, :input_data, :model_paper, :compile_command, criterions_attributes: [:name, :score], file_infos_attributes: [:file]))
     if @problem.save
       redirect_to new_subject_problem_path(params[:subject_id]), flash: { success: "문제를 성공적으로 저장했습니다. 다음 문제를 입력해주세요."}
     else
