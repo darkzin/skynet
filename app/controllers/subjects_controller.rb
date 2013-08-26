@@ -5,7 +5,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @subjects = Subject.all
+    @subjects = @current_course.subjects.all.to_a
     @subject = Subject.find(params.permit(:id)[:id])
     @files = @subject.file_infos.all
     @problems = @subject.problems.all
