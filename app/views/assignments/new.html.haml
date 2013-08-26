@@ -20,7 +20,7 @@
         .square-box-title
           %span= @subject.name
           .square-box-title-right-btn
-            = link_to "설명보기", @subject, class: "btn btn-info"
+            = link_to "설명보기", [@course, @subject], class: "btn btn-info"
         .square-box-info
 
           %p
