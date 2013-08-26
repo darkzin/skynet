@@ -11,8 +11,13 @@
     .square-box
       .square-box-title
         %span= @notice.name
-      .square-box-subinfo.pull-right
-        %span= "#{time_localize_date(@notice.updated_at)}, #{@notice.professor.name}"
+        .square-box-title-right-btn
+          =link_to "수정", '#', class: "btn btn-success"
+          =link_to "삭제", '#', class: "btn btn-danger"
+      .square-box-subinfo
+        %span &nbsp
+        .pull-right
+          %span= "#{time_localize_date(@notice.updated_at)}, #{@notice.professor.name}"
       .square-box-info
         %p= simple_format(@notice.content)
   .span2
