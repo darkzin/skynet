@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params.permit(:id)[:id])
 
-    redirect_to courses_path, warning: "등록된 수업이 없습니다. 관리자에게 문의하세요." if @course.nil?
+    redirect_to courses_path, alert: "등록된 수업이 없습니다. 관리자에게 문의하세요." if @course.nil?
 
     current_user.last_selected_course_id = params.permit(:id)[:id]
     current_user.save
@@ -45,9 +45,9 @@ class CoursesController < ApplicationController
 
     if @course.save
       current_user.last_selected_course_id = @course.id
-      redirect_to @course, success: "새로운 과목이 성공적으로 개설되었습니다. 이제 과제를 만들어주세요."
+      redirect_to @course, flash: { success: "새로운 과목이 성공적으로 개설되었습니다. 이제 과제를 만들어주세요." }
     else
-      render :new, error: "과제 개설에 실패했습니다. " + @course.errors.full_messages.join(" ")
+      render :new, flash: { error: "과제 개설에 실패했습니다. " + @course.errors.full_messages.join(" ") }
     end
 
   end
@@ -69,7 +69,7 @@ class CoursesController < ApplicationController
     if @course.update_attributes(params.require(:course).permit(:name, :content, :year, :term))
       redirect_to @course, notice: "과목의 내용이 성공적으로 수정되었습니다."
     else
-      render edit, error: "과목 내용 수정에 실패하였습니다. " + @course.errors.full_messages.join(" ")
+      render edit, flash: { error: "과목 내용 수정에 실패하였습니다. " + @course.errors.full_messages.join(" ") }
     end
   end
 

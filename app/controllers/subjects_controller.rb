@@ -37,14 +37,13 @@ class SubjectsController < ApplicationController
 
     uploaded_files = params.require(:subject).permit(file_infos_attributes: [])[:file_infos_attributes]
     uploaded_files.each do |file|
-      debugger
       @subject.file_infos.new(name: file.original_filename, extension: File.extname(file.original_filename), file: file)
     end
 
     if @subject.save
-      redirect_to new_subject_problem_path(@subject), success: "과제가 성공적으로 저장되었습니다. 이제 문제를 만들어주세요."
+      redirect_to new_subject_problem_path(@subject), flash: { success: "과제가 성공적으로 저장되었습니다. 이제 문제를 만들어주세요." }
     else
-      render :new, error: "과제 저장에 실패했습니다. " + @subject.errors.full_messages.join(" ")
+      render :new, flash: { error: "과제 저장에 실패했습니다. " + @subject.errors.full_messages.join(" ")}
     end
   end
 
@@ -58,9 +57,9 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params.permit(:id)[:id])
 
     if @subject.update_attributes(params.require(:subject).permit(:name, :content))
-      redirect_to @subject, notice: "과제 내용이 성공적으로 수정되었습니다."
+      redirect_to @subject, flash: { success: "과제 내용이 성공적으로 수정되었습니다." }
     else
-      render edit, error: "과저 내용 수정에 실패하였습니다. " + @subject..errors.full_messages.join(" ")
+      render edit, flash: { error: "과저 내용 수정에 실패하였습니다. " + @subject..errors.full_messages.join(" ") }
     end
   end
 
