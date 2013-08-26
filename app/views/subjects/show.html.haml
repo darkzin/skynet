@@ -4,12 +4,6 @@
     .title-bar-thin
     .title-bar-thick
 .row-fluid#subjects-show
-  .span3
-    %ul.nav.nav-list.bs-docs-sidenav
-      %li.nav-header 주제목록
-      - @subjects.each_with_index do |subject, index|
-        %li{class: ("active" if subject.id == @subject.id)}
-          = link_to "#{index + 1}. #{subject.name}", subject
   .span9
     .square-box
       .square-box-title
@@ -22,7 +16,6 @@
             %button.close{data: { dismiss: "alert"}}  &times
             %span 본 주제는 마감되었습니다.
       .square-box-info
-        %h3= @subject.name
         .date
           - @subject.deadlines.each_with_index do |deadline, index|
             - if index == 0
@@ -50,3 +43,9 @@
                 %span= "#{index + 1}. #{problem.name}"
                 = link_to "제출하기", new_problem_assignment_path(problem), class: "btn btn-success pull-right"
                 %p= problem.content
+  .span3
+    %ul.nav.nav-list.bs-docs-sidenav
+      %li.nav-header 주제목록
+      - @subjects.each_with_index do |subject, index|
+        %li{class: ("active" if subject.id == @subject.id)}
+          = link_to "#{index + 1}. #{subject.name}", subject
