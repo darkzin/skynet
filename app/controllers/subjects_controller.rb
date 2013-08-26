@@ -6,15 +6,17 @@ class SubjectsController < ApplicationController
 
   def show
     @course = Course.find(params.permit(:course_id)[:course_id])
-    @subjects = @course.subjects.all
+    @subjects = @course.subjects.all.to_a
 
     @subjects.delete_if do |subject|
+      future_work = true
       subject.deadlines.each do |deadline|
         if deadline.start <= DateTime.now
-          return false
+          future_work = false
+          break
         end
       end
-      true
+      future_work
     end
 
     @subject = @course.subjects.find(params.permit(:id)[:id])
