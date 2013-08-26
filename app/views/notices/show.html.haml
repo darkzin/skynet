@@ -12,8 +12,9 @@
       .square-box-title
         %span= @notice.name
         .square-box-title-right-btn
-          =link_to "수정", '#', class: "btn btn-success"
-          =link_to "삭제", '#', class: "btn btn-danger"
+          - if professor_signed_in?
+            = link_to "수정", edit_course_notice_path(@course, @notice), class: "btn btn-success"
+            = link_to "삭제", [@course, @notice], method: "delete", class: "btn btn-danger"
       .square-box-subinfo
         %span &nbsp
         .pull-right

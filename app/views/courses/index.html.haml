@@ -16,7 +16,7 @@
           - else
             %span= course.name
           .square-box-title-right-btn
-            = link_to '자세히 보기', '#', class: 'btn btn-inverse'
+            = link_to '자세히 보기', course, class: 'btn btn-inverse'
             - if student_signed_in?
               = link_to '수업 선택', select_course_student_path(current_student, course_id: course.id),method: :post,  class: 'btn btn-info'
         .square-box-subinfo
