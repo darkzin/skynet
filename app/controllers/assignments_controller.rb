@@ -82,16 +82,17 @@ class AssignmentsController < ApplicationController
 
     if @assignment.save
       assignment_arguments = ""
-      @assignment.file_infos.each { |file_info| assignment_arguments += file_info.file.url + " " }
+      @assignment.file_infos.each { |file_info| assignment_arguments += file_info.file.path + " " }
       puts "source #{@problem.script.file.url} #{assignment_arguments}"
-      stdin, stdout, stderr = Open3.popen3("source #{@problem.script.file.url} #{assignment_arguments}")
-      @assignment.scores.each_with_index do |index, score|
-        unless stdout[index].nil?
-          score = stdout[index].split("\t")[0].to_i
-        else
-          score = 0
-        end
-      end
+      stdin, stdout, stderr = Open3.popen3(". #{@problem.script.file.path} #{assignment_arguments}")
+
+      # @assignment.scores.each_with_index do |index, score|
+      #   unless stdout[index].nil?
+      #     score = stdout[index].split("\t")[0].to_i
+      #   else
+      #     score = 0
+      #   end
+      # end
       @assignment.compile_message = stderr.readlines.join
       @assignment.save
 

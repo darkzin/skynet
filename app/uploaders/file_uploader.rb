@@ -24,7 +24,7 @@ class FileUploader < CarrierWave::Uploader::Base
       subject = Subject.find(model.category_id)
       course = subject.course
       "uploads/courses/#{course.id}/subjects/#{subject.id}"
-    when "problem", "script" then
+    when "problem" then
       problem = Problem.find(model.category_id)
       subject = problem.subject
       course = subject.course

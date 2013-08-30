@@ -32,8 +32,8 @@
         .div-width400
           %h4 스크립트 파일
           .field
-            = problem.label :script, "제목"
-            = problem.file_field :script
+            = problem.fields_for :script do |f|
+              = f.file_field :file
 
         .div-width400
           %h4 관련 파일
