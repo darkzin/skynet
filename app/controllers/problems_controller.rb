@@ -28,9 +28,16 @@ class ProblemsController < ApplicationController
     else
       redirect_to new_subject_problem_path(params[:subject_id]), flash: { error: "문제 저장에 실패하였습니다. " + @problem.errors.full_messages.join(" ")}
     end
+    debugger
   end
 
-  def delete
+  def destroy
+    @subject = Subject.find(params.permit(:subject_id)[:subject_id])
+    @course = @subject.course
+    @problem = @subject.problems.find(params.permit(:id)[:id])
+    @problem.destroy
+
+    redirect_to [@course, @subject]
   end
 
 

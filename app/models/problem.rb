@@ -4,7 +4,7 @@ class Problem < ActiveRecord::Base
   has_many :assignments
   has_many :criterions, dependent: :destroy
   has_many :file_infos, as: :category, dependent: :destroy
-  has_one :script, class_name: 'FileInfo', as: :category, conditions: { file_info_type: "script" }, dependent: :destroy
+  has_one :script, class_name: 'FileInfo', as: :category, conditions: { category_type: "script" }, dependent: :destroy
 
 
   validates :name, presence: {message: "문제의 제목을 입력하여 주십시오."}

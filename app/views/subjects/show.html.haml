@@ -40,7 +40,9 @@
                   - if professor_signed_in?
                     = link_to "삭제", [@subject, file_info], method: "delete", class: "btn btn-danger"
         .problems
-          %h4 문제
+          %h4
+            문제
+            = link_to "문제 만들기", new_subject_problem_path(@subject), class: "btn btn-primary"
           %ul.file_upload
             - @subject.problems.each_with_index do |problem, index|
               %li

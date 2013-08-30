@@ -1,2 +1,2 @@
 %fieldset
-  = f.file_field :file
+  = f.file_field :file, multiple: true, name: (multiple_file_supported? ? "problem[file_infos_attributes][]" : "problem[file_infos_attributes]")

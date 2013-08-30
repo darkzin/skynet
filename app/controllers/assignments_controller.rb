@@ -72,28 +72,32 @@ class AssignmentsController < ApplicationController
   def create
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
     @assignment = @problem.assignments.new
-    @problem.criterions.each do |criterion|
-      @assignment.scores.new(criterion_id: criterion.id, score: 0)
-    end
+    # @problem.criterions.each do |criterion|
+    #   @assignment.scores.new(criterion_id: criterion.id, score: 0)
+    # end
     file_infos = params.require(:assignment).permit(:file_infos_attributes => [])[:file_infos_attributes]
     file_infos.each do |file|
       @assignment.file_infos.new(name: file.original_filename, extension: File.extname(file.original_filename), file: file)
     end
 
     if @assignment.save
-      # stdin, stdout, stderr = Open3.popen3("#{@problem.compile_command} #{@problem.file_info.file.url} #{@assignment.file_infos.inject { |file_names, file_name| file_names + " " + file_name }}")
-      # @assignment.scores.each_with_index do |index, score|
-      #   unless stdout[index].nil?
-      #     score = stdout[index].split("\t")[0].to_i
-      #   else
-      #     score = 0
-      #   end
-      # end
-      # @assignment.compile_message = stderr.readlines.join
-      # @assignment.save
-      redirect_to @assignment, success: "과제가 성공적으로 제출되었습니다."
+      assignment_arguments = ""
+      @assignment.file_infos.each { |file_info| assignment_arguments += file_info.file.url + " " }
+      puts "source #{@problem.script.file.url} #{assignment_arguments}"
+      stdin, stdout, stderr = Open3.popen3("source #{@problem.script.file.url} #{assignment_arguments}")
+      @assignment.scores.each_with_index do |index, score|
+        unless stdout[index].nil?
+          score = stdout[index].split("\t")[0].to_i
+        else
+          score = 0
+        end
+      end
+      @assignment.compile_message = stderr.readlines.join
+      @assignment.save
+
+      redirect_to @assignment, flash: { success: "과제가 성공적으로 제출되었습니다." }
     else
-      render :new, error: "과제 제출에 실패하였습니다." + @assignment.errors.full_messages.join(" ")
+      redirect_to new_problem_assignment_path(@problem), flash: { error: "과제 제출에 실패하였습니다." + @assignment.errors.full_messages.join(" ") }
     end
 
   end
