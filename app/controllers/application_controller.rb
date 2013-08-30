@@ -63,9 +63,6 @@ class ApplicationController < ActionController::Base
     current_professor.email == "root@hanyang.ac.kr"
   end
 
-  def am_i_here?(association, id)
-    @association = current_user.send(association).find(id)
-    not @association.nil?
-  end
+
 
 end
