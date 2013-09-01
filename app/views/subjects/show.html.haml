@@ -9,7 +9,7 @@
       .square-box-title
         %span= @subject.name
         .square-box-title-right-btn
-          - if professor_signed_in?
+          - if can_i_manage_this_course?
             = link_to "편집", edit_course_subject_path(@course, @subject), class: "btn btn-warning"
             = link_to "삭제", [@course, @subject], method: "delete", class: "btn btn-danger"
       - if @subject.deadlines.last.end < Time.now
@@ -37,7 +37,7 @@
                 %li
                   %span= file_info.name
                   = link_to "내려받기", [@subject, file_info], class: "btn btn-primary"
-                  - if professor_signed_in?
+                  - if can_i_manage_this_course?
                     = link_to "삭제", [@subject, file_info], method: "delete", class: "btn btn-danger"
         .problems
           %h4
@@ -50,7 +50,7 @@
                   %span= "#{index + 1}. #{problem.name}"
                 .square-box-right
                   = link_to "제출하기", new_problem_assignment_path(problem), class: "btn btn-success"
-                  - if professor_signed_in?
+                  - if can_i_manage_this_course?
                     = link_to "삭제", [@subject, problem], method: "delete", class: "btn btn-danger"
                 .square-box-clear
                   .indent-left

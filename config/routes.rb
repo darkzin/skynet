@@ -32,8 +32,6 @@ Skynet::Application.routes.draw do
     resources :assignments, concern: :file
   end
 
-  resources :assignments
-
   resources :criterions
 
   # The priority is based upon order of creation: first created -> highest priority.

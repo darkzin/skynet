@@ -25,4 +25,18 @@ module ApplicationHelper
     @association = master.send(association).find_by_id(slave.id)
     not @association.nil?
   end
+
+  def current_course_id
+    begin
+      params.require(:course).permit(:id)[:id]
+    rescue
+      if params.permit(:course_id).any?
+        params.permit(:course_id)[:course_id]
+      elsif params.permit(:subject_id).any?
+        Subject.find(params.permit(:subject_id)[:subject_id]).course.id
+      elsif params.permit(:problem_id).any?
+        Problem.find(params.permit(:problem_id)[:problem_id]).subject.course.id
+      end
+    end
+  end
 end
