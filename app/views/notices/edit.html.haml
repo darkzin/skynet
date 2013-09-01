@@ -1,2 +1,20 @@
-%h1 Notices#edit
-%p Find me in app/views/notices/edit.html.haml
+.row-fluid
+  .span12
+    %h3 공지사항
+    .title-bar-thin
+    .title-bar-thick
+.row-fluid.input-style
+  .span2
+  .span8
+    .fields-box
+      .div-width400
+        = form_for [@course, @notice], method: "PATCH" do |f|
+          .field
+            = f.label :name, "제목"
+            = f.text_field :name, :autofocus => true
+          .field
+            = f.label :content, "내용"
+            = f.text_area :content
+          .field
+            = f.submit "등록", class: 'btn btn-success'
+  .span2
