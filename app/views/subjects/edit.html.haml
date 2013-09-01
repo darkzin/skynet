@@ -1,0 +1,57 @@
+.row-fluid
+  .span12
+    %h3= "과제 생성(수업 : #{@course.name})"
+    .title-bar-thin
+    .title-bar-thick
+.row-fluid.input-style
+  .span2
+  .span8
+    .fields-box
+      .div-width400
+        = form_for [@course, @subject], method: "PATCH", multipart: true do |subject|
+          %h4 과제 기본 내용 설정
+          .control-group
+            .field
+              = subject.label :name, "과제명", class: "control-label"
+              .controls
+                = subject.text_field :name, placeholder: "과제명을 입력하세요."
+            .field
+              = subject.label :content, "과제 내용", class: "control-label"
+              .controls
+                = subject.text_area :content
+          .bar
+
+          %h4 과제 파일
+          .field
+            - @subject.file_infos.each do |file_info|
+              .file
+                %i.icon-file
+                %span= file_info.file.identifier
+                = link_to "삭제", [@subject, file_info], method: "delete", class: "btn btn-small btn-danger"
+
+          .uploaded-files
+            .file
+              %i.icon-file
+              %span 파일 이름
+          .bar
+
+          %h4 과제 파일 추가
+          .field
+            = subject.file_field :file_info, multiple: true, name: (multiple_file_supported? ? "subject[file_infos_attributes][]" : "subject[file_infos_attributes]")
+            - unless multiple_file_supported?
+              = link_to_add_fields "추가", subject, :subjects, :file_infos
+          .uploaded-files
+            .file
+              %i.icon-file
+              %span 파일 이름
+          .bar
+
+          %h4 제출 기한 설정
+          .field
+            = subject.fields_for :deadlines do |deadline|
+              = render "subjects/deadline_fields", f: deadline
+            = link_to_add_fields "추가", subject, :subjects, :deadlines
+          .bar
+
+          .filed
+            = subject.submit "수정하기", class: "btn btn-success submit400"

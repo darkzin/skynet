@@ -27,7 +27,8 @@ class FileInfosController < ApplicationController
   def destroy
     @file_info = @category.file_infos.find(params[:id])
     @file_info.destroy
-    render :json => true
+    #render :json => true
+    redirect_to :back
   end
 
   def show

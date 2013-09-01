@@ -4,7 +4,7 @@
       %span= "#{@course.year.to_s}년 #{@course.term.to_s}학기 #{@course.name}"
       .buttons.pull-right
         - unless @current_subjects.first.nil? || @outdate_subjects.nil?
-          = link_to "과제보기", @current_subjects.first || @outdate_subjects.first, class: "btn btn-info"
+          = link_to "과제보기", [@course, @current_subjects.first || @outdate_subjects.first], class: "btn btn-info"
         - else
           = link_to "과제없음", @current_course, class: "btn btn-info disabled"
 
@@ -14,7 +14,7 @@
           = link_to "제출없음", @current_course, class: "btn btn-success disabled"
 
         - unless @current_subjects.first.nil? || @current_subjects.first.problems.first.nil?
-          = link_to "결과보기", assignments_path(@current_subjects.first.problems.first), class: "btn btn-primary"
+          = link_to "결과보기", problem_assignments_path(@current_subjects.first.problems.first), class: "btn btn-primary"
         - else
           = link_to "결과없음", @current_course, class: "btn btn-primary disabled"
 
