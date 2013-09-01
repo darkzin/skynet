@@ -25,5 +25,7 @@
           .field
             = f.submit "로그인", class: 'btn btn-success'
           .field
+            = link_to "교수 로그인", "/professors/sign_in", class: 'btn btn-info a-white'
+          .field
             = render "devise/shared/links"
   .span3
