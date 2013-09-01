@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 class ProblemsController < ApplicationController
+  before_action :permit_user!
+
   def index
   end
 

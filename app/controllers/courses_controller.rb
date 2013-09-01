@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class CoursesController < ApplicationController
+  before_action :permit_user!, only: [:destroy, :edit]
 
   def index
     @courses = Course.all

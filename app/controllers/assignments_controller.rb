@@ -2,6 +2,8 @@
 require 'open3'
 
 class AssignmentsController < ApplicationController
+  #before_action :permit_user!, only: [:destroy,
+
   def index
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
     @assignments = @problem.assignments.all.to_a

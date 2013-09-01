@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :permit_user!, only: [:create, :destroy, :update]
+
   def index
   end
 
@@ -11,7 +13,7 @@ class CommentsController < ApplicationController
   def create
   end
 
-  def delete
+  def destroy
   end
 
   def update

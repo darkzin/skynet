@@ -1,3 +1,4 @@
+# -*- coding: undecided -*-
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -55,14 +56,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def print_params
-    p params
-  end
-
   def are_you_root?
-    current_professor.email == "root@hanyang.ac.kr"
+    professor_signed_in? || current_professor.email == "root@hanyang.ac.kr"
   end
 
-
-
+  def permit_user!
+    unless can_i_manage_this_course?
+      redirect_to :back, alert: "자신이 관리하는 수업이 아닙니다."
+    else
+      true
+    end
+  end
 end

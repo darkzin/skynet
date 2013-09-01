@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class SubjectsController < ApplicationController
+  before_action :permit_user!, except: [:index, :show]
   def index
     @subjects = Subject.all
   end
@@ -60,6 +61,16 @@ class SubjectsController < ApplicationController
       redirect_to @subject, flash: { success: "과제 내용이 성공적으로 수정되었습니다." }
     else
       render edit, flash: { error: "과저 내용 수정에 실패하였습니다. " + @subject..errors.full_messages.join(" ") }
+    end
+  end
+
+  def destroy
+    @subject = Subject.find(params.permit(:id)[:id])
+
+    if @subject.destroy
+      redirect_to @subject, flash: { success: "과제가 성공적으로 삭제되었습니다." }
+    else
+      redirect_to @subject, flash: { error: "과저 삭제에 실패하였습니다. " + @subject..errors.full_messages.join(" ") }
     end
   end
 
