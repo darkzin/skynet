@@ -34,18 +34,26 @@ $(function(){
 
 });
 
-/*Modernizr.load([
-  {
-        test: ,
-        nope: "assets,
-        callback: function() {
+// Modernizr.load([
+//   {
+//         test: ,
+//         nope: "assets,
+//         callback: function() {
 
-        }
-  },
-  {
-        test: Modernizr.inputtypes.number,
-        callback: function() {
-          $("input[type=number]").spinner();
-        }
-  }
-]);*/
+//         }
+//   },
+//   {
+//         test: Modernizr.inputtypes.number,
+//         callback: function() {
+//           $("input[type=number]").spinner();
+//         }
+//   }
+// ]);
+
+$("input[multiple]").each(function(){
+  this.on('change', function(){
+    var fileName = this.val().split('/').pop().split('\\').pop();
+    $(".uploaded-files").append("<div class='file'><i class='icon icon-file'></i><span>"
+    + this.fileName + "</span>");
+    });
+});
