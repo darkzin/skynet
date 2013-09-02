@@ -87,6 +87,8 @@ class ApplicationController < ActionController::Base
       Subject.find(params.permit(:subject_id)[:subject_id]).course.id
     elsif params.permit(:problem_id).present?
       Problem.find(params.permit(:problem_id)[:problem_id]).subject.course.id
+    elsif params.permit(:assignment_id).present?
+      Assignment.find(params.permit(:assignment_id)[:assignment_id]).problem.subject.course.id
     else
       params.permit(:id)[:id]
     end
