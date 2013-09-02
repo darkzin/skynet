@@ -50,10 +50,17 @@ $(function(){
 //   }
 // ]);
 
-$("input[multiple]").each(function(){
-  this.on('change', function(){
-    var fileName = this.val().split('/').pop().split('\\').pop();
-    $(".uploaded-files").append("<div class='file'><i class='icon icon-file'></i><span>"
-    + this.fileName + "</span>");
-    });
+/*$('.fields-box input[type="file"][multiple="multiple"]').on('change',function(){
+   var fileName = this.val().split('/').pop().split('\\').pop();
+   $(".uploaded-files").append("<div class='file'><i class='icon-large icon-file'></i><span>" + fileName + "</span>");
+});
+*/
+$document.ready(function(){
+  $('input[multiple]').each(function(){
+    $(this).on('change', function(){
+      var fileName = $(this).val().split('/').pop().split('\\').pop();
+      $(".uploaded-files").append("<div class='file'><i class='icon-large icon-file'></i><span>"
+      + fileName + "</span>");
+      });
+  });
 });

@@ -10,6 +10,9 @@
             = link_to "로그아웃", destroy_student_session_path, :method => :delete
           - elsif professor_signed_in?
             = link_to "로그아웃", destroy_professor_session_path, :method => :delete
+        %li.active
+          - if professor_signed_in?
+            = link_to "관리자 계정 생성", new_registration_path(Professor)
       .choose_class.pull-right
         %ul.nav
           %li.active
