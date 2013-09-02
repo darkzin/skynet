@@ -17,10 +17,18 @@
 body {
 
 }
-
+.navbar{
+//    width:1000px !important;
+}
 .navbar .container{
     width: 980px !important;
 }
+
+.nav a{
+  padding-right:0;
+  background:transparent !important;
+}
+
 
 .container {
     width: 980px !important;
