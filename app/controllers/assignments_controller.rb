@@ -90,7 +90,7 @@ class AssignmentsController < ApplicationController
 
   def create
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
-    @assignment = @problem.assignments.new
+    @assignment = @problem.assignments.new(student_id: current_student.id)
     # @problem.criterions.each do |criterion|
     #   @assignment.scores.new(criterion_id: criterion.id, score: 0)
     # end
