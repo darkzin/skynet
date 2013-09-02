@@ -59,19 +59,21 @@
   .span12
     %h4 교수님 한마디
     .square-box
-      .square-box-info
-        %span 드럽게 못했네.. 나가죽어
-      .square-box-under-info
-        %span 조성홍 2013-09-01 12:23
-        = link_to "삭제",'#',class: "btn btn-small btn-alert"
-      .square-box-clear
+      - @comments.each do |comment|
+        .square-box-info
+          %p= simple_format(comment.content)
+        .square-box-under-info
+          %span= "#{comment.professor.name} #{time_localize_dateTime(comment.created_at)}"
+          = link_to "삭제", [@assignment, comment], method: "delete", class: "btn btn-small btn-alert"
+        .square-box-clear
 
     .square-box
-      .square-box-info
-        = text_area_tag :comment
-      .square-box-under-info
-        =link_to "등록", '#', class: "btn btn-small btn-primary"
-      .square-box-clear
+      = form_for Comment.new, url: new_assignment_comment_path(@assignment) do |comment|
+        .square-box-info
+          = comment.text_area :content
+        .square-box-under-info
+          = comment.submit "등록", class: "btn btn-small btn-primary"
+        .square-box-clear
 
 .row-fluid
   .span12
