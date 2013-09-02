@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130902065328) do
+ActiveRecord::Schema.define(version: 20130902172213) do
 
   create_table "assignments", force: true do |t|
     t.string   "state"
@@ -149,6 +149,17 @@ ActiveRecord::Schema.define(version: 20130902065328) do
     t.datetime "remember_created_at"
     t.integer  "last_selected_course_id"
   end
+
+  create_table "scores", force: true do |t|
+    t.integer  "criterion_id"
+    t.integer  "score",         limit: 255
+    t.integer  "assignment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scores", ["assignment_id"], name: "index_scores_on_assignment_id"
+  add_index "scores", ["criterion_id"], name: "index_scores_on_criterion_id"
 
   create_table "students", force: true do |t|
     t.string   "student_number",          default: "", null: false

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  criterion_id: 
+  score: 1
+  assignment_id: 
+
+two:
+  criterion_id: 
+  score: 1
+  assignment_id: 

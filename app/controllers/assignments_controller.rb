@@ -107,17 +107,54 @@ class AssignmentsController < ApplicationController
         assignment_arguments += "assignments/#{@assignment.id.to_s}/#{file_info.file.identifier} "
       end
 
-      Dir.chdir(File.dirname(@problem.script.path)) do
-        stdin, stdout, stderr = Open3.popen3("bash #{File.basename(@problem.script.path)} #{assignment_arguments}")
+      benchmark_command = "/usr/bin/time -v"
 
-      # @assignment.scores.each_with_index do |index, score|
-      #   unless stdout[index].nil?
-      #     score = stdout[index].split("\t")[0].to_i
-      #   else
-      #     score = 0
-      #   end
-      # end
-        @assignment.compile_message = stdout.readlines.join
+      Dir.chdir(File.dirname(@problem.script.path)) do
+        stdin, stdout, stderr = Open3.popen3("#{benchmark_command} bash #{File.basename(@problem.script.path)} #{assignment_arguments}")
+
+        scores = []
+        compile_message = ""
+        result = ""
+        lead_time = ""
+        memory_usage = ""
+        state = "error"
+
+        #puts "#{benchmark_command} bash #{File.basename(@problem.script.path)} #{assignment_arguments}"
+        stdout.readlines.each do |line|
+          if line.include? "score"
+            scores << line.split("\t")[1]
+          elsif line.include? "Compilation succeeded."
+            state = "success"
+          else
+            result += line + "\n"
+          end
+        end
+
+        stderr.readlines.each do |line|
+          if line.include? "User time (seconds):"
+            lead_time = line.delete("User time (seconds):").strip
+
+          elsif line.include? "Maximum resident set size (kbytes):"
+            memory_usage = line.delete("Maximum resident set size (kbytes):").strip
+          end
+        end
+
+        total_score = 0
+
+        @assignment.problem.criterions.each_with_index do |criterion, index|
+          if scores[index]
+            @assignment.scores.new(criterion_id: criterion.id, score: scores[index].to_i)
+            total_score += scores[index].to_i
+          else
+            @assignment.scores.new(criterion_id: criterion.id, score: 0)
+          end
+        end
+
+        @assignment.state = state
+        @assignment.lead_time = lead_time
+        @assignment.memory_usage = memory_usage
+        @assignment.result = result
+        @assignment.score = total_score
       end
 
       @assignment.save
