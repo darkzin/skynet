@@ -5,8 +5,6 @@ class AssignmentsController < ApplicationController
   #before_action :permit_user!, only: [:destroy,
 
   def index
-    if can_i_manage_this_course?
-    end
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
     @assignments = @problem.assignments.all.to_a
     @subject = @problem.subject

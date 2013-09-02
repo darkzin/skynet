@@ -64,7 +64,7 @@
           %p= simple_format(comment.content)
         .square-box-under-info
           %span= "#{comment.professor.name} #{time_localize_dateTime(comment.created_at)}"
-          = link_to "삭제", [@assignment, comment], method: "delete", class: "btn btn-small btn-alert"
+          = link_to "삭제", [@assignment, comment], method: "delete", class: "btn btn-small btn-danger"
         .square-box-clear
 
     .square-box

@@ -260,6 +260,7 @@ dd{
     border-bottom: 1px solid #e7e7e7;
 
     clear:both;
+
   }
 
   .square-box-info{
@@ -270,8 +271,15 @@ dd{
 
   .square-box-under-info{
     padding-right:7px;
+    margin-bottom:7px;
     float:right;
     font-size:0.7em;
+    
+    textarea{
+      min-width:90%;
+      min-height: 60px;
+      resize:none;
+    }
   }
 
   .square-box-clear{
