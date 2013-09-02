@@ -7,13 +7,13 @@
   .span4
     %h4 과제선택
     .btn-group
-        = link_to @subject.name, new_problem_assignment_path(@subject.problems.first), class: "btn"
-        %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
-          %span.caret
-        %ul.dropdown-menu
-          - @subjects.each do |subject|
-            %li
-              = link_to subject.name, problem_assignments_path(subject.problems.first)
+      = link_to @subject.name, new_problem_assignment_path(@subject.problems.first), class: "btn"
+      %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
+        %span.caret
+      %ul.dropdown-menu
+        - @subjects.each do |subject|
+          %li
+            = link_to subject.name, problem_assignments_path(subject.problems.first)
     /= collection_select(:assignment, :subject_id, @subjects, :id, :title)
     /
       %select
@@ -24,13 +24,13 @@
   .span4
     %h4 문제선택
     .btn-group
-        = link_to @problem.name, new_problem_assignment_path(@problem), class: "btn"
-        %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
-          %span.caret
-        %ul.dropdown-menu
-          %li
-            - @problems.each do |problem|
-              = link_to problem.name, problem_assignments_path(problem)
+      = link_to @problem.name, new_problem_assignment_path(@problem), class: "btn"
+      %a.btn.dropdown-toggle{ href: "#", data: { toggle: "dropdown" } }
+        %span.caret
+      %ul.dropdown-menu
+        %li
+          - @problems.each do |problem|
+            = link_to problem.name, problem_assignments_path(problem)
     /= collection_select(:assignment, :problem_id, @problems, :id, :title)
     /
       %select
@@ -46,6 +46,7 @@
         %thead
           %tr
             %th 제출번호
+            %th 학번
             %th 상태
             %th 소요시간
             %th 메모리 사용량
@@ -54,6 +55,7 @@
           - @assignments.each_with_index do |assignment, index|
             %tr{class: assignment.state}
               %td= index
+              %td 학번
               %td= assignment.state
               %td= "#{assignment.lead_time}ms"
               %td= "#{assignment.memory_usage}KB"
