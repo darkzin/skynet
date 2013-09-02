@@ -64,7 +64,7 @@
                   = link_to "설명", [@course, subject], class:"button btn btn-small btn-primary"
                 .problem
                   - subject.problems.each_with_index do |problem, index|
-                    = link_to "#{index + 1}. #{problem.name}", new_problem_assignment_path(problem)
+                    %p= link_to "#{index + 1}. #{problem.name}", new_problem_assignment_path(problem)
 
     .square-box
       .square-box-title
@@ -79,5 +79,5 @@
                   = link_to "설명", [@course, subject], class:"button btn btn-small btn-primary"
                 .problem
                   - subject.problems.each_with_index do |problem, index|
-                    = "#{index + 1}. #{problem.name}"
+                    %p= "#{index + 1}. #{problem.name}"
                     /= link_to "#{index + 1}. #{problem.name}", [@course, subject]

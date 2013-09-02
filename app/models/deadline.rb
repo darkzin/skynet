@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 class Deadline < ActiveRecord::Base
+  scope :by_end, order("end ASC")
+  default_scope by_end
+
   belongs_to :subject
 
   validates :start, presence: {message: "과제시한의 시작을 입력하여 주십시오."}

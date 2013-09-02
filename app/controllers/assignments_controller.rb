@@ -47,6 +47,10 @@ class AssignmentsController < ApplicationController
     @subject = @problem.subject
     @course = @subject.course
 
+    unless @subject.deadlines.where("start <= ?", DateTime.now).where("end >= ?", DateTime.now).any?
+      redirect_to [@course, @subject], alert: "기한이 지난 문제는 제출할 수 없습니다."
+    end
+
     @assignment.file_infos.build
     # unless params[:subject_id].nil?
     #   @subject = Subject.find(params[:subject_id])
@@ -54,21 +58,19 @@ class AssignmentsController < ApplicationController
     #   @subject = Subject.last
     # end
 
+
     @subjects = @course.subjects.all.to_a
+
+    @subjects.delete_if do |subject|
+      subject.deadlines.where("start <= ?", DateTime.now).where("end >= ?", DateTime.now).empty?
+    end
+
     @subjects.delete @subject
 
-    redirect_to courses_path if @subject.nil?
+    #redirect_to courses_path, notice: "과제가 없습니다. 새로 만들어 주세요.", if @subject.nil?
 
     @problems = @subject.problems.all
-
-    # unless params[:problem_id].nil?
-    #   @problem = @subject.problems.find(params[:problem_id])
-    # else
-    #   @problem = @subject.problems.last
-    # end
-
     @problems.delete @problem
-
   end
 
   def create
@@ -85,7 +87,6 @@ class AssignmentsController < ApplicationController
     if @assignment.save
       assignment_arguments = ""
       @assignment.file_infos.each { |file_info| assignment_arguments += file_info.file.path + " " }
-      puts "source #{@problem.script.file.url} #{assignment_arguments}"
       stdin, stdout, stderr = Open3.popen3(". #{@problem.script.file.path} #{assignment_arguments}")
 
       # @assignment.scores.each_with_index do |index, score|
