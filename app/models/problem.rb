@@ -7,7 +7,6 @@ class Problem < ActiveRecord::Base
   mount_uploader :script, FileUploader
 
   validates :name, presence: {message: "문제의 제목을 입력하여 주십시오."}
-  validates :compile_command, presence: {message: "문제를 컴파일할 때 사용할 커맨드를 입력하여 주십시오."}
 
   accepts_nested_attributes_for :criterions
   accepts_nested_attributes_for :file_infos
