@@ -57,12 +57,12 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params.permit(:id)[:id])
     @course = @subject.course
 
-    uploaded_files = params.require(:subject).permit(file_infos_attributes: [])[:file_infos_attributes]
+    uploaded_files = params.require(:subject).permit(file_infos_attributes: [])[:file_infos_attributes] || []
     uploaded_files.each do |file|
       @subject.file_infos.new(name: file.original_filename, extension: File.extname(file.original_filename), file: file)
     end
 
-    if @subject.update_attributes(params.require(:subject).permit(:name, :content, deadlines_attributes: [:start, :end, :penalty]))
+    if @subject.update_attributes(params.require(:subject).permit(:name, :content, deadlines_attributes: [:id, :start, :end, :penalty]))
       redirect_to [@course, @subject], flash: { success: "과제 내용이 성공적으로 수정되었습니다." }
     else
       render edit, flash: { error: "과저 내용 수정에 실패하였습니다. " + @subject..errors.full_messages.join(" ") }
