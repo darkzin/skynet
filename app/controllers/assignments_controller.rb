@@ -54,6 +54,7 @@ class AssignmentsController < ApplicationController
     @subject = @problem.subject
     @course = @subject.course
     @comments = @assignment.comments.all.to_a
+    @comment = Comment.new
   end
 
   def new

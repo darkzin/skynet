@@ -64,11 +64,11 @@
           %p= simple_format(comment.content)
         .square-box-under-info
           %span= "#{comment.professor.name} #{time_localize_dateTime(comment.created_at)}"
-          = link_to "삭제", [@assignment, comment], method: "delete", class: "btn btn-small btn-danger"
+          = link_to "삭제", [@assignment, comment], method: "delete", class: "btn btn-small btn-alert"
         .square-box-clear
 
     .square-box
-      = form_for Comment.new, url: new_assignment_comment_path(@assignment) do |comment|
+      = form_for @comment, url: [@assignment, @comment] do |comment|
         .square-box-info
           = comment.text_area :content
         .square-box-under-info
