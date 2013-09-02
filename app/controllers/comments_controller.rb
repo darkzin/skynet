@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class CommentsController < ApplicationController
-  before_action :permit_user!, only: [:create, :destroy, :update]
+  before_action :permit_professor!, only: [:create, :destroy, :update]
 
   def index
   end

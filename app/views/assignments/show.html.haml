@@ -15,7 +15,7 @@
         %tr
           %td 제출 시간
         %tr
-          %td= @assignment.created_at
+          %td= time_localize_dateTime(@assignment.created_at)
         %tr
           %td 채점 상태
         %tr
