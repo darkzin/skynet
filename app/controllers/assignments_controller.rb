@@ -87,8 +87,8 @@ class AssignmentsController < ApplicationController
     if @assignment.save
       assignment_arguments = ""
       @assignment.file_infos.each { |file_info| assignment_arguments += file_info.file.path + " " }
-      stdin, stdout, stderr = Open3.popen3(". #{@problem.script.file.path} #{assignment_arguments}")
-
+      stdin, stdout, stderr = Open3.popen3(". #{@problem.script.path} #{assignment_arguments}")
+      debugger
       # @assignment.scores.each_with_index do |index, score|
       #   unless stdout[index].nil?
       #     score = stdout[index].split("\t")[0].to_i
@@ -96,7 +96,7 @@ class AssignmentsController < ApplicationController
       #     score = 0
       #   end
       # end
-      @assignment.compile_message = stderr.readlines.join
+      @assignment.compile_message = stdout.readlines.join
       @assignment.save
 
       redirect_to [@problem, @assignment], flash: { success: "과제가 성공적으로 제출되었습니다." }

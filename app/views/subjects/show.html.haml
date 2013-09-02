@@ -42,7 +42,8 @@
         .problems
           %h4
             문제
-            = link_to "문제 만들기", new_subject_problem_path(@subject), class: "btn btn-primary"
+            - if can_i_manage_this_course?
+              = link_to "문제 만들기", new_subject_problem_path(@subject), class: "btn btn-primary"
           %ul.file_upload
             - @subject.problems.each_with_index do |problem, index|
               %li

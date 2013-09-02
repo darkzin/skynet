@@ -13,7 +13,6 @@ class ProblemsController < ApplicationController
     @course = @subject.course
     @problem = @subject.problems.new
     @problem.criterions.build
-    @problem.build_script
     @problem.file_infos.build
   end
 
@@ -25,7 +24,7 @@ class ProblemsController < ApplicationController
 
   def create
     @subject = Subject.find(params.permit(:subject_id)[:subject_id])
-    @problem = @subject.problems.new(params.require(:problem).permit(:name, :content, :input_data, :model_paper, :compile_command, criterions_attributes: [:name, :score], script_attributes: [:file]))
+    @problem = @subject.problems.new(params.require(:problem).permit(:name, :content, :input_data, :model_paper, :script, :compile_command, criterions_attributes: [:name, :score]))
 
     file_infos = params.require(:problem).permit(:file_infos_attributes => [])[:file_infos_attributes]
     file_infos.each do |file|
