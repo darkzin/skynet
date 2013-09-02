@@ -99,7 +99,7 @@ class AssignmentsController < ApplicationController
       @assignment.compile_message = stderr.readlines.join
       @assignment.save
 
-      redirect_to @assignment, flash: { success: "과제가 성공적으로 제출되었습니다." }
+      redirect_to [@problem, @assignment], flash: { success: "과제가 성공적으로 제출되었습니다." }
     else
       redirect_to new_problem_assignment_path(@problem), flash: { error: "과제 제출에 실패하였습니다." + @assignment.errors.full_messages.join(" ") }
     end
