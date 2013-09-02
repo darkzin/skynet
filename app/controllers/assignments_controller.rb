@@ -10,6 +10,14 @@ class AssignmentsController < ApplicationController
     @subject = @problem.subject
     @course = @subject.course
 
+    @subjects = @course.subjects.all.to_a
+    @subjects.delete @subject
+
+    #redirect_to courses_path, notice: "과제가 없습니다. 새로 만들어 주세요.", if @subject.nil?
+
+    @problems = @subject.problems.all.to_a
+    @problems.delete @problem
+
     # if student_signed_in?
     #   @assignments = current_student.assignments.all
     # else
