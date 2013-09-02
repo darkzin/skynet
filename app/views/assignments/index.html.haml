@@ -46,6 +46,7 @@
         %thead
           %tr
             %th 제출번호
+            %th 학번
             %th 상태
             %th 소요시간
             %th 메모리 사용량
@@ -54,6 +55,7 @@
           - @assignments.each_with_index do |assignment, index|
             %tr{class: assignment.state}
               %td= index
+              %td 학번
               %td= assignment.state
               %td= "#{assignment.lead_time}ms"
               %td= "#{assignment.memory_usage}KB"
