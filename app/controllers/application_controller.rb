@@ -56,10 +56,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def are_you_root?
-    professor_signed_in? || current_professor.email == "root@hanyang.ac.kr"
-  end
-
   def permit_user!
     unless can_i_manage_this_course?
       redirect_to :back, alert: "자신이 관리하는 수업이 아닙니다."

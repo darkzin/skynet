@@ -6,7 +6,13 @@ class AssignmentsController < ApplicationController
 
   def index
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
-    @assignments = @problem.assignments.all.to_a
+
+    if can_i_manage_this_course?
+      @assignments = @problem.assignments.all.to_a
+    else
+      @assignments = @problem.assignments.where(student_id: current_student.id).to_a
+    end
+
     @subject = @problem.subject
     @course = @subject.course
 
@@ -47,6 +53,7 @@ class AssignmentsController < ApplicationController
     @problem = @assignment.problem
     @subject = @problem.subject
     @course = @subject.course
+    @comments = @assignment.comments.all.to_a
   end
 
   def new

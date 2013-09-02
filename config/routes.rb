@@ -7,7 +7,7 @@ Skynet::Application.routes.draw do
   get "comments/update"
   root 'courses#index'
 
-  devise_for :professors
+  devise_for :professors, controllers: { registrations: "professor_registrations" }
   devise_for :students
 
   resources :students do

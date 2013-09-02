@@ -18,4 +18,8 @@ module ProfessorsHelper
   def am_i_enroll_this_course?
     student_signed_in? && current_student.courses.find_by_id(current_course_id)
   end
+
+  def are_you_root?
+    professor_signed_in? && current_professor.email == "root@hanyang.ac.kr"
+  end
 end

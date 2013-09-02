@@ -55,7 +55,7 @@
           - @assignments.each_with_index do |assignment, index|
             %tr{class: assignment.state}
               %td= index
-              %td 학번
+              %td= assignment.student.id
               %td= assignment.state
               %td= "#{assignment.lead_time}ms"
               %td= "#{assignment.memory_usage}KB"
