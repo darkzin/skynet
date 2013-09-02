@@ -52,11 +52,6 @@
 
 .row-fluid
   .span12
-    %h4 오류 시 컴파일 에러 출력
-    .hero-unit#compile-message-box= @assignment.compile_message
-
-.row-fluid
-  .span12
     %h4 교수님 한마디
     .square-box
       - @comments.each do |comment|
