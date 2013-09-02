@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class SubjectsController < ApplicationController
-  before_action :permit_user!, except: [:index, :show]
+  before_action :permit_professor!, except: [:index, :show]
   def index
     @subjects = Subject.all
   end

@@ -57,8 +57,24 @@ class ApplicationController < ActionController::Base
   end
 
   def permit_user!
+    unless am_i_enroll_this_course? || can_i_manage_this_course?
+      redirect_to :back, alert: "자신이 해당되는 수업이 아닙니다."
+    else
+      true
+    end
+  end
+
+  def permit_professor!
     unless can_i_manage_this_course?
       redirect_to :back, alert: "자신이 관리하는 수업이 아닙니다."
+    else
+      true
+    end
+  end
+
+  def permit_student!
+    unless am_i_enroll_this_course?
+      redirect_to :back, alert: "자신이 수강하는 수업이 아닙니다."
     else
       true
     end

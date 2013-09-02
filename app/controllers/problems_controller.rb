@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class ProblemsController < ApplicationController
-  before_action :permit_user!
+  before_action :permit_professor!
 
   def index
   end

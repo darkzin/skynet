@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class NoticesController < ApplicationController
-  before_action :permit_user!, except: [:index, :show]
+  before_action :permit_professor!, except: [:index, :show]
 
   def index
     @course = Course.find(params.permit(:course_id)[:course_id])
