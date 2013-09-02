@@ -17,7 +17,8 @@ class FileUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    category_type = model.category_type.underscore || model.class.to_s.underscore
+    model_name = model.class.to_s.underscore
+    category_type = model_name != "problem" ? model.category_type.underscore : model_name
 
     case category_type
     when "subject" then
@@ -25,7 +26,7 @@ class FileUploader < CarrierWave::Uploader::Base
       course = subject.course
       "uploads/courses/#{course.id}/subjects/#{subject.id}"
     when "problem" then
-      problem = model.category_id ? Problem.find(model.category_id) : Problem.find(model.id)
+      problem = model_name != "problem" ? Problem.find(model.category_id) : Problem.find(model.id)
       subject = problem.subject
       course = subject.course
       "uploads/courses/#{course.id}/subjects/#{subject.id}/problems/#{problem.id}"

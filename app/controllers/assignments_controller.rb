@@ -86,9 +86,14 @@ class AssignmentsController < ApplicationController
 
     if @assignment.save
       assignment_arguments = ""
-      @assignment.file_infos.each { |file_info| assignment_arguments += file_info.file.path + " " }
-      stdin, stdout, stderr = Open3.popen3(". #{@problem.script.path} #{assignment_arguments}")
-      debugger
+
+      @assignment.file_infos.each do |file_info|
+        assignment_arguments += "assignments/#{@assignment.id.to_s}/#{file_info.file.identifier} "
+      end
+
+      Dir.chdir(File.dirname(@problem.script.path)) do
+        stdin, stdout, stderr = Open3.popen3("bash #{File.basename(@problem.script.path)} #{assignment_arguments}")
+
       # @assignment.scores.each_with_index do |index, score|
       #   unless stdout[index].nil?
       #     score = stdout[index].split("\t")[0].to_i
@@ -96,13 +101,13 @@ class AssignmentsController < ApplicationController
       #     score = 0
       #   end
       # end
-      @assignment.compile_message = stdout.readlines.join
-      @assignment.save
+        @assignment.compile_message = stdout.readlines.join
+      end
 
+      @assignment.save
       redirect_to [@problem, @assignment], flash: { success: "과제가 성공적으로 제출되었습니다." }
     else
       redirect_to new_problem_assignment_path(@problem), flash: { error: "과제 제출에 실패하였습니다." + @assignment.errors.full_messages.join(" ") }
     end
-
   end
 end
