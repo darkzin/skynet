@@ -81,7 +81,6 @@ class ApplicationController < ActionController::Base
   end
 
   def can_i_manage_this_course?
-    debugger
     professor_signed_in? && current_professor.courses.find_by_id(current_course_id)
   end
 
