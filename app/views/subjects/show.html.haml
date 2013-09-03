@@ -50,7 +50,7 @@
                 .square-box-content
                   %span= "#{index + 1}. #{problem.name}"
                 .square-box-right
-                  - unless @subject.deadlines.last.end < Time.now
+                  - unless professor_signed_in? || @subject.deadlines.last.end < Time.now
                     = link_to "제출하기", new_problem_assignment_path(problem), class: "btn btn-success"
                   - if can_i_manage_this_course?
                     = link_to "삭제", [@subject, problem], method: "delete", class: "btn btn-danger"

@@ -3,7 +3,7 @@ require 'open3'
 
 class AssignmentsController < ApplicationController
   before_action :permit_user!
-
+  before_action :permit_student!, only: [:new]
   def index
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
 

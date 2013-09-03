@@ -1,13 +1,7 @@
 Skynet::Application.routes.draw do
-  get "comments/index"
-  get "comments/new"
-  get "comments/show"
-  get "comments/create"
-  get "comments/delete"
-  get "comments/update"
   root 'courses#index'
 
-  devise_for :professors, controllers: { registrations: "professor_registrations" }
+  devise_for :professors, controllers: { registrations: "professors/registrations" }
   devise_for :students
 
   resources :students do
