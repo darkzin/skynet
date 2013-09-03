@@ -121,11 +121,10 @@ class AssignmentsController < ApplicationController
 
         #puts "#{benchmark_command} bash #{File.basename(@problem.script.path)} #{assignment_arguments}"
         puts "#{benchmark_command} #{@problem.compile_command} ./#{File.basename(@problem.script.path)} #{assignment_arguments}"
-	puts stdout.readlines.join
+
         stdout.readlines.each do |line|
-          if line.include? "score"
-            scores << line.split("\t")[1]
-          elsif line.include? "Compilation succeeded."
+          puts line
+          if line.include? "Compilation succeeded."
             state = "success"
           else
             result += line + "\n"
