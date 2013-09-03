@@ -110,7 +110,7 @@ class AssignmentsController < ApplicationController
       benchmark_command = "/usr/bin/time -v"
 
       Dir.chdir(File.dirname(@problem.script.path)) do
-        stdin, stdout, stderr = Open3.popen3("#{benchmark_command} bash #{File.basename(@problem.script.path)} #{assignment_arguments}")
+        stdin, stdout, stderr = Open3.popen3("#{benchmark_command} #{@problem.compile_command} ./#{File.basename(@problem.script.path)} #{assignment_arguments}")
 
         scores = []
         compile_message = ""
@@ -120,6 +120,8 @@ class AssignmentsController < ApplicationController
         state = "error"
 
         #puts "#{benchmark_command} bash #{File.basename(@problem.script.path)} #{assignment_arguments}"
+        puts "#{benchmark_command} #{@problem.compile_command} ./#{File.basename(@problem.script.path)} #{assignment_arguments}"
+
         stdout.readlines.each do |line|
           if line.include? "score"
             scores << line.split("\t")[1]
@@ -136,6 +138,24 @@ class AssignmentsController < ApplicationController
 
           elsif line.include? "Maximum resident set size (kbytes):"
             memory_usage = line.delete("Maximum resident set size (kbytes):").strip
+          end
+        end
+
+        source_code = @assignment.file_infos.first.file.identifier
+
+        # begin
+        #   File.open("assignments/#{@assignment.id.to_s}/#{source_code}.grade") do |file|
+        #     puts file.readlines.to_s
+        #   end
+        # rescue
+        #   redirect_to new_problem_assignment_path(@problem), flash: { error: "컴파일 과정에 문제가 있습니다. 스크립트 파일을 확인하시기 바랍니다." }
+        # end
+
+        File.open("assignments/#{@assignment.id.to_s}/#{source_code}.grade") do |file|
+          file.readline.each_with_index do |line, index|
+            if index > 0
+              scores << line.split(',')[0].strip
+            end
           end
         end
 
