@@ -121,7 +121,7 @@ class AssignmentsController < ApplicationController
 
         #puts "#{benchmark_command} bash #{File.basename(@problem.script.path)} #{assignment_arguments}"
         puts "#{benchmark_command} #{@problem.compile_command} ./#{File.basename(@problem.script.path)} #{assignment_arguments}"
-
+	puts stdout.readlines.join
         stdout.readlines.each do |line|
           if line.include? "score"
             scores << line.split("\t")[1]
@@ -152,7 +152,7 @@ class AssignmentsController < ApplicationController
         # end
 
         File.open("assignments/#{@assignment.id.to_s}/#{source_code}.grade") do |file|
-          file.readline.each_with_index do |line, index|
+          file.readlines.each_with_index do |line, index|
             if index > 0
               scores << line.split(',')[0].strip
             end
