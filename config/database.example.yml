@@ -19,7 +19,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter:  mysql
+  database: skynet_production
   pool: 5
+  endcoding: utf8
+  reconnect: false
+  username: 
+  password:
   timeout: 5000

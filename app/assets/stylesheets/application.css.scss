@@ -29,6 +29,14 @@ body {
   background:transparent !important;
 }
 
+.nav.nav-list.bs-docs-sidenav{
+     a{
+       margin-left:10px;
+     }
+     .active{
+        background:#6cc0ff;
+     }
+}
 
 .container {
     width: 980px !important;
