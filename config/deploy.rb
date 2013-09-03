@@ -10,7 +10,7 @@ load "config/recipes/check"
 
 server "swgrade.hanyang.ac.kr:8022", :web, :app, :db, primary: true
 
-set :gateway, 'swadmin@calab.hanyang.ac.kr:8022'
+#set :gateway, 'swadmin@calab.hanyang.ac.kr:8022'
 set :user, "deployer"
 set :application, "skynet"
 set :deploy_to, "/home/#{user}/apps/#{application}"
