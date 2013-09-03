@@ -283,11 +283,6 @@ dd{
     float:right;
     font-size:0.7em;
     
-    textarea{
-      min-width:90%;
-      min-height: 60px;
-      resize:none;
-    }
   }
 
   .square-box-clear{
@@ -366,4 +361,10 @@ table a:link{
 
 .btn-margin{
   margin-right:0 5px;
+}
+
+#comment_content{
+   min-width:97%;
+   min-height: 100px;
+   resize:none;
 }
