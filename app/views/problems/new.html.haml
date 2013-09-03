@@ -46,6 +46,12 @@
         .bar
 
         .div-width400
+          %h4 컴파일 커맨드
+          .field
+            = problem.text_field :compile_command
+        .bar
+
+        .div-width400
           %h4 입력데이터
           .field
             = problem.text_area :input_data
