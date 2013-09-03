@@ -93,6 +93,7 @@ GEM
     minitest (4.7.5)
     modernizr-rails (2.6.2.3)
     multi_json (1.7.7)
+    mysql2 (0.3.11)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -187,6 +188,7 @@ DEPENDENCIES
   jquery-rails (~> 2.3.0)
   jquery-ui-rails
   modernizr-rails
+  mysql2
   rails (= 4.0.0)
   rails-i18n
   sass-rails (~> 4.0.0)
