@@ -182,4 +182,15 @@ class AssignmentsController < ApplicationController
       redirect_to new_problem_assignment_path(@problem), flash: { error: "과제 제출에 실패하였습니다." + @assignment.errors.full_messages.join(" ") }
     end
   end
+
+  def destroy
+    @assignment = Assignment.find(params.permit(:id)[:id])
+
+    if @assignment.destroy
+      redirect_to assignments_path, flash: { success: "과제 제출이 성공적으로 삭제되었습니다." }
+    else
+      redirect_to assignemtns_path, flash: { error: "과제 제출 삭제에 실패하였습니다." }
+    end
+  end
+
 end
