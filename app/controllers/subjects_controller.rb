@@ -65,7 +65,7 @@ class SubjectsController < ApplicationController
     if @subject.update_attributes(params.require(:subject).permit(:name, :content, deadlines_attributes: [:id, :start, :end, :penalty]))
       redirect_to [@course, @subject], flash: { success: "과제 내용이 성공적으로 수정되었습니다." }
     else
-      render edit, flash: { error: "과저 내용 수정에 실패하였습니다. " + @subject..errors.full_messages.join(" ") }
+      render edit, flash: { error: "과저 내용 수정에 실패하였습니다. " + @subject.errors.full_messages.join(" ") }
     end
   end
 
@@ -76,7 +76,7 @@ class SubjectsController < ApplicationController
     if @subject.destroy
       redirect_to [@course, @subject], flash: { success: "과제가 성공적으로 삭제되었습니다." }
     else
-      redirect_to [@course, @subject], flash: { error: "과저 삭제에 실패하였습니다. " + @subject..errors.full_messages.join(" ") }
+      redirect_to [@course, @subject], flash: { error: "과저 삭제에 실패하였습니다. " + @subject.errors.full_messages.join(" ") }
     end
   end
 
