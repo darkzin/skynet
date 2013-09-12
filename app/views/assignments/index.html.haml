@@ -59,7 +59,9 @@
               %td= assignment.state
               %td= "#{assignment.lead_time}ms"
               %td= "#{assignment.memory_usage}KB"
-              %td= link_to "결과보기" , [@problem, assignment], class: 'btn btn-info'
+              %td
+                = link_to "결과보기" , [@problem, assignment], class: 'btn btn-info'
+                = link_to "삭제", [@problem,assignment], method: 'delete', class: 'btn btn-danger'
     - else
       %p 문제에 제출된 결과가 존재하지 않습니다.
 .blank
