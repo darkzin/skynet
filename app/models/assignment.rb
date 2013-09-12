@@ -11,4 +11,5 @@ class Assignment < ActiveRecord::Base
   # validates :result, presence: true
 
   accepts_nested_attributes_for :file_infos
+
 end

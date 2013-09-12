@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 class Problem < ActiveRecord::Base
+  before_save :set_default
+
   belongs_to :subject, foreign_key: "subject_id"
   has_many :assignments
   has_many :criterions, dependent: :destroy
@@ -10,4 +12,10 @@ class Problem < ActiveRecord::Base
 
   accepts_nested_attributes_for :criterions
   accepts_nested_attributes_for :file_infos
+
+  protected
+  def set_default
+    self.compile_command |= "lua"
+  end
+
 end
