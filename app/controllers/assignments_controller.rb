@@ -193,7 +193,7 @@ class AssignmentsController < ApplicationController
 
   def destroy
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
-    @assignment = @problem.assignments.find(params.require(:assignment).permit(:id)[:id])
+    @assignment = @problem.assignments.find(params.permit(:id)[:id])
 
     if @assignment.destroy
       redirect_to assignments_path, flash: { success: "과제 제출이 성공적으로 삭제되었습니다." }
