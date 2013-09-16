@@ -92,6 +92,13 @@ class AssignmentsController < ApplicationController
   def create
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
     @assignment = @problem.assignments.new(student_id: current_student.id)
+    @subject = @problem.subject
+    @course = @subject.course
+
+    unless @subject.deadlines.where("start <= ?", DateTime.now).where("end >= ?", DateTime.now).any?
+      redirect_to [@course, @subject], alert: "기한이 지난 문제는 제출할 수 없습니다."
+    end
+
     # @problem.criterions.each do |criterion|
     #   @assignment.scores.new(criterion_id: criterion.id, score: 0)
     # end
@@ -184,7 +191,8 @@ class AssignmentsController < ApplicationController
   end
 
   def destroy
-    @assignment = Assignment.find(params.permit(:id)[:id])
+    @problem = Problem.find(params.permit(:problem_id)[:problem_id])
+    @assignment = @problem.assignments.find(params.require(:assignment).permit(:id)[:id])
 
     if @assignment.destroy
       redirect_to assignments_path, flash: { success: "과제 제출이 성공적으로 삭제되었습니다." }
