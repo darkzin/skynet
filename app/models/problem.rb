@@ -15,7 +15,7 @@ class Problem < ActiveRecord::Base
 
   protected
   def set_default
-    self.compile_command |= "lua"
+  self.compile_command = self.compile_command || "lua"
   end
 
 end
