@@ -39,7 +39,7 @@ class SubjectsController < ApplicationController
     uploaded_files = params.require(:subject).permit(file_infos_attributes: [])[:file_infos_attributes]
     uploaded_files.each do |file|
       @subject.file_infos.new(name: file.original_filename, extension: File.extname(file.original_filename), file: file)
-    end
+    end unless uploaded_files.nil?
 
     if @subject.save
       redirect_to new_subject_problem_path(@subject), flash: { success: "과제가 성공적으로 저장되었습니다. 이제 문제를 만들어주세요." }
