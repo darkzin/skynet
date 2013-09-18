@@ -3,7 +3,7 @@
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%- if resource_name != 'Professor' %>
+  <%- if resource_name != :professor %>
     <%= link_to "계정 생성", new_registration_path(resource_name), class: 'btn btn-primary a-white away-from-top-10px' %><br />
   <% end -%>
 <% end -%>
