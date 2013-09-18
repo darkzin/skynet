@@ -39,7 +39,8 @@ class NoticesController < ApplicationController
 
   def update
     @course = Course.find(params.permit(:course_id)[:course_id])
-    @notice = @course.notices.update_attributes(params.require(:notice).permit(:name, :content))
+    @notice = @course.notices.find(params.permit(:id)[:id])
+    @notice.update_attributes(params.require(:notice).permit(:name, :content))
 
     if @notice.save
       redirect_to course_notices_path, notice: "공지사항이 성공적으로 등록되었습니다."
@@ -49,8 +50,14 @@ class NoticesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @course = Course.find(params.permit(:course_id)[:course_id])
     @notice = @course.notices.find(params.permit(:id)[:id])
+
+    if @notice.destroy
+      redirect_to course_notices_path, flash: { success: "공지사항이 성공적으로 삭제되었습니다." }
+    else
+      redirect_to course_notices_path, flash: { alert: "공지사항 삭제에 실패했습니다. 관리자에게 문의하세요." }
+    end
   end
 end
