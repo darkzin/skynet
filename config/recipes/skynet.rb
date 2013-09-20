@@ -2,6 +2,7 @@ namespace :skynet do
   desc "copy upload data to latest release directory."
   task :copy_upload, roles: :web do
     if previous_release
+      run "#{try_sudo} mkdir #{latest_release}/public/uploads" unless Dir.exist? "#{latest_release}/public/uploads"
       run "#{try_sudo} cp -r #{previous_release}/public/uploads/* #{latest_release}/public/uploads/"
     else
       logger.important "no previous release to copy to, copy upload data skipped."
