@@ -7,6 +7,7 @@ load "config/recipes/unicorn"
 load "config/recipes/nodejs"
 load "config/recipes/rbenv"
 load "config/recipes/check"
+load "config/recipes/skynet"
 
 server "swgrade.hanyang.ac.kr:8022", :web, :app, :db, primary: true
 
