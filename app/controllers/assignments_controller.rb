@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'open3'
+require 'timeout'
 
 class AssignmentsController < ApplicationController
   before_action :permit_user!
@@ -104,89 +105,99 @@ class AssignmentsController < ApplicationController
       # end
       file_infos = params.require(:assignment).permit(:file_infos_attributes => [])[:file_infos_attributes]
       file_infos.each do |file|
-	@assignment.file_infos.new(name: file.original_filename, extension: File.extname(file.original_filename), file: file)
+        @assignment.file_infos.new(name: file.original_filename, extension: File.extname(file.original_filename), file: file)
       end
 
       if @assignment.save
-	assignment_arguments = ""
+        assignment_arguments = ""
 
-	@assignment.file_infos.each do |file_info|
-	  assignment_arguments += "assignments/#{@assignment.id.to_s}/#{file_info.file.identifier} "
-	end
+        @assignment.file_infos.each do |file_info|
+          assignment_arguments += "assignments/#{@assignment.id.to_s}/#{file_info.file.identifier} "
+        end
 
-	benchmark_command = "/usr/bin/time -v"
+        benchmark_command = "/usr/bin/time -v"
 
-	Dir.chdir(File.dirname(@problem.script.path)) do
-	  stdin, stdout, stderr = Open3.popen3("#{benchmark_command} #{@problem.compile_command} ./#{File.basename(@problem.script.path)} #{assignment_arguments}")
+        Dir.chdir(File.dirname(@problem.script.path)) do
+          stdin, stdout, stderr = Open3.popen3("#{benchmark_command} #{@problem.compile_command} ./#{File.basename(@problem.script.path)} #{assignment_arguments}")
 
-	  scores = []
-	  compile_message = ""
-	  result = ""
-	  lead_time = ""
-	  memory_usage = ""
-	  state = "error"
+          scores = []
+          compile_message = ""
+          result = ""
+          lead_time = ""
+          memory_usage = ""
+          state = "error"
 
-	  #puts "#{benchmark_command} bash #{File.basename(@problem.script.path)} #{assignment_arguments}"
-	  puts "#{benchmark_command} #{@problem.compile_command} ./#{File.basename(@problem.script.path)} #{assignment_arguments}"
+          puts "#{benchmark_command} #{@problem.compile_command} ./#{File.basename(@problem.script.path)} #{assignment_arguments}"
 
-	  stdout.readlines.each do |line|
-	    puts line
-	    if line.include? "Compilation succeeded."
-	      state = "success"
-	    else
-	      result += line + "\n"
-	    end
-	  end
+          stdout.readlines.each do |line|
+            puts line
+            if line.include? "Compilation succeeded."
+              state = "success"
+            else
+              result += line + "\n"
+            end
+          end
 
-	  stderr.readlines.each do |line|
-	    if line.include? "User time (seconds):"
-	      lead_time = line.delete("User time (seconds):").strip
+          stderr.readlines.each do |line|
+            if line.include? "User time (seconds):"
+              lead_time = line.delete("User time (seconds):").strip
 
-	    elsif line.include? "Maximum resident set size (kbytes):"
-	      memory_usage = line.delete("Maximum resident set size (kbytes):").strip
-	    end
-	  end
+            elsif line.include? "Maximum resident set size (kbytes):"
+              memory_usage = line.delete("Maximum resident set size (kbytes):").strip
+            end
+          end
 
-	  source_code = @assignment.file_infos.first.file.identifier
+          source_code = @assignment.file_infos.first.file.identifier
 
-	  # begin
-	  #   File.open("assignments/#{@assignment.id.to_s}/#{source_code}.grade") do |file|
-	  #     puts file.readlines.to_s
-	  #   end
-	  # rescue
-	  #   redirect_to new_problem_assignment_path(@problem), flash: { error: "컴파일 과정에 문제가 있습니다. 스크립트 파일을 확인하시기 바랍니다." }
-	  # end
+          # begin
+          #   File.open("assignments/#{@assignment.id.to_s}/#{source_code}.grade") do |file|
+          #     puts file.readlines.to_s
+          #   end
+          # rescue
+          #   redirect_to new_problem_assignment_path(@problem), flash: { error: "컴파일 과정에 문제가 있습니다. 스크립트 파일을 확인하시기 바랍니다." }
+          # end
 
-	  File.open("assignments/#{@assignment.id.to_s}/#{source_code}.grade") do |file|
-	    file.readlines.each_with_index do |line, index|
-	      if index > 0
-		scores << line.split(',')[0].strip
-	      end
-	    end
-	  end
+          begin
+            Timeout::timeout(10) do
+              begin
+                File.open("assignments/#{@assignment.id.to_s}/#{source_code}.grade") do |file|
+                  file.readlines.each_with_index do |line, index|
+                    if index > 0
+                      scores << line.split(',')[0].strip
+                    end
+                  end
+                end
+              rescue
+                retry
+              end
+            end
+          rescue
+            state = "compile failed"
+            scores << "0"
+          end
 
-	  total_score = 0
+          total_score = 0
 
-	  @assignment.problem.criterions.each_with_index do |criterion, index|
-	    if scores[index]
-	      @assignment.scores.new(criterion_id: criterion.id, score: scores[index].to_i)
-	      total_score += scores[index].to_i
-	    else
-	      @assignment.scores.new(criterion_id: criterion.id, score: 0)
-	    end
-	  end
+          @assignment.problem.criterions.each_with_index do |criterion, index|
+            if scores[index]
+              @assignment.scores.new(criterion_id: criterion.id, score: scores[index].to_i)
+              total_score += scores[index].to_i
+            else
+              @assignment.scores.new(criterion_id: criterion.id, score: 0)
+            end
+          end
 
-	  @assignment.state = state
-	  @assignment.lead_time = lead_time
-	  @assignment.memory_usage = memory_usage
-	  @assignment.result = result
-	  @assignment.score = total_score
-	end
+          @assignment.state = state
+          @assignment.lead_time = lead_time
+          @assignment.memory_usage = memory_usage
+          @assignment.result = result
+          @assignment.score = total_score
+        end
 
-	@assignment.save
-	redirect_to [@problem, @assignment], flash: { success: "과제가 성공적으로 제출되었습니다." }
+        @assignment.save
+        redirect_to [@problem, @assignment], flash: { success: "과제가 성공적으로 제출되었습니다." }
       else
-	redirect_to new_problem_assignment_path(@problem), flash: { error: "과제 제출에 실패하였습니다." + @assignment.errors.full_messages.join(" ") }
+        redirect_to new_problem_assignment_path(@problem), flash: { error: "과제 제출에 실패하였습니다." + @assignment.errors.full_messages.join(" ") }
       end
     end
   end
