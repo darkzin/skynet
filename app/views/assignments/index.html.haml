@@ -41,6 +41,7 @@
             %th 제출번호
             %th 학번
             %th 상태
+            %th 점수
             %th 제출일
             %th 결과보기
         %tbody
@@ -49,6 +50,7 @@
               %td= index
               %td= assignment.student.student_number
               %td= assignment.state
+              %td= assignment.score
               %td= time_localize_dateTime(assignment.created_at)
               %td
                 = link_to "결과보기" , [@problem, assignment], class: 'btn btn-info'
