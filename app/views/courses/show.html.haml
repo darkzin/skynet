@@ -13,8 +13,8 @@
         - else
           = link_to "제출없음", @current_course, class: "btn btn-success disabled"
 
-        - unless @current_subjects.first.nil? || @current_subjects.first.problems.first.nil?
-          = link_to "결과보기", problem_assignments_path(@current_subjects.first.problems.first), class: "btn btn-primary"
+        - unless @all_subjects.first.nil? || @all_subjects.first.problems.first.nil?
+          = link_to "결과보기", problem_assignments_path(@all_subjects.first.problems.first), class: "btn btn-primary"
         - else
           = link_to "결과없음", @current_course, class: "btn btn-primary disabled"
 

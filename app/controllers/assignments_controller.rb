@@ -4,7 +4,7 @@ require 'timeout'
 
 class AssignmentsController < ApplicationController
   before_action :permit_user!
-  before_action :permit_student!, only: [:new]
+  #before_action :permit_student!, only: [:new]
   before_action :permit_professor!, only: [:destroy]
   def index
     @problem = Problem.find(params.permit(:problem_id)[:problem_id])
@@ -15,7 +15,7 @@ class AssignmentsController < ApplicationController
 	@end_date = Time.parse(params.permit(:end_date)[:end_date]).utc
 	@assignments = @problem.assignments.where(:created_at => @start_date..@end_date).order("created_at DESC").group("student_id").to_a
       else
-        @assignments = @problem.assignments.find(:all, order: 'created_at asc', group: 'student_id').to_a
+        @assignments = @problem.assignments.find(:all, order: 'created_at desc', group: 'student_id').to_a
         #@assignments = @problem.assignments.find(:all, select: 'DISTINCT student_id').to_a
         #@assignments = @problem.assignments.all.to_a
       end

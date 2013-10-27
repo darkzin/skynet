@@ -35,6 +35,7 @@ class CoursesController < ApplicationController
         false
       end
     end
+    @all_subjects = @outdate_subjects + @current_subjects
   end
 
   def new
