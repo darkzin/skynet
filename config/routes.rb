@@ -19,13 +19,14 @@ Skynet::Application.routes.draw do
   end
 
   resources :subjects, concerns: :file do
-    resources :problems
+    resources :problems do
+      get "csv", on: :member
+    end
     resources :deadlines
   end
 
   resources :problems, concerns: :file do
     resources :assignments, concern: :file
-    get "csv", on: :member
   end
 
   resources :assignments, concern: :file do
