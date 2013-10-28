@@ -76,6 +76,6 @@ class ProblemsController < ApplicationController
 
     end # csv loop end.
 
-    send_data c.to_s
+    send_data c.to_s, filename: "problem_result.csv"
   end # csv action end.
 end

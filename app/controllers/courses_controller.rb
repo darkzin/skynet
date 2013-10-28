@@ -116,6 +116,6 @@ class CoursesController < ApplicationController
       csv << result
     end # csv loop end.
 
-    send_data c.to_s
+    send_data c.to_s, filename: "course_result.csv"
   end # csv action end.
 end
