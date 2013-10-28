@@ -3,6 +3,9 @@
     .class-title
       %span= "#{@course.year.to_s}년 #{@course.term.to_s}학기 #{@course.name}"
       .buttons.pull-right
+        - if can_i_manage_this_course?
+          = link_to "CSV",  csv_course_path(@course), class: "btn btn-danger"
+
         - unless @current_subjects.first.nil? || @outdate_subjects.nil?
           = link_to "과제보기", [@course, @current_subjects.first || @outdate_subjects.first], class: "btn btn-info"
         - else

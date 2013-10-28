@@ -15,6 +15,7 @@ Skynet::Application.routes.draw do
   resources :courses do
     resources :notices
     resources :subjects
+    get "csv", on: :member
   end
 
   resources :subjects, concerns: :file do
@@ -24,6 +25,7 @@ Skynet::Application.routes.draw do
 
   resources :problems, concerns: :file do
     resources :assignments, concern: :file
+    get "csv", on: :member
   end
 
   resources :assignments, concern: :file do

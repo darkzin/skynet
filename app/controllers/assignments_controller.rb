@@ -11,9 +11,9 @@ class AssignmentsController < ApplicationController
     if can_i_manage_this_course?
       #@problem = Problem.find_by_sql("SELECT * FROM assignments WHERE problem_id = :id", :id => params.permit(:problem_id)[:problem_id])
       if(params.permit(:start_date)[:start_date] != nil && params.permit(:end_date)[:end_date] != nil)
-	@start_date = Time.parse(params.permit(:start_date)[:start_date]).utc
-	@end_date = Time.parse(params.permit(:end_date)[:end_date]).utc
-	@assignments = @problem.assignments.where(:created_at => @start_date..@end_date).order("created_at DESC").group("student_id").to_a
+  @start_date = Time.parse(params.permit(:start_date)[:start_date]).utc
+  @end_date = Time.parse(params.permit(:end_date)[:end_date]).utc
+  @assignments = @problem.assignments.where(:created_at => @start_date..@end_date).order("created_at DESC").group("student_id").to_a
       else
         @assignments = @problem.assignments.find(:all, order: 'created_at desc', group: 'student_id').to_a
         #@assignments = @problem.assignments.find(:all, select: 'DISTINCT student_id').to_a
@@ -222,4 +222,45 @@ class AssignmentsController < ApplicationController
     end
   end
 
-end
+  def csv
+    @course = Course.find(params[:id])
+    @subject = @course.subjects.order(id: :asc).all.to_a
+    result_column_names = ["학번", "이름"]
+    problem_id_list = []
+    @subject.each_with_index do |subject, s_index|
+      problems = subject.problems.order(id: :asc).all.to_a
+      problems.each_with_index do |problem, p_index|
+        result_column_names << "#{s_index + 1}_#{p_index + 1}점수"
+        problem_id_list << problem.id
+      end
+    end
+    @students = @course.students.all.to_a
+    c = CSV.generate do |csv|
+      csv << result_column_names
+      @students.each do |student|
+        result = [student.student_number, student.name]
+        problem_id_list.each do |problem_id|
+          problem = Problem.find(problem_id)
+          best_score_assignment = problem.assignments.where(student_id: student.id).order(score: :desc).first
+          result << (best_score_assignment.nil? ? '0' : best_score_assignment.score.to_s)
+        end # problem_id_list loop end.
+        csv << result
+      end # @students loop end.
+      @problems = Problem.find(problem_id_list)
+      result = ["만점", "만점"]
+      @problems.each do |problem|
+        criterions = problem.criterions.all.to_a
+        if criterions.empty?
+          score = 10
+        else
+          score = 0
+          criterions.each do |criterion|
+            score += (criterion.score.nil? ? 0 : criterion.score)
+          end
+        end # if end.
+        result << score.to_s
+      end
+      csv << result
+    end # csv loop end.
+  end # csv action end.
+end # class end.

@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
   end
 
   def select_course
-    @enroll = current_student.enrolls.build(course_id: params[:course_id])
+    @enroll = current_student.enrolls.where(course_id: params[:course_id]).first || current_student.enrolls.build(course_id: params[:course_id])
 
     if @enroll.save
       @course = current_student.courses.find(params[:course_id])

@@ -47,5 +47,35 @@ class ProblemsController < ApplicationController
     redirect_to [@course, @subject]
   end
 
+  def csv
+    @problem = Problem.find(params[:id])
+    @assignments = @problem.assignments.order(student_id: :asc).all.to_a
+    result_column_names = ["학번", "이름", "점수", "만점", "상태", "제출파일", "시간", "메모리"]
+    problem_id_list = []
 
+    criterions = @problem.criterions.all.to_a
+    if criterions.empty?
+      problem_score = 10
+    else
+      problem_score = 0
+      criterions.each do |criterion|
+        problem_score += (criterion.score.nil? ? 0 : criterion.score)
+      end
+    end # if end.
+
+    c = CSV.generate do |csv|
+      csv << result_column_names
+      result = []
+      @assignments.each do |assignment|
+        student = assignment.student
+        files = assignment.file_infos.pluck(:file).join(" / ")
+
+        result = [student.student_number, student.name, assignment.score, problem_score, assignment.state, files, assignment.lead_time, assignment.memory_usage]
+        csv << result
+      end # @assignment loop end.
+
+    end # csv loop end.
+
+    send_data c.to_s
+  end # csv action end.
 end
