@@ -11,11 +11,11 @@ class AssignmentsController < ApplicationController
     if can_i_manage_this_course?
       #@problem = Problem.find_by_sql("SELECT * FROM assignments WHERE problem_id = :id", :id => params.permit(:problem_id)[:problem_id])
       if(params.permit(:start_date)[:start_date] != nil && params.permit(:end_date)[:end_date] != nil)
-  @start_date = Time.parse(params.permit(:start_date)[:start_date]).utc
-  @end_date = Time.parse(params.permit(:end_date)[:end_date]).utc
-  @assignments = @problem.assignments.where(:created_at => @start_date..@end_date).order("created_at DESC").group("student_id").to_a
+        @start_date = Time.parse(params.permit(:start_date)[:start_date]).utc
+        @end_date = Time.parse(params.permit(:end_date)[:end_date]).utc
+        @assignments = @problem.assignments.where(:created_at => @start_date..@end_date).order("created_at ASC").group("student_id").to_a
       else
-        @assignments = @problem.assignments.find(:all, order: 'created_at desc', group: 'student_id').to_a
+        @assignments = @problem.assignments.find(:all, order: 'created_at ASC', group: 'student_id').to_a
         #@assignments = @problem.assignments.find(:all, select: 'DISTINCT student_id').to_a
         #@assignments = @problem.assignments.all.to_a
       end
