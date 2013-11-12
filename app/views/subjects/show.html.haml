@@ -54,7 +54,7 @@
                     = link_to "제출하기", new_problem_assignment_path(problem), class: "btn btn-success"
                   - if can_i_manage_this_course?
                     = link_to "삭제", [@subject, problem], method: "delete", class: "btn btn-danger"
-                    = link_to "CSV", csv_subject_problem_path(@subject, problem), class: "btn btn-info"
+                    = link_to "성적 다운로드", csv_subject_problem_path(@subject, problem), class: "btn btn-info"
                 .square-box-clear
                   .indent-left
                     %p= problem.content
