@@ -1,3 +1,0 @@
-class Category < TermTaxonomy
-
-end
