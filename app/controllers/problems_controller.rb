@@ -49,7 +49,7 @@ class ProblemsController < ApplicationController
 
   def csv
     @problem = Problem.find(params[:id])
-    @subquery = @problem.assignments.select('student_id, MAX(created_at) as max_created_at').group(:student_id).to_sql
+    @subquery = Assignment.select('student_id, MAX(created_at) as max_created_at').group(:student_id).where(problem_id: @problem.id).to_sql
     @assignments = @problem.assignments.joins("INNER JOIN (#{@subquery}) max_data ON (assignments.student_id = max_data.student_id AND assignments.created_at = max_data.max_created_at)").order(student_id: :asc).to_a
     result_column_names = ["학번", "이름", "점수", "만점", "상태", "제출파일", "시간", "메모리"]
     problem_id_list = []

@@ -13,10 +13,10 @@ class AssignmentsController < ApplicationController
       if(params.permit(:start_date)[:start_date] != nil && params.permit(:end_date)[:end_date] != nil)
         @start_date = Time.parse(params.permit(:start_date)[:start_date]).utc
         @end_date = Time.parse(params.permit(:end_date)[:end_date]).utc
-        @subquery = @problem.assignments.select('student_id, MAX(created_at) as max_created_at').group(:student_id).to_sql
+        @subquery = Assignment.select('student_id, MAX(created_at) as max_created_at').group(:student_id).where(problem_id: @problem.id).to_sql
         @assignments = @problem.assignments.joins("INNER JOIN (#{@subquery}) max_data ON (assignments.student_id = max_data.student_id AND assignments.created_at = max_data.max_created_at)").where(:created_at => @start_date..@end_date).order(student_id: :asc).to_a
       else
-        @subquery = @problem.assignments.select('student_id, MAX(created_at) as max_created_at').group(:student_id).to_sql
+        @subquery = Assignment.select('student_id, MAX(created_at) as max_created_at').group(:student_id).where(problem_id: @problem.id).to_sql
         @assignments = @problem.assignments.joins("INNER JOIN (#{@subquery}) max_data ON (assignments.student_id = max_data.student_id AND assignments.created_at = max_data.max_created_at)").order(student_id: :asc).to_a
         #@assignments = @problem.assignments.find(:all, order: 'created_at desc', group: 'student_id').to_a
         #@assignments = @problem.assignments.find(:all, select: 'DISTINCT student_id').to_a
